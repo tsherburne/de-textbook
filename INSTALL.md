@@ -2,6 +2,7 @@
 ```
 sudo pip install notebook
 sudo pip install RISE
+sudo pip install ipywidgets
 ```
 
 ## Notebook MetaData
