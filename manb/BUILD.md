@@ -3,6 +3,8 @@
 [Python Packaging Tutorial](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 
 ```
+sudo apt-get install python3.8-venv
+
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade build
 python3 -m pip install --upgrade twine

@@ -2,9 +2,10 @@ import requests
 import ipywidgets as widgets
 import subprocess
 from IPython.display import clear_output
+from typing import Tuple
 
 class Environment:
-  
+
   def __init__(this, domain: str, path: str):
     # REST API base URL
     this.domain = domain
@@ -13,7 +14,7 @@ class Environment:
 
     # GENESYS API refresh token
     this.refresh_token = ""
-    
+
     # REST API Header
     #  cf-access-token: -> tunnel token
     #  Authorization: -> GENESYS api token
@@ -29,20 +30,23 @@ class Environment:
     this.login = None
     this.status = None
     this.project = None
-    
+
     # Authorized Projects
     this.projectList = []
     this.projectDict = {}
 
+    # Categories
+    this.categoryDict = {}
+
     # Initialize API dictionaries
     this._init_api_dict()
 
-  # Authenticate the Cloudflare Tunnel 
+  # Authenticate the Cloudflare Tunnel
   def Tunnel(this):
 
     clear_output()
 
-    process = subprocess.Popen(['./cloudflared', 'access', 'login', this.domain], 
+    process = subprocess.Popen(['./cloudflared', 'access', 'login', this.domain],
                               stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE,
                               universal_newlines=True)
@@ -71,21 +75,21 @@ class Environment:
 
   # Login to GENESYS
   def Login(this):
-    
+
     this.name = widgets.Text(
       value='',
       placeholder='Enter username',
       description='User Name:',
       disabled=False)
-    
+
     this.pwd = widgets.Password(
       value='',
       placeholder='Enter password',
       description='Password:',
       disabled=False)
-    
+
     this.login = widgets.Button(
-      description="Login", 
+      description="Login",
       tooltip="Enter User Name and Password - then click to Login.",
       button_style='success')
 
@@ -108,14 +112,13 @@ class Environment:
   def _on_login(this, b):
 
     # Authenticate name / password
-    payload = {'grant_type': 'password', 
-               'username': this.name.value, 
+    payload = {'grant_type': 'password',
+               'username': this.name.value,
                'password': this.pwd.value}
-    r = requests.post(this.url + 'token', data=payload, 
+    r = requests.post(this.url + 'token', data=payload,
                       allow_redirects=False, headers=this.header)
-    # clear name / password
+    # clear password
     del payload
-    this.name.value = ""
     this.pwd.value = ""
 
     if r.status_code != 200:
@@ -126,13 +129,13 @@ class Environment:
         this.project.options = []
       this.status.value = 'Login Failed: ' + str(r.status_code)
       return
-    
+
     this.status.value = 'Login Success!'
     # save access token for future requests
     this.header['Authorization'] = 'bearer ' + r.json()['access_token']
 
     # get authorized projects for user
-    r = requests.get(this.url + 'projects', allow_redirects=False, 
+    r = requests.get(this.url + 'projects', allow_redirects=False,
                       headers=this.header)
     if r.status_code != 200:
       this.projectList = []
@@ -143,11 +146,11 @@ class Environment:
       return
 
     projects = r.json()['results']
-    
+
     for proj in projects:
       this.projectList.append(proj['name'])
       this.projectDict[proj['name']] = proj['id']
-    
+
     this.projectList.sort()
     firstProj = this.projectList[0]
 
@@ -172,7 +175,7 @@ class Environment:
     this.entityDict['Hazard'] = 'a05af43e-ac3c-41ec-b17f-b0d30fff9a75'
     this.entityDict['HazardousAction'] = 'dd2870d1-a9ab-4c26-a1cf-d3efda1248ef'
     this.entityDict['Loss'] = '13f1f878-b40c-4c7a-a4e0-e348e4278d9d'
-    
+
     this.relationDict = {}
     this.relationDict['ma: leads to'] = '9ee3b2ea-eaa9-4a02-ae33-cc11bb682167'
     this.relationDict['ma: is caused by'] = 'e734cdba-7143-4b37-9478-5b62497543f3'
@@ -193,8 +196,41 @@ class Environment:
     this.attributeDict['ca:title'] ='2a855444-2ddb-42a1-a04f-625f120cec26'
     this.attributeDict['note:status'] = '5b268627-f078-464e-8a12-f13cd8eee5f2'
     this.attributeDict['note:decision'] = 'd66bbaec-817e-469e-a3b3-354b6e9a2a08'
-    
+
     this.sortBlockDict = {}
-    this.sortBlockDict['Numeric'] = '78b85fc0-3aec-442d-95b9-2b291bd4d1bc' 
+    this.sortBlockDict['Numeric'] = '78b85fc0-3aec-442d-95b9-2b291bd4d1bc'
 
     this.hcaTypes = ['Providing', 'NotProviding', 'TooEarlyTooLate']
+
+  # Get a Category GUID by Name
+  def getCategoryId (this, name: str) -> Tuple[int, str]:
+    catId = ""
+    status = 404
+
+    if len(this.categoryDict) == 0:
+      # fetch categories
+      r = requests.get(this.url + 'projects/' + this.projectDict[this.project.value] +
+                    '/entities/byclass/' + this.entityDict['Category'] + '?sortBlockId=' +
+                    this.sortBlockDict['Numeric'],
+                    allow_redirects=False, headers=this.header)
+      if r.status_code == 200:
+        # Create Category Dictionary
+        categories = r.json()['results']
+        for category in categories:
+          categoryName = ""
+          for attr in category['attributes']:
+            if attr['definitionId'] == this.attributeDict['name']:
+              if attr['value'] is not None:
+                categoryName = attr['value']['value']
+                break
+
+          this.categoryDict[categoryName] = category['id']
+      else:
+        print('Error Fetching Categories: ' + str(r.status_code))
+        status = r.status_code
+
+    if name in this.categoryDict:
+      catId = this.categoryDict[name]
+      status = 200
+
+    return status, catId

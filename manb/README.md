@@ -6,7 +6,7 @@
 
 ## Local Development Setup
 ```
-export PYTHONPATH=/home/ubuntu/pypi/manb/src
+export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
 ```
 
 ## Usage
