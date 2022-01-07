@@ -185,6 +185,9 @@ class Environment:
     this.relationDict['categorized by'] = 'c2138bd9-06db-4146-bef2-1bbdeb5b6732'
     this.relationDict['built from'] = '6a545e1a-9052-4299-84bb-74ca62d532ad'
     this.relationDict['built in'] = '262f160b-c3a0-4207-9ba0-89ca78de45bf'
+    this.relationDict['allocated to'] = '357a7bbf-db23-44e8-a4ce-a311e79d3287'
+    this.relationDict['inputs'] = '5267c9a4-3fc8-403e-bb4c-94a8319d7046'
+    this.relationDict['outputs'] = 'cff0384d-8e62-4021-936e-ea512b117de0'
 
     this.attributeDict = {}
     this.attributeDict['name'] = '743d424c-daae-4dc9-887c-a8c92b9f08a4'
@@ -192,8 +195,12 @@ class Environment:
     this.attributeDict['description'] = '5d4a1782-8b0e-4b5d-b0f2-a0985f01c817'
     this.attributeDict['priority'] ='3f58efe8-90f1-4793-9573-9575d580cb31'
     this.attributeDict['variationType'] = 'a00302c6-3a7f-40e6-b382-88ab33cacca9'
+    this.attributeDict['component:abbreviation'] ='d47e4ed7-7b0e-4b4a-a0da-c95db481a34a'
+    this.attributeDict['component:type'] ='de3acf7c-9d38-40dc-92ce-0a58d14c8de9'
     this.attributeDict['component:title'] ='e70c8e32-8ed9-4c69-93d1-ec873ae22e8a'
+    this.attributeDict['function:title'] ='2a855444-2ddb-42a1-a04f-625f120cec26'
     this.attributeDict['ca:title'] ='2a855444-2ddb-42a1-a04f-625f120cec26'
+    this.attributeDict['item:title'] = '2a855444-2ddb-42a1-a04f-625f120cec26'
     this.attributeDict['note:status'] = '5b268627-f078-464e-8a12-f13cd8eee5f2'
     this.attributeDict['note:decision'] = 'd66bbaec-817e-469e-a3b3-354b6e9a2a08'
 

@@ -1,13 +1,7 @@
 # Mission Aware Note Book (manb)
 
 ## Description
-* A Google Colab Notebook for [Mission Aware](https://mission-aware.net)
-* Using the GENESYS REST API 
-
-## Local Development Setup
-```
-export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
-```
+* A Google Colab Notebook for [Mission Aware](https://mission-aware.net) using the GENESYS REST API
 
 ## Usage
 ```
