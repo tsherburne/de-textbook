@@ -3,10 +3,15 @@ import ipywidgets as widgets
 import subprocess
 from IPython.display import clear_output
 from typing import Tuple
+import urllib.request
+import os
 
 class Environment:
 
   def __init__(this, domain: str, path: str):
+
+    clear_output()
+    print("Initializing Mission Aware Notebook.....")
     # REST API base URL
     this.domain = domain
     this.path = path
@@ -40,6 +45,9 @@ class Environment:
 
     # Initialize API dictionaries
     this._init_api_dict()
+
+    # Download cloudflared CLI
+    this._get_cloudflared()
 
   # Authenticate the Cloudflare Tunnel
   def Tunnel(this):
@@ -208,6 +216,15 @@ class Environment:
     this.sortBlockDict['Numeric'] = '78b85fc0-3aec-442d-95b9-2b291bd4d1bc'
 
     this.hcaTypes = ['Providing', 'NotProviding', 'TooEarlyTooLate']
+
+  # Download Cloudflared CLI
+  def _get_cloudflared(this):
+    urllib.request.urlretrieve(\
+      'https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64',\
+      'cloudflared')
+    ret = os.chmod('./cloudflared', 0o775)
+    clear_output()
+    print("Initialization Complete!")
 
   # Get a Category GUID by Name
   def getCategoryId (this, name: str) -> Tuple[int, str]:

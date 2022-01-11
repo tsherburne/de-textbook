@@ -10,7 +10,7 @@ python3 -m pip install --upgrade build
 python3 -m pip install --upgrade twine
 
 python3 -m build
-python3 -m twine upload --repository testpypi dist/*
+python3 -m twine upload --repository pypi dist/*
 
 ```
 
@@ -21,4 +21,10 @@ python3 -m pip install --upgrade jupyterlab
 ```
 ```
 export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
+```
+
+### NoteBook Module Reload Cell Magic
+```
+%load_ext autoreload
+%autoreload 2
 ```

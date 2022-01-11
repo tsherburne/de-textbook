@@ -2,10 +2,13 @@ import requests
 import ipywidgets as widgets
 import subprocess
 from IPython.display import clear_output
+from IPython.display import Image
 from .env import Environment
 import sys
 from pprint import pprint
 from io import _io
+import plantuml
+import pandas as pd
 
 class ControlStructure:
   def __init__(this, env: Environment):
@@ -24,7 +27,15 @@ class ControlStructure:
     this.arcList = []
     this.arcByName = {}
 
-    print("Doing CS....")
+    this.output = {}
+    this.csImage = {}
+
+    this.caDF = {}
+    this.caDT = {}
+
+    clear_output()
+    print("Initializing Control Structure....")
+
     status, catId = this.env.getCategoryId("STPA: CS: Components")
     if status != 200:
       sys.exit("Failed to fetch control structure components category: " + str(status))
@@ -139,6 +150,9 @@ class ControlStructure:
         sys.exit("Failed to fetch output control actions / feedback items: " + str(r.status_code))
       outputs = r.json()['results']
       for output in outputs:
+        itemType = ""
+        itemTitle = ""
+        itemDescription = ""
         # check item type
         if output['entityDefinitionId'] == this.env.entityDict['ControlAction']:
           itemType = "ControlAction"
@@ -148,13 +162,19 @@ class ControlStructure:
         for attr in output['attributes']:
           if attr['definitionId'] == this.env.attributeDict['item:title']:
             if attr['value'] is not None:
-              # add to itemList
-              this.itemList.append(attr['value']['value'])
-              itemEntry = {}
-              itemEntry['type'] = itemType
-              itemEntry['inputComponent'] = ""
-              itemEntry['outputComponent'] = this.funcByName[function]['component']
-              this.itemByName[attr['value']['value']] = itemEntry
+              itemTitle = attr['value']['value']
+          if attr['definitionId'] == this.env.attributeDict['description']:
+            if attr['value'] is not None:
+              itemDescription = attr['value']['value']['plainText']
+
+        # add to itemList
+        this.itemList.append(itemTitle)
+        itemEntry = {}
+        itemEntry['type'] = itemType
+        itemEntry['description'] = itemDescription
+        itemEntry['inputComponent'] = ""
+        itemEntry['outputComponent'] = this.funcByName[function]['component']
+        this.itemByName[itemTitle] = itemEntry
 
     # fetch input control actions and feedback items
     for function in this.funcList:
@@ -194,8 +214,8 @@ class ControlStructure:
         arcEntry['arcLabels'] = arcLabels
         this.arcByName[arcName] = arcEntry
 
-    pprint(this.arcList)
-    pprint(this.arcByName)
+    clear_output()
+    print("Control Structure Initialization Complete!")
 
   # create control structure plantuml diagram file
   def Diagram(this):
@@ -237,6 +257,20 @@ class ControlStructure:
 
       f.write('@enduml\n')
 
+    server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
+    try:
+      ret = server.processes_file('./cs.txt', './cs.png', './cs_error.html')
+    except BaseException as err:
+      print(err)
+
+    # setup output area
+    this.output = widgets.Output(layout={'border': '1px solid black'})
+    display(this.output)
+    this.csImage = Image('./cs.png')
+    # display cs diagram to output area
+    with this.output:
+      display(this.csImage)
+
   # recursively output built from
   def _output_built_from(this, f: _io.TextIOWrapper, level: int, component: str):
     compColor = '#deepskyblue'
@@ -264,3 +298,31 @@ class ControlStructure:
       f.write(' '*level + '}\n')
     else:
       f.write('\n')
+
+# display table of control actions
+  def ControlActionTable(this):
+
+    caTable = []
+    for ca in this.itemList:
+      caItem = []
+      if this.itemByName[ca]['type'] == 'ControlAction':
+        caItem.append(ca)
+        caItem.append(this.itemByName[ca]['description'])
+        caTable.append(caItem)
+
+    this.caDF = pd.DataFrame(caTable, columns = ['Control Action', 'Description'])
+
+    # setup output area
+    this.output = widgets.Output(layout={'border': '1px solid black'})
+    display(this.output)
+
+    with this.output:
+      try:
+        from google.colab import data_table
+        data_table.enable_dataframe_formatter()
+        this.caDT = data_table.DataTable(this.caDF, include_index=False)
+        # Display dataframa via Colab datatable
+        display(this.caDT)
+      except ModuleNotFoundError:
+        # Display basic dataframe
+        display(this.caDF)
