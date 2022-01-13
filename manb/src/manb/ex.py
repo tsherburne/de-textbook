@@ -26,8 +26,7 @@ class Exercises:
     this.status = {}
     this.decision = {}
     this.save = {}
-    this.form_items ={}
-    this.form = {}
+    this.result = {}
 
     if this.section.name == Section.RISK_ASSESSMENT.name:
       this.category = "EX: Risk Assessment"
@@ -82,63 +81,39 @@ class Exercises:
     this.exList.sort()
 
   def Edit(this):
-    # setup exercise editor form
-    form_item_layout = Layout(
-        display='flex',
-        flex_flow='row',
-        justify_content='space-between'
+
+    this.title = Dropdown(
+      options=this.exList,
+      description='Title:',
+      disabled=False
     )
-    this.title = Dropdown(options=this.exList)
-    this.status = Dropdown(options=['Open', 'Closed'])
-    this.decision = Textarea()
-    this.save = Button(description='Save', button_style='success')
+    this.status = Dropdown(
+      options=['Open', 'Closed'],
+      description='Status:',
+      disabled=False
+    )
+    this.decision = Textarea(
+      description='Decision:',
+      placeholder='Enter Decision...',
+      disabled=False
+    )
+    this.save = Button(
+      description='Save',
+      tooltip='Click to Save status & decision.',
+      button_style='success',
+      disabled=False
+    )
     this.save.on_click(this._on_save)
-
-    this.form_items = [
-        Box([Label(value='Title:'),
-            this.title], layout=form_item_layout),
-        Box([Label(value='Status:'),
-            this.status], layout=form_item_layout),
-        Box([Label(value='Decision:'),
-            this.decision], layout=form_item_layout),
-        Box([Label(value='Operation:'),
-            this.save], layout=form_item_layout)
-    ]
-    this.form = Box(this.form_items, layout=Layout(
-        display='flex',
-        flex_flow='column',
-        border='solid 2px',
-        align_items='stretch',
-        width='40%'
-    ))
-
-    # assemble exercise table
-    exTable = []
-    for ex in this.exList:
-      exItem = []
-      exItem.append(this.exDict[ex]['exTitle'])
-      exItem.append(this.exDict[ex]['exDescription'])
-      exItem.append(this.exDict[ex]['exStatus'])
-      exItem.append(this.exDict[ex]['exDecision'])
-      exTable.append(exItem)
-
-    this.exDF = pd.DataFrame(exTable, columns = ['Title', 'Description', \
-                                                  'Status', 'Decision'])
+    this.result = widgets.Text(
+      value='',
+      placeholder='Save Result',
+      description='',
+      disabled=True)
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
-
-    with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.exDT = data_table.DataTable(this.exDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.exDT, this.form)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.exDF, this.form)
+    this._refresh_output()
 
   def _on_save(this, b):
     # update exercise response
@@ -165,7 +140,41 @@ class Exercises:
                     allow_redirects=False, headers=this.env.header,
                     json=payload)
     if r.status_code != 200:
-      print("Failed to save Exercise update: " + str(r.status_code))
+      this.result.value("Failed to save Exercise update: " + str(r.status_code))
       return
     else:
-      print("Saved Exercise Response!")
+      this.result.value = "Save Success!"
+      # update local dictionary
+      this.exDict[this.title.value]['exStatus'] = this.status.value
+      this.exDict[this.title.value]['exDecision'] = this.decision.value
+
+      this._refresh_output()
+
+  def _refresh_output(this):
+
+    # assemble exercise table
+    exTable = []
+    for ex in this.exList:
+      exItem = []
+      exItem.append(this.exDict[ex]['exTitle'])
+      exItem.append(this.exDict[ex]['exDescription'])
+      exItem.append(this.exDict[ex]['exStatus'])
+      exItem.append(this.exDict[ex]['exDecision'])
+      exTable.append(exItem)
+
+    this.exDF = pd.DataFrame(exTable, columns = ['Title', 'Description', \
+                                                  'Status', 'Decision'])
+
+    this.output.clear_output()
+    with this.output:
+      try:
+        from google.colab import data_table
+        data_table.enable_dataframe_formatter()
+        this.exDT = data_table.DataTable(this.exDF, include_index=False)
+        # Display dataframa via Colab datatable
+        display(this.exDT, this.title, this.status, this.decision,
+          this.save, this.result)
+      except ModuleNotFoundError:
+        # Display basic dataframe
+         display(this.exDF, this.title, this.status, this.decision,
+          this.save, this.result)
