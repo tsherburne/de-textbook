@@ -5,6 +5,11 @@ from IPython.display import clear_output
 from typing import Tuple
 import urllib.request
 import os
+from enum import Enum
+
+class Section(Enum):
+  RISK_ASSESSMENT = 1
+  VULNERABILITY_ASSESSMENT = 2
 
 class Environment:
 
@@ -20,13 +25,16 @@ class Environment:
     # GENESYS API refresh token
     this.refresh_token = ""
 
+    # API content types
+    this.content_form = 'application/x-www-form-urlencoded'
+    this.content_json = 'application/json'
     # REST API Header
     #  cf-access-token: -> tunnel token
     #  Authorization: -> GENESYS api token
     this.header = {'cf-access-token': "",
                   'Authorization': "",
                   'Accept': 'application/json',
-                  'Content-Type': 'application/x-www-form-urlencoded'}
+                  'Content-Type': ""}
     # Login widget handles
     this.output = {}
 
@@ -123,6 +131,8 @@ class Environment:
     payload = {'grant_type': 'password',
                'username': this.name.value,
                'password': this.pwd.value}
+
+    this._set_form_header()
     r = requests.post(this.url + 'token', data=payload,
                       allow_redirects=False, headers=this.header)
     # clear password
@@ -174,6 +184,13 @@ class Environment:
       # diplay projects widget to output area
       with this.output:
         display(this.project)
+
+  # Set REST header for json content
+  def _set_json_header(this):
+    this.header['Content-Type'] = this.content_json
+  # Set REST header for form content
+  def _set_form_header(this):
+    this.header['Content-Type'] = this.content_form
 
   # GENESYS API name to GUID dictionaries
   def _init_api_dict(this):

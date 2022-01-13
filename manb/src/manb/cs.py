@@ -21,6 +21,7 @@ class ControlStructure:
     this.funcById = {}
     this.funcList = []
 
+    # item: Control Action & Feedback types
     this.itemList = []
     this.itemByName = {}
 
@@ -30,6 +31,7 @@ class ControlStructure:
     this.output = {}
     this.csImage = {}
 
+    # control actions
     this.caDF = {}
     this.caDT = {}
 

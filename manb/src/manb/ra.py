@@ -12,21 +12,34 @@ class RiskAssessment:
   def __init__(this, env: Environment, cs: ControlStructure):
     this.env = env
     this.cs = cs
+    this.output = {}
 
+    # losses
     this.lossList = []
     this.lossesById = {}
     this.lossDF = {}
     this.lossDT = {}
 
+    # hazards
     this.hazardList = []
     this.hazardsById = {}
     this.hazardDF = {}
     this.hazardDT = {}
 
+    # hazardous control action
     this.hcaList = []
     this.hcasById = {}
     this.hcaDF = {}
     this.hcaDT = {}
+
+    # reverse mapping of ca:variation_type -> hca
+    this.caVariationDict = {}
+
+    # control action analysis
+    this.caaDF = {}
+    this.caaDT = {}
+
+    this.hcaTypes = ['Providing', 'NotProviding', 'TooEarlyTooLate']
 
     clear_output()
     print("Initializing Risk Assessment....")
@@ -40,195 +53,204 @@ class RiskAssessment:
 
     if r.status_code != 200:
       sys.exit("Error Fetching Losses: " + str(r.status_code))
-    else:
-      losses = r.json()['results']
-      for loss in losses:
-        lossEntry = {}
-        lossId = ""
 
-        for attr in loss['attributes']:
+    losses = r.json()['results']
+    for loss in losses:
+      lossEntry = {}
+      lossId = ""
+
+      for attr in loss['attributes']:
+        if attr['definitionId'] == this.env.attributeDict['number']:
+          if attr['value'] is not None:
+            lossId = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['name']:
+          if attr['value'] is not None:
+            lossEntry['lossName'] = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['description']:
+          if attr['value'] is not None:
+            lossEntry['lossDescription'] = attr['value']['value']['plainText']
+        elif attr['definitionId'] == this.env.attributeDict['priority']:
+          if attr['value'] is not None:
+            lossEntry['lossPriority'] = attr['value']['value']['value']
+      # fetch related hazards (ma: is caused by)
+      r2 = requests.get(this.env.url + 'projects/' +
+                this.env.projectDict[this.env.project.value] +
+                '/entities/' + loss['id'] +
+                '/relationshiptargets/' + this.env.relationDict['ma: is caused by'] +
+                '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
+                allow_redirects=False, headers=this.env.header)
+      if r2.status_code != 200:
+        sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
+      hazards = r2.json()['results']
+      first = True
+      lossEntry['hazardList'] = ""
+      for hazard in hazards:
+        for attr in hazard['attributes']:
           if attr['definitionId'] == this.env.attributeDict['number']:
             if attr['value'] is not None:
-              lossId = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['name']:
-            if attr['value'] is not None:
-              lossEntry['lossName'] = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['description']:
-            if attr['value'] is not None:
-              lossEntry['lossDescription'] = attr['value']['value']['plainText']
-          elif attr['definitionId'] == this.env.attributeDict['priority']:
-            if attr['value'] is not None:
-              lossEntry['lossPriority'] = attr['value']['value']['value']
-        # fetch related hazards (ma: is caused by)
-        r2 = requests.get(this.env.url + 'projects/' +
-                  this.env.projectDict[this.env.project.value] +
-                  '/entities/' + loss['id'] +
-                  '/relationshiptargets/' + this.env.relationDict['ma: is caused by'] +
-                  '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
-                  allow_redirects=False, headers=this.env.header)
-        if r2.status_code != 200:
-          sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
-        else:
-          hazards = r2.json()['results']
-          first = True
-          lossEntry['hazardList'] = ""
-          for hazard in hazards:
-            for attr in hazard['attributes']:
-              if attr['definitionId'] == this.env.attributeDict['number']:
-                if attr['value'] is not None:
-                  if first == True:
-                    first = False
-                  else:
-                    lossEntry['hazardList'] += ','
-                  lossEntry['hazardList'] += attr['value']['value']
-        # save loss
-        this.lossList.append(lossId)
-        this.lossesById[lossId] = lossEntry
+              if first == True:
+                first = False
+              else:
+                lossEntry['hazardList'] += ','
+              lossEntry['hazardList'] += attr['value']['value']
+      # save loss
+      this.lossList.append(lossId)
+      this.lossesById[lossId] = lossEntry
 
     # fetch hazards
-    r = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
+    r = requests.get(this.env.url + 'projects/' +
+                    this.env.projectDict[this.env.project.value] +
                     '/folders/' + this.env.entityDict['Hazard'] + '/entities?sortBlockId=' +
                     this.env.sortBlockDict['Numeric'],
                     allow_redirects=False, headers=this.env.header)
 
     if r.status_code != 200:
       sys.exit("Error Fetching Hazards: " + str(r.status_code))
-    else:
-      hazards = r.json()['results']
-      for hazard in hazards:
-        hazardEntry = {}
-        hazardId = " "
-        for attr in hazard['attributes']:
-          if attr['definitionId'] == this.env.attributeDict['number']:
-            if attr['value'] is not None:
-              hazardId = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['name']:
-            if attr['value'] is not None:
-              hazardEntry['hazardName'] = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['description']:
-            if attr['value'] is not None:
-              hazardEntry['hazardDescription'] = attr['value']['value']['plainText']
 
-        # fetch related losses (ma: leads to)
-        r2 = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
-                  '/entities/' + hazard['id'] +
-                  '/relationshiptargets/' + this.env.relationDict['ma: leads to'] +
-                  '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
-                  allow_redirects=False, headers=this.env.header)
-        if r2.status_code != 200:
-          sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
-        else:
-          losses = r2.json()['results']
-          first = True
-          hazardEntry['lossList'] = " "
-          for loss in losses:
-            if loss['entityDefinitionId'] == this.env.entityDict['Loss']:
-              for attr in loss['attributes']:
-                if attr['definitionId'] == this.env.attributeDict['number']:
-                  if attr['value'] is not None:
-                    if first == True:
-                      first = False
-                    else:
-                      hazardEntry['lossList'] += ','
-                    hazardEntry['lossList'] += attr['value']['value']
+    hazards = r.json()['results']
+    for hazard in hazards:
+      hazardEntry = {}
+      hazardId = " "
+      for attr in hazard['attributes']:
+        if attr['definitionId'] == this.env.attributeDict['number']:
+          if attr['value'] is not None:
+            hazardId = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['name']:
+          if attr['value'] is not None:
+            hazardEntry['hazardName'] = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['description']:
+          if attr['value'] is not None:
+            hazardEntry['hazardDescription'] = attr['value']['value']['plainText']
 
-        # fetch related hazardous control actions (ma: is caused by)
-        r2 = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
-                  '/entities/' + hazard['id'] +
-                  '/relationshiptargets/' + this.env.relationDict['ma: is caused by'] +
-                  '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
-                  allow_redirects=False, headers=this.env.header)
-        if r2.status_code != 200:
-          sys.exit("Error Fetching Related HCA: " + str(r2.status_code))
-        else:
-          hcas = r2.json()['results']
-          first = True
-          hazardEntry['hcaList'] = " "
-          for hca in hcas:
-            if hca['entityDefinitionId'] == this.env.entityDict['HazardousAction']:
-              for attr in hca['attributes']:
-                if attr['definitionId'] == this.env.attributeDict['number']:
-                  if attr['value'] is not None:
-                    if first == True:
-                      first = False
-                    else:
-                      hazardEntry['hcaList'] += ','
-                    hazardEntry['hcaList'] += attr['value']['value']
-        # save hazard
-        this.hazardList.append(hazardId)
-        this.hazardsById[hazardId] = hazardEntry
+      # fetch related losses (ma: leads to)
+      r2 = requests.get(this.env.url + 'projects/' +
+                this.env.projectDict[this.env.project.value] +
+                '/entities/' + hazard['id'] +
+                '/relationshiptargets/' + this.env.relationDict['ma: leads to'] +
+                '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
+                allow_redirects=False, headers=this.env.header)
+      if r2.status_code != 200:
+        sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
+
+      losses = r2.json()['results']
+      first = True
+      hazardEntry['lossList'] = " "
+      for loss in losses:
+        if loss['entityDefinitionId'] == this.env.entityDict['Loss']:
+          for attr in loss['attributes']:
+            if attr['definitionId'] == this.env.attributeDict['number']:
+              if attr['value'] is not None:
+                if first == True:
+                  first = False
+                else:
+                  hazardEntry['lossList'] += ','
+                hazardEntry['lossList'] += attr['value']['value']
+
+      # fetch related hazardous control actions (ma: is caused by)
+      r2 = requests.get(this.env.url + 'projects/' +
+                this.env.projectDict[this.env.project.value] +
+                '/entities/' + hazard['id'] +
+                '/relationshiptargets/' + this.env.relationDict['ma: is caused by'] +
+                '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
+                allow_redirects=False, headers=this.env.header)
+      if r2.status_code != 200:
+        sys.exit("Error Fetching Related HCA: " + str(r2.status_code))
+
+      hcas = r2.json()['results']
+      first = True
+      hazardEntry['hcaList'] = " "
+      for hca in hcas:
+        if hca['entityDefinitionId'] == this.env.entityDict['HazardousAction']:
+          for attr in hca['attributes']:
+            if attr['definitionId'] == this.env.attributeDict['number']:
+              if attr['value'] is not None:
+                if first == True:
+                  first = False
+                else:
+                  hazardEntry['hcaList'] += ','
+                hazardEntry['hcaList'] += attr['value']['value']
+      # save hazard
+      this.hazardList.append(hazardId)
+      this.hazardsById[hazardId] = hazardEntry
 
     # fetch hca
-    r = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
-                    '/folders/' + this.env.entityDict['HazardousAction'] + '/entities?sortBlockId=' +
+    r = requests.get(this.env.url + 'projects/' +
+                    this.env.projectDict[this.env.project.value] +
+                    '/folders/' + this.env.entityDict['HazardousAction'] +
+                    '/entities?sortBlockId=' +
                     this.env.sortBlockDict['Numeric'],
                     allow_redirects=False, headers=this.env.header)
     if r.status_code != 200:
       sys.exit("Error Fetching HCAs: " + str(r.status_code))
-    else:
-      hcas = r.json()['results']
-      for hca in hcas:
-        hcaId = ""
-        hcaEntry = {}
-        for attr in hca['attributes']:
-          if attr['definitionId'] == this.env.attributeDict['number']:
-            if attr['value'] is not None:
-              hcaId = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['name']:
-            if attr['value'] is not None:
-              hcaEntry['hcaName'] = attr['value']['value']
-          elif attr['definitionId'] == this.env.attributeDict['description']:
-            if attr['value'] is not None:
-              hcaEntry['hcaDescription'] = attr['value']['value']['plainText']
-          elif attr['definitionId'] == this.env.attributeDict['variationType']:
-            if attr['value'] is not None:
-              hcaEntry['hcaVariationType'] = attr['value']['value']['value']
 
-        # fetch related hazards (ma: leads to)
-        r2 = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
-                  '/entities/' + hca['id'] +
-                  '/relationshiptargets/' + this.env.relationDict['ma: leads to'] +
-                  '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
-                  allow_redirects=False, headers=this.env.header)
-        if r2.status_code != 200:
-          sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
-        else:
-          hazards = r2.json()['results']
-          first = True
-          hcaEntry['hazardList'] = " "
-          for hazard in hazards:
-            if hazard['entityDefinitionId'] == this.env.entityDict['Hazard']:
-              for attr in hazard['attributes']:
-                if attr['definitionId'] == this.env.attributeDict['number']:
-                  if attr['value'] is not None:
-                    if first == True:
-                      first = False
-                    else:
-                      hcaEntry['hazardList'] += ','
-                    hcaEntry['hazardList'] += attr['value']['value']
+    hcas = r.json()['results']
+    for hca in hcas:
+      hcaId = ""
+      hcaEntry = {}
+      for attr in hca['attributes']:
+        if attr['definitionId'] == this.env.attributeDict['number']:
+          if attr['value'] is not None:
+            hcaId = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['name']:
+          if attr['value'] is not None:
+            hcaEntry['hcaName'] = attr['value']['value']
+        elif attr['definitionId'] == this.env.attributeDict['description']:
+          if attr['value'] is not None:
+            hcaEntry['hcaDescription'] = attr['value']['value']['plainText']
+        elif attr['definitionId'] == this.env.attributeDict['variationType']:
+          if attr['value'] is not None:
+            hcaEntry['hcaVariationType'] = attr['value']['value']['value']
 
-        # fetch related control actions (ma: is variation of)
-        r2 = requests.get(this.env.url + 'projects/' + this.env.projectDict[this.env.project.value] +
-                  '/entities/' + hca['id'] +
-                  '/relationshiptargets/' + this.env.relationDict['ma: variation of'] +
-                  '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
-                  allow_redirects=False, headers=this.env.header)
-        if r2.status_code != 200:
-          sys.exit("Error Fetching Related CA: " + str(r2.status_code))
-        else:
-          controlActions = r2.json()['results']
-          first = True
-          hcaEntry['relatedCAList'] = " "
-          for controlAction in controlActions:
-            if controlAction['entityDefinitionId'] == this.env.entityDict['ControlAction']:
-              for attr in controlAction['attributes']:
-                if attr['definitionId'] == this.env.attributeDict['ca:title']:
-                  if attr['value'] is not None:
-                    if first == True:
-                      first = False
-                    else:
-                      hcaEntry['relatedCAList'] += ','
-                    hcaEntry['relatedCAList'] += attr['value']['value']
+      # fetch related hazards (ma: leads to)
+      r2 = requests.get(this.env.url + 'projects/' +
+                this.env.projectDict[this.env.project.value] +
+                '/entities/' + hca['id'] +
+                '/relationshiptargets/' + this.env.relationDict['ma: leads to'] +
+                '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
+                allow_redirects=False, headers=this.env.header)
+      if r2.status_code != 200:
+        sys.exit("Error Fetching Related Hazards: " + str(r2.status_code))
+
+      hazards = r2.json()['results']
+      first = True
+      hcaEntry['hazardList'] = " "
+      for hazard in hazards:
+        if hazard['entityDefinitionId'] == this.env.entityDict['Hazard']:
+          for attr in hazard['attributes']:
+            if attr['definitionId'] == this.env.attributeDict['number']:
+              if attr['value'] is not None:
+                if first == True:
+                  first = False
+                else:
+                  hcaEntry['hazardList'] += ','
+                hcaEntry['hazardList'] += attr['value']['value']
+
+      # fetch related control actions (ma: is variation of)
+      r2 = requests.get(this.env.url + 'projects/' +
+                this.env.projectDict[this.env.project.value] +
+                '/entities/' + hca['id'] +
+                '/relationshiptargets/' + this.env.relationDict['ma: variation of'] +
+                '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
+                allow_redirects=False, headers=this.env.header)
+      if r2.status_code != 200:
+        sys.exit("Error Fetching Related CA: " + str(r2.status_code))
+
+      controlActions = r2.json()['results']
+      first = True
+      hcaEntry['relatedCAList'] = " "
+      for controlAction in controlActions:
+        if controlAction['entityDefinitionId'] == this.env.entityDict['ControlAction']:
+          for attr in controlAction['attributes']:
+            if attr['definitionId'] == this.env.attributeDict['ca:title']:
+              if attr['value'] is not None:
+                if first == True:
+                  first = False
+                else:
+                  hcaEntry['relatedCAList'] += ','
+                hcaEntry['relatedCAList'] += attr['value']['value']
+                # ca:variation type -> hca
+                this.caVariationDict[attr['value']['value'] + ':' \
+                                        + hcaEntry['hcaVariationType']] = hcaId
 
         this.hcaList.append(hcaId)
         this.hcasById[hcaId] = hcaEntry
@@ -249,7 +271,8 @@ class RiskAssessment:
         lossItem.append(this.lossesById[loss]['hazardList'])
         lossTable.append(lossItem)
 
-    this.lossDF = pd.DataFrame(lossTable, columns = ['ID', 'Title', 'Priority', 'is caused by: Hazard'])
+    this.lossDF = pd.DataFrame(lossTable, columns = ['ID', 'Title', 'Priority', \
+                                        'is caused by: Hazard'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
@@ -326,3 +349,38 @@ class RiskAssessment:
       except ModuleNotFoundError:
         # Display basic dataframe
         display(this.hcaDF)
+
+  def ControlActionAnalysisTable(this):
+    caaTable = []
+    for item in this.cs.itemList:
+      if this.cs.itemByName[item]['type'] == "ControlAction":
+        for hcaType in this.hcaTypes:
+          caaItem = []
+          caaItem.append(item)
+          caaItem.append(hcaType)
+          if (item + ':' + hcaType) in this.caVariationDict:
+            caaItem.append(this.caVariationDict[item + ':' + hcaType])
+          else:
+            caaItem.append(' ')
+          # Todo: save / retrieve variation type
+          caaItem.append(' ')
+          caaTable.append(caaItem)
+
+    this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', 'Variation', \
+                    'has variation: Hazardous Action', 'has variation: .justification'])
+
+    # setup output area
+    this.output = widgets.Output(layout={'border': '1px solid black'})
+    display(this.output)
+
+    with this.output:
+      try:
+        from google.colab import data_table
+        data_table.enable_dataframe_formatter()
+        this.caaDT = data_table.DataTable(this.caaDF, include_index=False)
+        # Display dataframa via Colab datatable
+        display(this.caaDT)
+      except ModuleNotFoundError:
+        # Display basic dataframe
+        display(this.caaDF)
+

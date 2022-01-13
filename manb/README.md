@@ -1,7 +1,7 @@
 # Mission Aware Note Book (manb)
 
 ## Description
-* A Google Colab Notebook for [Mission Aware](https://mission-aware.net) using the GENESYS REST API
+* A Python package for Google Colab that supports [Mission Aware](https://mission-aware.net) concepts using the GENESYS REST API.
 
 ## Usage
 ```
@@ -14,11 +14,12 @@ cs = manb.ControlStructure(env)
 cs.Diagram()
 cs.ControlActionTable()
 
-
 ra = manb.RiskAssessment(env, cs)
 ra.LossTable()
-ra.LossEdit()
+ra.HazardTable()
+ra.HazardousActionTable()
+ra.ControlActionAnalysisTable()
 
-ex = manb.Exercises(env, manb.SECTION)
+ex = manb.Exercises(env, manb.Section.RISK_ASSESSMENT)
 ex.Edit()
 ```
