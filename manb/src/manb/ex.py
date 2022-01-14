@@ -3,7 +3,7 @@ import requests
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
-from ipywidgets import Layout, Button, Box, FloatText, Textarea
+from ipywidgets import Layout, Button, VBox, FloatText, Textarea
 from ipywidgets import Dropdown, Label, IntSlider
 from IPython.display import clear_output
 import json
@@ -28,6 +28,7 @@ class Exercises:
     this.save = {}
     this.result = {}
     this.table = {}
+    this.vbox = {}
 
     if this.section.name == Section.RISK_ASSESSMENT.name:
       this.category = "EX: Risk Assessment"
@@ -183,6 +184,8 @@ class Exercises:
       with this.table:
         display(this.exDF)
     finally:
+      vbox_items = [this.table, this.title, this.status, \
+                    this.decision, this.save, this.result]
+      vbox = VBox(vbox_items)
       with this.output:
-        display(this.table, this.title, this.status,
-                  this.decision, this.save, this.result)
+        display(vbox)

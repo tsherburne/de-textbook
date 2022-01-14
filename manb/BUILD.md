@@ -33,8 +33,9 @@ export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
 ### Using Notebook Logger
 ```
 # create a cell for log output
+import logging
 env.logger.setLevel(logging.INFO)
-env.handlerhandler.clear_logs()
+env.loghandler.clear_logs()
 env.loghandler.show_logs()
 ```
 
