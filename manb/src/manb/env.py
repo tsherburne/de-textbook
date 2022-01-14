@@ -6,6 +6,8 @@ from typing import Tuple
 import urllib.request
 import os
 from enum import Enum
+from .log import MANBLogHandler
+import logging
 
 class Section(Enum):
   RISK_ASSESSMENT = 1
@@ -47,6 +49,14 @@ class Environment:
     # Authorized Projects
     this.projectList = []
     this.projectDict = {}
+
+    # Setup MANB Logger
+    this.logger = logging.getLogger(__name__)
+    this.loghandler = MANBLogHandler()
+    this.loghandler.setFormatter(logging.Formatter(\
+                '%(asctime)s - [%(levelname)s] %(message)s'))
+    this.logger.addHandler(this.loghandler)
+    this.logger.setLevel(logging.ERROR)
 
     # Categories
     this.categoryDict = {}

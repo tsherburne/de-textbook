@@ -1,11 +1,11 @@
 from .env import Environment, Section
 import requests
-from IPython.display import clear_output
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
 from ipywidgets import Layout, Button, Box, FloatText, Textarea
 from ipywidgets import Dropdown, Label, IntSlider
+from IPython.display import clear_output
 import json
 
 
@@ -27,6 +27,7 @@ class Exercises:
     this.decision = {}
     this.save = {}
     this.result = {}
+    this.table = {}
 
     if this.section.name == Section.RISK_ASSESSMENT.name:
       this.category = "EX: Risk Assessment"
@@ -164,17 +165,24 @@ class Exercises:
 
     this.exDF = pd.DataFrame(exTable, columns = ['Title', 'Description', \
                                                   'Status', 'Decision'])
-
-    this.output.clear_output()
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.exDT = data_table.DataTable(this.exDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.exDT, this.title, this.status, this.decision,
-          this.save, this.result)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-         display(this.exDF, this.title, this.status, this.decision,
-          this.save, this.result)
+      clear_output()
+
+    # output the DF/DT plus edit form
+    try:
+      from google.colab import data_table
+      data_table.enable_dataframe_formatter()
+      this.exDT = data_table.DataTable(this.exDF, include_index=False)
+      # Display dataframa via Colab datatable
+      this.table = widgets.Output(layout={'border': '1px solid black'})
+      with this.table:
+        display(this.exDT)
+    except ModuleNotFoundError:
+      # Display basic dataframe
+      this.table = widgets.Output(layout={'border': '1px solid black'})
+      with this.table:
+        display(this.exDF)
+    finally:
+      with this.output:
+        display(this.table, this.title, this.status,
+                  this.decision, this.save, this.result)
