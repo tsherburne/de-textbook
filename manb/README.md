@@ -11,6 +11,7 @@ env.Tunnel()
 env.Login()
 
 cs = manb.ControlStructure(env)
+cs.UseCaseTable()
 cs.Diagram()
 cs.ControlActionTable()
 
@@ -22,4 +23,8 @@ ra.ControlActionAnalysisTable()
 
 ex = manb.Exercises(env, manb.Section.RISK_ASSESSMENT)
 ex.Edit()
+
+va = manb.VulnerabilityAssesment(env, ra)
+va.LossScenarioTable()
+va.LossScenarioAnalysisTable()
 ```
