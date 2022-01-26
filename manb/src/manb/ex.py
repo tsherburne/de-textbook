@@ -5,7 +5,7 @@ import pandas as pd
 import ipywidgets as widgets
 from ipywidgets import Layout, Button, VBox, FloatText, Textarea
 from ipywidgets import Dropdown, Label, IntSlider
-from IPython.display import clear_output
+from IPython.display import clear_output, display
 import json
 
 
@@ -186,6 +186,6 @@ class Exercises:
     finally:
       vbox_items = [this.table, this.title, this.status, \
                     this.decision, this.save, this.result]
-      vbox = VBox(vbox_items)
+      this.vbox = VBox(vbox_items)
       with this.output:
-        display(vbox)
+        display(this.vbox)

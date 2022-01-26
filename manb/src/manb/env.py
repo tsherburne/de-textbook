@@ -1,7 +1,8 @@
 import requests
 import ipywidgets as widgets
+from ipywidgets import VBox
 import subprocess
-from IPython.display import clear_output
+from IPython.display import clear_output, display
 from typing import Tuple
 import urllib.request
 import os
@@ -40,11 +41,13 @@ class Environment:
     # Login widget handles
     this.output = {}
 
-    this.name = None
-    this.pwd = None
-    this.login = None
-    this.status = None
-    this.project = None
+    this.name = {}
+    this.pwd = {}
+    this.login = {}
+    this.status = {}
+    this.project = {}
+    this.vbox = {}
+    this.vboxitems = []
 
     # Authorized Projects
     this.projectList = []
@@ -115,8 +118,8 @@ class Environment:
       disabled=False)
 
     this.login = widgets.Button(
-      description="Login",
-      tooltip="Enter User Name and Password - then click to Login.",
+      description='Login',
+      tooltip='Enter User Name and Password - then click to Login.',
       button_style='success')
 
     this.status = widgets.Text(
@@ -124,15 +127,23 @@ class Environment:
       placeholder='Login Status',
       description='',
       disabled=True)
+
+    this.project = widgets.Select(
+      options=[''],
+      value='',
+      description='Project:',
+      disabled=False)
+
     # Register Login button callback
     this.login.on_click(this._on_login)
-
+    this.vbox_items = [this.name, this.pwd, this.login, this.status, this.project]
+    this.vbox = VBox(this.vbox_items)
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
     # display login widgets to output area
     with this.output:
-      display(this.name, this.pwd, this.login, this.status)
+      display(this.vbox)
 
   # Login button clicked
   def _on_login(this, b):
@@ -149,12 +160,14 @@ class Environment:
     del payload
     this.pwd.value = ""
 
+    # clear project list
+    this.projectList = []
+    this.projectDict = {}
+    this.project.options = ['']
+    this.project.value = ''
+
     if r.status_code != 200:
       this.header['Authorization'] = ""
-      this.projectList = []
-      this.projectDict = {}
-      if this.project:
-        this.project.options = []
       this.status.value = 'Login Failed: ' + str(r.status_code)
       return
 
@@ -166,34 +179,21 @@ class Environment:
     r = requests.get(this.url + 'projects', allow_redirects=False,
                       headers=this.header)
     if r.status_code != 200:
-      this.projectList = []
-      this.projectDict = {}
-      if this.project is not None:
-        this.project.options = []
       this.status.value = 'Project Request Failed: ' + str(r.status_code)
       return
 
     projects = r.json()['results']
 
+    # build project list and dict
     for proj in projects:
       this.projectList.append(proj['name'])
       this.projectDict[proj['name']] = proj['id']
 
     this.projectList.sort()
-    firstProj = this.projectList[0]
 
-    if this.project:
-        this.project.options=this.projectList
-        this.project.value=firstProj
-    else:
-      this.project = widgets.Select(
-        options=this.projectList,
-        value=firstProj,
-        description='Project:',
-        disabled=False)
-      # diplay projects widget to output area
-      with this.output:
-        display(this.project)
+    this.project.options = this.projectList
+    this.project.value = this.projectList[0]
+
 
   # Set REST header for json content
   def _set_json_header(this):

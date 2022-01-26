@@ -1,7 +1,7 @@
 from .env import Environment
 from .cs import ControlStructure
 import requests
-from IPython.display import clear_output
+from IPython.display import clear_output, display
 import sys
 from pprint import pprint
 import pandas as pd

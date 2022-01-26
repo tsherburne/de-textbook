@@ -1,10 +1,9 @@
 import requests
 import ipywidgets as widgets
 import subprocess
-from IPython.display import clear_output
+from IPython.display import clear_output, display
 from IPython.display import Image
 from .env import Environment
-import sys
 from pprint import pprint
 from io import _io
 import plantuml
@@ -40,8 +39,8 @@ class ControlStructure:
 
     status, catId = this.env.getCategoryId("STPA: CS: Components")
     if status != 200:
-      sys.exit("Failed to fetch control structure components category: " + str(status))
-
+      print("Failed to fetch control structure components category: " + str(status))
+      return
     # fetch 'categorized' components
     r = requests.get(this.env.url + 'projects/' +
                 this.env.projectDict[this.env.project.value] +
@@ -50,8 +49,8 @@ class ControlStructure:
                 '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                 allow_redirects=False, headers=this.env.header)
     if r.status_code != 200:
-      sys.exit("Failed to fetch categorized components: " + str(r.status_code))
-
+      print("Failed to fetch categorized components: " + str(r.status_code))
+      return
     # collect all components using Title
     components = r.json()['results']
     for component in components:
@@ -80,7 +79,8 @@ class ControlStructure:
                   '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                   allow_redirects=False, headers=this.env.header)
       if r.status_code != 200:
-        sys.exit("Failed to fetch built from components: " + str(r.status_code))
+        print("Failed to fetch built from components: " + str(r.status_code))
+        return
       bf_components = r.json()['results']
       bf_list = []
       for bf_component in bf_components:
@@ -95,8 +95,8 @@ class ControlStructure:
 
     status, catId = this.env.getCategoryId("STPA: CS: Functions")
     if status != 200:
-      sys.exit("Failed to fetch control structure functions category: " + str(status))
-
+      print("Failed to fetch control structure functions category: " + str(status))
+      return
     # fetch 'categorized' functions
     r = requests.get(this.env.url + 'projects/' +
                 this.env.projectDict[this.env.project.value] +
@@ -105,8 +105,8 @@ class ControlStructure:
                 '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                 allow_redirects=False, headers=this.env.header)
     if r.status_code != 200:
-      sys.exit("Failed to fetch categorized functions: " + str(r.status_code))
-
+      print("Failed to fetch categorized functions: " + str(r.status_code))
+      return
     # collect all functions using Title
     functions = r.json()['results']
     for function in functions:
@@ -129,7 +129,8 @@ class ControlStructure:
                   '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                   allow_redirects=False, headers=this.env.header)
       if r.status_code != 200:
-        sys.exit("Failed to fetch allocated to components: " + str(r.status_code))
+        print("Failed to fetch allocated to components: " + str(r.status_code))
+        return
       at_components = r.json()['results']
       for at_component in at_components:
         for attr in at_component['attributes']:
@@ -149,7 +150,8 @@ class ControlStructure:
                   '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                   allow_redirects=False, headers=this.env.header)
       if r.status_code != 200:
-        sys.exit("Failed to fetch output control actions / feedback items: " + str(r.status_code))
+        print("Failed to fetch output control actions / feedback items: " + str(r.status_code))
+        return
       outputs = r.json()['results']
       for output in outputs:
         itemType = ""
@@ -187,7 +189,8 @@ class ControlStructure:
                   '?sortBlockId=' + this.env.sortBlockDict['Numeric'],
                   allow_redirects=False, headers=this.env.header)
       if r.status_code != 200:
-        sys.exit("Failed to fetch input control actions / feedback items: " + str(r.status_code))
+        print("Failed to fetch input control actions / feedback items: " + str(r.status_code))
+        return
       outputs = r.json()['results']
       for output in outputs:
         for attr in output['attributes']:
