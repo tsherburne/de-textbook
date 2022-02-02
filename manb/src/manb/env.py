@@ -64,11 +64,15 @@ class Environment:
     # Categories
     this.categoryDict = {}
 
-    # Initialize API dictionaries
+    # Initialize API schema dictionaries
     this._init_api_dict()
 
     # Download cloudflared CLI
     this._get_cloudflared()
+
+    # Create temporary directory for plantuml output
+    if not os.path.exists('./diagrams'):
+      os.makedirs('./diagrams')
 
   # Authenticate the Cloudflare Tunnel
   def Tunnel(this):

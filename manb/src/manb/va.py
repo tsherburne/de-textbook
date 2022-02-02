@@ -11,8 +11,8 @@ class VulnerabilityAssessment:
   def __init__(this, env: Environment, ra: RiskAssessment):
     this.env = env
     this.ra = ra
+    clear_output()
     print("Initializing Vulnerability Assessment")
-
 
   def LossScenarioTable(this):
     print("Loss Table")
