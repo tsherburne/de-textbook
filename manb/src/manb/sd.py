@@ -24,6 +24,9 @@ class SystemDescription:
     this.pr.FetchEntities(this.compTypes)
     this.pr.FetchStructure()
 
+    # last function processed - when parsing call structure
+    this.lastFunction = ""
+
     this.output = {}
 
     # item: Control Action & Feedback types
@@ -349,6 +352,7 @@ class SystemDescription:
 
     for construct in constructs:
       if construct['constructType'] == 'function':
+        this.lastFunction = construct['functionId']
         this._process_function(f, level, construct['functionId'])
         # process function exits
         exitCount = 0
@@ -390,6 +394,10 @@ class SystemDescription:
         this._process_constructs(f, level, construct['branch']['constructs'])
         level -= 2
         f.write(' '*level + 'end\n')
+      elif construct['constructType'] == 'loopExit':
+        comp = db[this.lastFunction]['rels']['allocated to'][0]['targetId']
+        compAbbrv = db[comp]['attrs']['abbreviation']['value']
+        f.write(' '*level + compAbbrv + ' --> ' + compAbbrv + ' : [Loop Exit]\n')
       else:
         print("Unknown Construct Type!")
     return
