@@ -42,6 +42,10 @@ class SystemDescription:
     # control actions
     this.caDF = {}
     this.caDT = {}
+
+    # use cases
+    this.ucDF = {}
+    this.ucDT = {}
     return
 
   # create control structure plantuml diagram file
@@ -283,7 +287,40 @@ class SystemDescription:
 
   # display use case table
   def UseCaseTable(this):
-    pass
+    db = this.pr.entities
+    dbDict = this.pr.entitiesDict
+    # get category ID for System Description: Use Cases
+    ucCatId = dbDict['SD: UC']
+
+    ucTable = []
+    # retrieve categorized Use Cases
+    for uc in db[ucCatId]['rels']['categorizes']:
+      for uci in db[uc['targetId']]['rels']['includes']:
+        ucItem = []
+        ucItem.append(db[uci['targetId']]['attrs']['name']['value'])
+        ucItem.append(db[uci['targetId']]['attrs']['description']['value'])
+        ucItem.append(db[uci['targetId']]['attrs']['preconditions']['value'])
+        ucItem.append(db[uci['targetId']]['attrs']['postconditions']['value'])
+        ucTable.append(ucItem)
+
+    this.ucDF = pd.DataFrame(ucTable, columns = ['Name', 'Description',
+                  'Pre-Conditions', 'Post-Conditions'])
+
+    # setup output area
+    this.output = widgets.Output(layout={'border': '1px solid black'})
+    display(this.output)
+
+    with this.output:
+      try:
+        from google.colab import data_table
+        data_table.enable_dataframe_formatter()
+        this.ucDT = data_table.DataTable(this.ucDF, include_index=False)
+        # Display dataframa via Colab datatable
+        display(this.ucDT)
+      except ModuleNotFoundError:
+        # Display basic dataframe
+        display(this.ucDF)
+    return
 
   # display use case message sequence diagrams
   def MSCDiagrams(this):
