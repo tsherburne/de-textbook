@@ -42,6 +42,8 @@ class SystemDescription:
     # use cases
     this.ucDF = {}
     this.ucDT = {}
+    clear_output()
+    print("System Description Initialization Complete!")
     return
 
   # create control structure plantuml diagram file

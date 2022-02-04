@@ -1,10 +1,12 @@
 [
   {
     "name": "Silverfish",
-    "path": "sf"
+    "path": "sf",
+    "id": "1d551042-0738-4e35-9a64-040103a5c016"
   },
   {
     "name": "Pipeline",
-    "path": "pl"
+    "path": "pl",
+    "id": ""
   }
 ]

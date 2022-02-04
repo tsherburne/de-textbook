@@ -72,8 +72,8 @@ class Environment:
 
     # form to select local / remote repository
     this.repository = widgets.ToggleButtons(
-      options=['Local ', 'Remote '],
-      value='Local ',
+      options=['Local', 'Remote'],
+      value='Local',
       description='Repository:',
       disabled=False,
       #button_style='info',
@@ -94,7 +94,7 @@ class Environment:
   def Tunnel(this):
 
     clear_output()
-    if this.repository.value == 'Local ':
+    if this.repository.value == 'Local':
       print("Tunnel authentication not required for local repository.")
     else:
       # Download cloudflared CLI
@@ -138,7 +138,7 @@ class Environment:
       description='Project:',
       disabled=False)
 
-    if this.repository.value == 'Local ':
+    if this.repository.value == 'Local':
       # no login for local repository
       this.vbox_items = [this.project]
 
