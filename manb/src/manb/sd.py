@@ -1,8 +1,4 @@
-from xml.etree.ElementTree import register_namespace
-from numpy import sort, true_divide
-import requests
 import ipywidgets as widgets
-import subprocess
 from IPython.display import clear_output, display
 from IPython.display import Image
 from .env import Environment

@@ -8,6 +8,9 @@ class Project:
   def __init__(this, env: Environment):
     this.env = env
 
+    this.sortBlockDict = {}
+    this.sortBlockDict['Numeric'] = '78b85fc0-3aec-442d-95b9-2b291bd4d1bc'
+
     # schema definition dictionaries name <-> uuid
 
     # fetch: entityType UUID
@@ -61,7 +64,8 @@ class Project:
       this.env._set_json_header()
       r = requests.get(this.env.url + 'projects/' +
                   this.env.projectDict[this.env.project.value] + '/entities/byclass/' +
-                  this.n2idEntityDict[entity]['id'],
+                  this.n2idEntityDict[entity]['id'] +
+                  '?sortBlockId=' + this.sortBlockDict['Numeric'],
                   allow_redirects=False, headers=this.env.header)
       if r.status_code != 200:
         print("Failed to fetch entity: " + entity + ": " + str(r.status_code))
