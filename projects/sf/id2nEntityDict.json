@@ -571,6 +571,7 @@
     "attrs": {
       "05efdb07-6b82-4203-8728-5202ce0f4300": "puid",
       "1c84ac8d-2d6f-4ab2-9e4d-c0737136d0ec": "threat-category",
+      "88d6b1d3-9a7c-48c2-b322-e050ab8503db": "sub-type",
       "171cfeb9-ad0a-41af-bc92-efa9a4b5375a": "detect-pattern",
       "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817": "description",
       "743d424c-daae-4dc9-887c-a8c92b9f08a4": "name",

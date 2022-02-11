@@ -433,6 +433,16 @@
       "5909efa3-647b-4958-84a2-ee8009f531f9": "type"
     }
   },
+  "02470853-4128-4a5f-9958-cd1490d6a707": {
+    "name": "ma: targets",
+    "rev-name": "ma: targeted by",
+    "attrs": {}
+  },
+  "5f615c27-766a-4611-8a2f-772cdc91c00a": {
+    "name": "ma: targeted by",
+    "rev-name": "ma: targets",
+    "attrs": {}
+  },
   "abda22b2-6be9-4d6d-bbe7-fe8e4e5e1314": {
     "name": "specifies",
     "rev-name": "specified by",

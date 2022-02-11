@@ -4,7 +4,7 @@
     "attrs": {
       "description": {
         "dataType": "text",
-        "value": "System Definition Functions."
+        "value": "System Definition Functions"
       },
       "name": {
         "dataType": "string",
@@ -267,8 +267,8 @@
     "type": "Category",
     "attrs": {
       "description": {
-        "dataType": "",
-        "value": ""
+        "dataType": "text",
+        "value": "System Definition Components"
       },
       "name": {
         "dataType": "string",
@@ -392,12 +392,30 @@
       ]
     }
   },
+  "5248473e-dba4-4230-a2c6-142665fc85c2": {
+    "type": "Category",
+    "attrs": {
+      "description": {
+        "dataType": "text",
+        "value": "System Definition Links"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SD: CS: Links"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SD.3"
+      }
+    },
+    "rels": {}
+  },
   "659b58b4-4b3c-4906-91b5-1947f652585d": {
     "type": "Category",
     "attrs": {
       "description": {
-        "dataType": "",
-        "value": ""
+        "dataType": "text",
+        "value": "System Definition Use Cases"
       },
       "name": {
         "dataType": "string",
@@ -405,7 +423,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SD.3"
+        "value": "SD.4"
       }
     },
     "rels": {
@@ -1107,6 +1125,15 @@
           }
         },
         {
+          "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
           "targetId": "62756e76-dbaf-4f13-a159-9866a2ada1e8",
           "attrs": {
             "portID": {
@@ -1271,6 +1298,15 @@
         },
         {
           "targetId": "c519680b-1721-4d09-83b5-2da677915730",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "cc364bd2-37d0-4608-a1dd-f5129beecac2",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -1650,28 +1686,11 @@
               "value": ""
             }
           }
-        },
-        {
-          "targetId": "3995d948-322e-40c8-a1df-0ea8052bcb46",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
         }
       ],
       "connected to": [
         {
-          "targetId": "59e08526-d3dc-40da-b5b3-5d53b538d38c",
+          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -1680,7 +1699,25 @@
           }
         },
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
+          "targetId": "cc364bd2-37d0-4608-a1dd-f5129beecac2",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "7ee75b77-26ec-40a5-bc46-6487c0c5d052",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -1733,112 +1770,6 @@
             "partMultiplicity": {
               "dataType": "string",
               "value": "1..2"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "3995d948-322e-40c8-a1df-0ea8052bcb46": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "CS:R"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "CS Radio"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "CS:R: Radio"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.4.1.1"
-      }
-    },
-    "rels": {
-      "connected to": [
-        {
-          "targetId": "7ff6f99d-3dd0-4edd-9a60-b259503d557a",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        },
-        {
-          "targetId": "e0838fd9-5e53-449d-8018-bf749029238d",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "built in": [
-        {
-          "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
             }
           }
         }
@@ -1923,17 +1854,6 @@
               "value": ""
             },
             "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "connected to": [
-        {
-          "targetId": "7ff6f99d-3dd0-4edd-9a60-b259503d557a",
-          "attrs": {
-            "portID": {
               "dataType": "",
               "value": ""
             }
@@ -2234,111 +2154,6 @@
           "targetId": "7ec940b5-e6b9-4439-9c57-55bbaee044a2",
           "attrs": {}
         }
-      ],
-      "built from": [
-        {
-          "targetId": "fe1de2ac-2b72-4b28-9c16-831a851a1c2d",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "fe1de2ac-2b72-4b28-9c16-831a851a1c2d": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "IR:R"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "IR Radio"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "IR: Radio"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.4.2.1"
-      }
-    },
-    "rels": {
-      "built in": [
-        {
-          "targetId": "40acfde6-a735-4124-84c1-74323cf39cab",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
       ]
     }
   },
@@ -2407,59 +2222,6 @@
       }
     },
     "rels": {
-      "built from": [
-        {
-          "targetId": "37970459-8150-4d88-8dd3-b62c5d195616",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "string",
-              "value": "1..2"
-            }
-          }
-        },
-        {
-          "targetId": "c86c59c5-ab13-4db3-b22d-8491944734ee",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "string",
-              "value": "6"
-            }
-          }
-        },
-        {
-          "targetId": "b852e8ca-3f4b-48c7-80f8-e7841294eb86",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "string",
-              "value": "1"
-            }
-          }
-        }
-      ],
       "built in": [
         {
           "targetId": "46a1f930-5d12-4414-98a9-0c5d75049dc9",
@@ -2500,6 +2262,42 @@
             "portID": {
               "dataType": "",
               "value": ""
+            }
+          }
+        }
+      ],
+      "built from": [
+        {
+          "targetId": "c86c59c5-ab13-4db3-b22d-8491944734ee",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "string",
+              "value": "6"
+            }
+          }
+        },
+        {
+          "targetId": "b852e8ca-3f4b-48c7-80f8-e7841294eb86",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "string",
+              "value": "1"
             }
           }
         }
@@ -2635,6 +2433,17 @@
             }
           }
         }
+      ],
+      "connected to": [
+        {
+          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
       ]
     }
   },
@@ -2723,6 +2532,17 @@
           }
         }
       ],
+      "connected to": [
+        {
+          "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
+      ],
       "performs": [
         {
           "targetId": "0abb45f1-d219-4079-95ce-05e2df7b098b",
@@ -2744,92 +2564,6 @@
             "partMultiplicity": {
               "dataType": "string",
               "value": "1"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "37970459-8150-4d88-8dd3-b62c5d195616": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "OBS:R"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "OBS Radio"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "OBS: Radio"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.4.3.3"
-      }
-    },
-    "rels": {
-      "built in": [
-        {
-          "targetId": "d9a3a7b3-ed1a-450e-acd1-ec2997fc0ded",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "string",
-              "value": "1..2"
             }
           }
         }
@@ -2901,43 +2635,16 @@
       }
     },
     "rels": {
-      "built from": [
+      "connected to": [
         {
-          "targetId": "dc425b4a-46fe-4967-9f5c-157359fab436",
+          "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
           "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
+            "portID": {
               "dataType": "",
               "value": ""
             }
           }
         },
-        {
-          "targetId": "177714f5-a3a3-447e-9954-2bba727747b8",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "connected to": [
         {
           "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
           "attrs": {
@@ -2964,6 +2671,15 @@
               "value": ""
             }
           }
+        },
+        {
+          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
         }
       ],
       "built in": [
@@ -2981,189 +2697,6 @@
             "partMultiplicity": {
               "dataType": "string",
               "value": "1..2"
-            }
-          }
-        }
-      ]
-    }
-  },
-  "177714f5-a3a3-447e-9954-2bba727747b8": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "RR:R"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "RR Radio"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "RR: Radio"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.4.4.1"
-      }
-    },
-    "rels": {
-      "connected to": [
-        {
-          "targetId": "e0838fd9-5e53-449d-8018-bf749029238d",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "built in": [
-        {
-          "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "dc425b4a-46fe-4967-9f5c-157359fab436": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Software Item"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "RR: OM"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "RR O&M"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "RR: O&M"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.4.4.2"
-      }
-    },
-    "rels": {
-      "built in": [
-        {
-          "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
             }
           }
         }
@@ -3235,59 +2768,6 @@
       }
     },
     "rels": {
-      "built from": [
-        {
-          "targetId": "1c8d8414-3d51-4028-81ae-1ac2cb690e91",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        },
-        {
-          "targetId": "68ba7269-8754-43d8-a00f-d705250bd81a",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        },
-        {
-          "targetId": "0f9398da-225b-4aac-8d13-a7d285946166",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
       "categorized by": [
         {
           "targetId": "6bed9181-5825-4b05-8711-1387720cc9f8",
@@ -3348,6 +2828,15 @@
           }
         },
         {
+          "targetId": "7ee75b77-26ec-40a5-bc46-6487c0c5d052",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
           "targetId": "96d45e28-d404-4d18-bf40-3407f074217a",
           "attrs": {
             "portID": {
@@ -3380,275 +2869,6 @@
           "targetId": "9eeffbe7-5f14-4b76-afaa-7af71df23391",
           "attrs": {
             "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "68ba7269-8754-43d8-a00f-d705250bd81a": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "UAV: PR"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "UAV Payload Radio"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "UAV: Payload Radio"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.5.1"
-      }
-    },
-    "rels": {
-      "connected to": [
-        {
-          "targetId": "59e08526-d3dc-40da-b5b3-5d53b538d38c",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "built in": [
-        {
-          "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "1c8d8414-3d51-4028-81ae-1ac2cb690e91": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Software Item"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "UAV: AP"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "Auto Pilot"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "UAV: Auto Pilot"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.5.2"
-      }
-    },
-    "rels": {
-      "built in": [
-        {
-          "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "0f9398da-225b-4aac-8d13-a7d285946166": {
-    "type": "Component",
-    "attrs": {
-      "type": {
-        "dataType": "enumeration",
-        "value": "Subassembly"
-      },
-      "clin": {
-        "dataType": "",
-        "value": ""
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "inventory": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "outofScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "mission": {
-        "dataType": "",
-        "value": ""
-      },
-      "operations": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "purpose": {
-        "dataType": "",
-        "value": ""
-      },
-      "receptions": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "abbreviation": {
-        "dataType": "string",
-        "value": "UAV:C"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "Camera"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "UAV: Camera"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "C.5.3"
-      }
-    },
-    "rels": {
-      "built in": [
-        {
-          "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
-          "attrs": {
-            "wholeMultiplicity": {
-              "dataType": "enumeration",
-              "value": 0
-            },
-            "partRole": {
-              "dataType": "",
-              "value": ""
-            },
-            "partMultiplicity": {
               "dataType": "",
               "value": ""
             }
@@ -3874,6 +3094,12 @@
       }
     },
     "rels": {
+      "transferred by": [
+        {
+          "targetId": "cb2cf0e9-b8e1-4773-ae5a-86b945bc62fb",
+          "attrs": {}
+        }
+      ],
       "output from": [
         {
           "targetId": "65a8b414-a7cd-4aae-9d32-9b936ce00e44",
@@ -3958,6 +3184,12 @@
       }
     },
     "rels": {
+      "transferred by": [
+        {
+          "targetId": "62756e76-dbaf-4f13-a159-9866a2ada1e8",
+          "attrs": {}
+        }
+      ],
       "output from": [
         {
           "targetId": "18892266-b260-4c08-b139-cb96ba6297d7",
@@ -4048,6 +3280,12 @@
           "attrs": {}
         }
       ],
+      "transferred by": [
+        {
+          "targetId": "62756e76-dbaf-4f13-a159-9866a2ada1e8",
+          "attrs": {}
+        }
+      ],
       "input to": [
         {
           "targetId": "27a249ba-e18b-4254-b09f-402bd7b5513f",
@@ -4126,6 +3364,12 @@
       }
     },
     "rels": {
+      "transferred by": [
+        {
+          "targetId": "c519680b-1721-4d09-83b5-2da677915730",
+          "attrs": {}
+        }
+      ],
       "input to": [
         {
           "targetId": "83ffe10f-7f18-4ffb-8fd7-d6e84be64b67",
@@ -4223,6 +3467,16 @@
               "value": "FIFO"
             }
           }
+        }
+      ],
+      "transferred by": [
+        {
+          "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
+          "attrs": {}
+        },
+        {
+          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
+          "attrs": {}
         }
       ],
       "ma: has variation": [
@@ -4568,6 +3822,16 @@
           }
         }
       ],
+      "transferred by": [
+        {
+          "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
+          "attrs": {}
+        },
+        {
+          "targetId": "566bc7e8-d703-4a80-8244-cfb5c4b7b139",
+          "attrs": {}
+        }
+      ],
       "input to": [
         {
           "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
@@ -4775,8 +4039,8 @@
         "value": "#OBS"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "DS.1"
       }
     },
     "rels": {
@@ -4788,40 +4052,6 @@
         {
           "targetId": "5dc8075e-343b-4d70-99e9-266cb2a2cc44",
           "attrs": {}
-        }
-      ]
-    }
-  },
-  "258756bd-0e3d-484f-9b1f-1e84d6ad8e6e": {
-    "type": "Exit",
-    "attrs": {
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "OP: Attacker Detected"
-      },
-      "number": {
-        "dataType": "",
-        "value": ""
-      }
-    },
-    "rels": {
-      "exit for": [
-        {
-          "targetId": "ced055f2-f31f-43b3-b774-a0ddccea018e",
-          "attrs": {
-            "selectionProbability": {
-              "dataType": "float",
-              "value": ""
-            },
-            "type": {
-              "dataType": "enumeration",
-              "value": "Normal"
-            }
-          }
         }
       ]
     }
@@ -4838,8 +4068,8 @@
         "value": "OP: No Attacker"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "OP.1"
       }
     },
     "rels": {
@@ -4860,7 +4090,7 @@
       ]
     }
   },
-  "107c726b-e02a-447b-a037-3bdd174ae4d6": {
+  "258756bd-0e3d-484f-9b1f-1e84d6ad8e6e": {
     "type": "Exit",
     "attrs": {
       "description": {
@@ -4869,20 +4099,20 @@
       },
       "name": {
         "dataType": "string",
-        "value": "TN: Located"
+        "value": "OP: Attacker Detected"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "OP.2"
       }
     },
     "rels": {
       "exit for": [
         {
-          "targetId": "c72d23cf-7686-454b-9db7-4b7f54c5f2c3",
+          "targetId": "ced055f2-f31f-43b3-b774-a0ddccea018e",
           "attrs": {
             "selectionProbability": {
-              "dataType": "",
+              "dataType": "float",
               "value": ""
             },
             "type": {
@@ -4906,8 +4136,42 @@
         "value": "TN: Not Located"
       },
       "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TN.1"
+      }
+    },
+    "rels": {
+      "exit for": [
+        {
+          "targetId": "c72d23cf-7686-454b-9db7-4b7f54c5f2c3",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "107c726b-e02a-447b-a037-3bdd174ae4d6": {
+    "type": "Exit",
+    "attrs": {
+      "description": {
         "dataType": "",
         "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TN: Located"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TN.2"
       }
     },
     "rels": {
@@ -4984,8 +4248,8 @@
         "value": "CS: Grid Location"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "CS.1"
       }
     },
     "rels": {
@@ -5068,8 +4332,8 @@
         "value": "CS: Grid Status"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "CS.2"
       }
     },
     "rels": {
@@ -5152,8 +4416,8 @@
         "value": "IR: Analytics"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "IR.1"
       }
     },
     "rels": {
@@ -5172,94 +4436,16 @@
           }
         }
       ],
-      "output from": [
+      "ma: targeted by": [
         {
-          "targetId": "7ec940b5-e6b9-4439-9c57-55bbaee044a2",
-          "attrs": {}
-        }
-      ]
-    }
-  },
-  "ad8f351f-e1f7-49f5-a246-2c1d05a7724b": {
-    "type": "Feedback",
-    "attrs": {
-      "range": {
-        "dataType": "",
-        "value": ""
-      },
-      "units": {
-        "dataType": "",
-        "value": ""
-      },
-      "accuracy": {
-        "dataType": "",
-        "value": ""
-      },
-      "fields": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "precision": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "size": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "sizeUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "priority": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "Analog"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "IR: Signature"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "IR: Signature"
-      },
-      "number": {
-        "dataType": "",
-        "value": ""
-      }
-    },
-    "rels": {
-      "output from": [
-        {
-          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
+          "targetId": "10e7543e-9984-4edb-be50-5e3c1b8e5dc5",
           "attrs": {}
         }
       ],
-      "input to": [
+      "output from": [
         {
           "targetId": "7ec940b5-e6b9-4439-9c57-55bbaee044a2",
-          "attrs": {
-            "triggering": {
-              "dataType": "boolean",
-              "value": ""
-            },
-            "queueType": {
-              "dataType": "enumeration",
-              "value": "FIFO"
-            }
-          }
+          "attrs": {}
         }
       ]
     }
@@ -5320,8 +4506,8 @@
         "value": "OBS: Location"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "OBS.1"
       }
     },
     "rels": {
@@ -5334,6 +4520,264 @@
       "input to": [
         {
           "targetId": "3ffd7b2b-cb15-4ca4-a9ed-60f429343be5",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ad8f351f-e1f7-49f5-a246-2c1d05a7724b": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Analog"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "IR: Signature"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "IR: Signature"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PA.1"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
+          "attrs": {}
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "7ec940b5-e6b9-4439-9c57-55bbaee044a2",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "a3b3d697-9172-4d32-b6a2-7b4579c2969b": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Analog"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "UAV: Signature"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "UAV: Signature"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PA.2"
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "e0dd8acd-bf6e-43fe-a760-840e3c0a266b",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          }
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "ee68047b-739f-4a08-a8a1-a3579e11d704": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "string",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Physical"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "SS: Signature"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SS: Signature"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PA.3"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
+          "attrs": {}
+        }
+      ],
+      "transferred by": [
+        {
+          "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
+          "attrs": {}
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "0abb45f1-d219-4079-95ce-05e2df7b098b",
           "attrs": {
             "triggering": {
               "dataType": "boolean",
@@ -5404,8 +4848,8 @@
         "value": "SS: Analytics"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "SS.1"
       }
     },
     "rels": {
@@ -5429,89 +4873,11 @@
           "targetId": "0abb45f1-d219-4079-95ce-05e2df7b098b",
           "attrs": {}
         }
-      ]
-    }
-  },
-  "ee68047b-739f-4a08-a8a1-a3579e11d704": {
-    "type": "Feedback",
-    "attrs": {
-      "range": {
-        "dataType": "",
-        "value": ""
-      },
-      "units": {
-        "dataType": "",
-        "value": ""
-      },
-      "accuracy": {
-        "dataType": "",
-        "value": ""
-      },
-      "fields": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "precision": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "string",
-        "value": ""
-      },
-      "size": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "sizeUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "priority": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "Physical"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "SS: Signature"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "SS: Signature"
-      },
-      "number": {
-        "dataType": "",
-        "value": ""
-      }
-    },
-    "rels": {
-      "output from": [
-        {
-          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
-          "attrs": {}
-        }
       ],
-      "input to": [
+      "transferred by": [
         {
-          "targetId": "0abb45f1-d219-4079-95ce-05e2df7b098b",
-          "attrs": {
-            "triggering": {
-              "dataType": "boolean",
-              "value": ""
-            },
-            "queueType": {
-              "dataType": "enumeration",
-              "value": "FIFO"
-            }
-          }
+          "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
+          "attrs": {}
         }
       ]
     }
@@ -5572,11 +4938,21 @@
         "value": "UAV: Analytics"
       },
       "number": {
-        "dataType": "",
-        "value": ""
+        "dataType": "hierarchicalNumber",
+        "value": "UAV.1"
       }
     },
     "rels": {
+      "transferred by": [
+        {
+          "targetId": "96d45e28-d404-4d18-bf40-3407f074217a",
+          "attrs": {}
+        },
+        {
+          "targetId": "7ee75b77-26ec-40a5-bc46-6487c0c5d052",
+          "attrs": {}
+        }
+      ],
       "input to": [
         {
           "targetId": "6ee227e1-f6f7-4663-84bd-9f2dc58fe01c",
@@ -5595,90 +4971,6 @@
       "output from": [
         {
           "targetId": "e0dd8acd-bf6e-43fe-a760-840e3c0a266b",
-          "attrs": {}
-        }
-      ]
-    }
-  },
-  "a3b3d697-9172-4d32-b6a2-7b4579c2969b": {
-    "type": "Feedback",
-    "attrs": {
-      "range": {
-        "dataType": "",
-        "value": ""
-      },
-      "units": {
-        "dataType": "",
-        "value": ""
-      },
-      "accuracy": {
-        "dataType": "",
-        "value": ""
-      },
-      "fields": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "precision": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "size": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "sizeUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "priority": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "Analog"
-      },
-      "title": {
-        "dataType": "string",
-        "value": "UAV: Signature"
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "UAV: Signature"
-      },
-      "number": {
-        "dataType": "",
-        "value": ""
-      }
-    },
-    "rels": {
-      "input to": [
-        {
-          "targetId": "e0dd8acd-bf6e-43fe-a760-840e3c0a266b",
-          "attrs": {
-            "triggering": {
-              "dataType": "boolean",
-              "value": ""
-            },
-            "queueType": {
-              "dataType": "enumeration",
-              "value": "FIFO"
-            }
-          }
-        }
-      ],
-      "output from": [
-        {
-          "targetId": "70ef8e90-d149-4b8f-9927-c6ce273de3b7",
           "attrs": {}
         }
       ]
@@ -6356,6 +5648,12 @@
       "outputs": [
         {
           "targetId": "5d04500d-ca91-47b2-b5e1-694ab175a99f",
+          "attrs": {}
+        }
+      ],
+      "ma: targeted by": [
+        {
+          "targetId": "99f89a2c-f55d-424d-9092-7ff066c3a7a8",
           "attrs": {}
         }
       ],
@@ -7478,6 +6776,12 @@
       }
     },
     "rels": {
+      "ma: targeted by": [
+        {
+          "targetId": "fff724b5-e8d1-40b0-b387-2d066dd3872c",
+          "attrs": {}
+        }
+      ],
       "categorized by": [
         {
           "targetId": "d50153f0-d136-42f8-a04c-a9c89bcf21c1",
@@ -8217,6 +7521,16 @@
           "attrs": {}
         }
       ],
+      "ma: targeted by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {}
+        },
+        {
+          "targetId": "19bf942e-2d3a-483e-9877-9099cd133076",
+          "attrs": {}
+        }
+      ],
       "allocated to": [
         {
           "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
@@ -8894,6 +8208,12 @@
             }
           }
         }
+      ],
+      "ma: is caused by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {}
+        }
       ]
     }
   },
@@ -8922,6 +8242,20 @@
       }
     },
     "rels": {
+      "ma: is caused by": [
+        {
+          "targetId": "19bf942e-2d3a-483e-9877-9099cd133076",
+          "attrs": {}
+        },
+        {
+          "targetId": "fff724b5-e8d1-40b0-b387-2d066dd3872c",
+          "attrs": {}
+        },
+        {
+          "targetId": "10e7543e-9984-4edb-be50-5e3c1b8e5dc5",
+          "attrs": {}
+        }
+      ],
       "ma: leads to": [
         {
           "targetId": "c54d11d9-304a-4b85-a41d-337b071a362d",
@@ -8966,6 +8300,12 @@
       }
     },
     "rels": {
+      "ma: is caused by": [
+        {
+          "targetId": "99f89a2c-f55d-424d-9092-7ff066c3a7a8",
+          "attrs": {}
+        }
+      ],
       "ma: leads to": [
         {
           "targetId": "f62b45d8-95ef-4ddd-be99-5bd6321596c4",
@@ -9050,6 +8390,16 @@
             }
           }
         }
+      ],
+      "transfers": [
+        {
+          "targetId": "37e4b1c6-dd2e-4c6b-ae01-57b33e78c995",
+          "attrs": {}
+        },
+        {
+          "targetId": "37db6532-de05-4566-95ab-518488421d2f",
+          "attrs": {}
+        }
       ]
     }
   },
@@ -9110,6 +8460,12 @@
       }
     },
     "rels": {
+      "transfers": [
+        {
+          "targetId": "a1744e31-20ea-49f0-8477-d14ed7e6ac40",
+          "attrs": {}
+        }
+      ],
       "connects to": [
         {
           "targetId": "17afb204-81f3-418a-9c37-e26bef76ed92",
@@ -9189,6 +8545,12 @@
       }
     },
     "rels": {
+      "transfers": [
+        {
+          "targetId": "307326cb-5a5e-4d1e-8afb-c97cc6359a8c",
+          "attrs": {}
+        }
+      ],
       "connects to": [
         {
           "targetId": "17afb204-81f3-418a-9c37-e26bef76ed92",
@@ -9201,85 +8563,6 @@
         },
         {
           "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ]
-    }
-  },
-  "7ff6f99d-3dd0-4edd-9a60-b259503d557a": {
-    "type": "Link",
-    "attrs": {
-      "outOfScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "protocol": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "Data"
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "delay": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "capacity": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "title": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "delayUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "capacityUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "CSFC:CSR: Link"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "CS.1"
-      }
-    },
-    "rels": {
-      "connects to": [
-        {
-          "targetId": "3995d948-322e-40c8-a1df-0ea8052bcb46",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        },
-        {
-          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -9350,6 +8633,109 @@
       "connects to": [
         {
           "targetId": "46a1f930-5d12-4414-98a9-0c5d75049dc9",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
+      ],
+      "includes": [
+        {
+          "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
+          "attrs": {}
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "72515235-8b3b-49d7-9a58-e6673e6a0b71",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "6f243b35-9468-43ab-a0b0-160e292fd0c5": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OP:CS: Link"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "OP.1.1"
+      }
+    },
+    "rels": {
+      "included in": [
+        {
+          "targetId": "566bc7e8-d703-4a80-8244-cfb5c4b7b139",
+          "attrs": {}
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "72515235-8b3b-49d7-9a58-e6673e6a0b71",
+          "attrs": {}
+        }
+      ],
+      "connects to": [
+        {
+          "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -9603,97 +8989,6 @@
             }
           }
         }
-      ],
-      "includes": [
-        {
-          "targetId": "e0838fd9-5e53-449d-8018-bf749029238d",
-          "attrs": {}
-        }
-      ]
-    }
-  },
-  "e0838fd9-5e53-449d-8018-bf749029238d": {
-    "type": "Link",
-    "attrs": {
-      "outOfScopeJustification": {
-        "dataType": "",
-        "value": ""
-      },
-      "protocol": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "Data"
-      },
-      "outOfScopeAttackAnalysis": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "delay": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "capacity": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "title": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "delayUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "capacityUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "CSR:RRR: Link"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "SF.1.1"
-      }
-    },
-    "rels": {
-      "connects to": [
-        {
-          "targetId": "177714f5-a3a3-447e-9954-2bba727747b8",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        },
-        {
-          "targetId": "3995d948-322e-40c8-a1df-0ea8052bcb46",
-          "attrs": {
-            "portID": {
-              "dataType": "",
-              "value": ""
-            }
-          }
-        }
-      ],
-      "included in": [
-        {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {}
-        }
       ]
     }
   },
@@ -9754,6 +9049,16 @@
       }
     },
     "rels": {
+      "includes": [
+        {
+          "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
+          "attrs": {}
+        },
+        {
+          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
+          "attrs": {}
+        }
+      ],
       "connects to": [
         {
           "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
@@ -9772,6 +9077,198 @@
               "value": ""
             }
           }
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
+          "attrs": {}
+        },
+        {
+          "targetId": "ee68047b-739f-4a08-a8a1-a3579e11d704",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "97e928ad-cfaf-40b8-ac5c-58430d714a68": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "MUN:RR: Link"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.2.1"
+      }
+    },
+    "rels": {
+      "included in": [
+        {
+          "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
+          "attrs": {}
+        }
+      ],
+      "connects to": [
+        {
+          "targetId": "c86c59c5-ab13-4db3-b22d-8491944734ee",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "db8476fe-4e38-4f82-b11f-2ca583ac40f3": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SS:RR: Link"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.2.2"
+      }
+    },
+    "rels": {
+      "included in": [
+        {
+          "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
+          "attrs": {}
+        }
+      ],
+      "connects to": [
+        {
+          "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "b852e8ca-3f4b-48c7-80f8-e7841294eb86",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "2c347fed-bb0c-4e98-a18d-0afc732e8d8f",
+          "attrs": {}
         }
       ]
     }
@@ -9825,7 +9322,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "IR:RR Link"
+        "value": "IR:RR: Link"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -9912,6 +9409,12 @@
       }
     },
     "rels": {
+      "includes": [
+        {
+          "targetId": "cc364bd2-37d0-4608-a1dd-f5129beecac2",
+          "attrs": {}
+        }
+      ],
       "connects to": [
         {
           "targetId": "aea8e157-e45e-4385-8178-63b564d3aaf1",
@@ -9930,6 +9433,91 @@
               "value": ""
             }
           }
+        }
+      ]
+    }
+  },
+  "cc364bd2-37d0-4608-a1dd-f5129beecac2": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TN:CS: Link"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TN.1.1"
+      }
+    },
+    "rels": {
+      "connects to": [
+        {
+          "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        },
+        {
+          "targetId": "aea8e157-e45e-4385-8178-63b564d3aaf1",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            }
+          }
+        }
+      ],
+      "included in": [
+        {
+          "targetId": "2eb2eabc-b24e-4de7-b5b2-813c200a951b",
+          "attrs": {}
         }
       ]
     }
@@ -9991,9 +9579,15 @@
       }
     },
     "rels": {
+      "transfers": [
+        {
+          "targetId": "20cebf01-dd11-4249-9591-ce29891d037a",
+          "attrs": {}
+        }
+      ],
       "includes": [
         {
-          "targetId": "59e08526-d3dc-40da-b5b3-5d53b538d38c",
+          "targetId": "7ee75b77-26ec-40a5-bc46-6487c0c5d052",
           "attrs": {}
         }
       ],
@@ -10019,7 +9613,7 @@
       ]
     }
   },
-  "59e08526-d3dc-40da-b5b3-5d53b538d38c": {
+  "7ee75b77-26ec-40a5-bc46-6487c0c5d052": {
     "type": "Link",
     "attrs": {
       "outOfScopeJustification": {
@@ -10068,7 +9662,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "UAV:CS Link"
+        "value": "UAV:CS: Link"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -10093,13 +9687,19 @@
           }
         },
         {
-          "targetId": "68ba7269-8754-43d8-a00f-d705250bd81a",
+          "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
           "attrs": {
             "portID": {
               "dataType": "",
               "value": ""
             }
           }
+        }
+      ],
+      "transfers": [
+        {
+          "targetId": "20cebf01-dd11-4249-9591-ce29891d037a",
+          "attrs": {}
         }
       ]
     }
@@ -10227,6 +9827,241 @@
       "ma: is caused by": [
         {
           "targetId": "4ecf8ab5-b6e5-4c39-b53e-8f9051c8dc2c",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1": {
+    "type": "LossScenario",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "threat-category": {
+        "dataType": "enumeration",
+        "value": "Tampering"
+      },
+      "sub-type": {
+        "dataType": "enumeration",
+        "value": "b.4 - Controlled Process"
+      },
+      "detect-pattern": {
+        "dataType": "enumeration",
+        "value": "Changing Control Input"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "During design and manufacture, a SW Developer introduces software to the Fire Control Application that redirects Operator fire commands, when deployed at a specific geographic location. With this Cyber-attack knowledge, a Physical attacker could gain access to a protected area.\u200b"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Manipulated Fire Command"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1"
+      }
+    },
+    "rels": {
+      "ma: targets": [
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
+          "attrs": {}
+        }
+      ],
+      "ma: leads to": [
+        {
+          "targetId": "f6fda6fa-97b1-495c-8c35-02540dccd388",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "10e7543e-9984-4edb-be50-5e3c1b8e5dc5": {
+    "type": "LossScenario",
+    "attrs": {
+      "puid": {
+        "dataType": "string",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "During operation of the Silverfish network, a Cyber Attacker gains access to the Radio Relay network and injects false IR sensor report messages."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Situational Injection"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.2"
+      },
+      "threat-category": {
+        "dataType": "enumeration",
+        "value": "Spoofing"
+      },
+      "sub-type": {
+        "dataType": "enumeration",
+        "value": "a.2 - Feedback Path"
+      },
+      "detect-pattern": {
+        "dataType": "enumeration",
+        "value": "Introspection"
+      }
+    },
+    "rels": {
+      "ma: targets": [
+        {
+          "targetId": "f67cc3ea-c3c6-4f89-b5aa-bd82644044a5",
+          "attrs": {}
+        }
+      ],
+      "ma: leads to": [
+        {
+          "targetId": "3530de54-4204-40d5-ad71-09d1e0fd0133",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "fff724b5-e8d1-40b0-b387-2d066dd3872c": {
+    "type": "LossScenario",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "threat-category": {
+        "dataType": "enumeration",
+        "value": "Tampering"
+      },
+      "sub-type": {
+        "dataType": "enumeration",
+        "value": "b.4 - Controlled Process"
+      },
+      "detect-pattern": {
+        "dataType": "enumeration",
+        "value": "Data Consistency"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "During design and manufacture, a SW Developer introduces software to the IR Sensor that delays sensor reports when deployed at a specific geographic location. With this Cyber-attack knowledge, a Physical attacker could gain access to a protected area."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Situational Delay"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.3"
+      }
+    },
+    "rels": {
+      "ma: targets": [
+        {
+          "targetId": "7ec940b5-e6b9-4439-9c57-55bbaee044a2",
+          "attrs": {}
+        }
+      ],
+      "ma: leads to": [
+        {
+          "targetId": "3530de54-4204-40d5-ad71-09d1e0fd0133",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "99f89a2c-f55d-424d-9092-7ff066c3a7a8": {
+    "type": "LossScenario",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "threat-category": {
+        "dataType": "enumeration",
+        "value": "Tampering"
+      },
+      "sub-type": {
+        "dataType": "enumeration",
+        "value": "b.4 - Controlled Process"
+      },
+      "detect-pattern": {
+        "dataType": "enumeration",
+        "value": "Measured Boot"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "During deployment, malware is injected that prevents setting obstacle location.\r\n\r\nSentinel stores boot integrity totp for each obstacle in order to detect tampering of sw / os / application / configuration."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Tampered Deployment"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.4"
+      }
+    },
+    "rels": {
+      "ma: leads to": [
+        {
+          "targetId": "8016dbd6-3803-4418-88b1-c3a60c2dfb8c",
+          "attrs": {}
+        }
+      ],
+      "ma: targets": [
+        {
+          "targetId": "a4762886-f60f-42fc-a4a3-956216a5f205",
+          "attrs": {}
+        }
+      ]
+    }
+  },
+  "19bf942e-2d3a-483e-9877-9099cd133076": {
+    "type": "LossScenario",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "threat-category": {
+        "dataType": "enumeration",
+        "value": "Tampering"
+      },
+      "sub-type": {
+        "dataType": "enumeration",
+        "value": "a.1 - Controller Behavior"
+      },
+      "detect-pattern": {
+        "dataType": "enumeration",
+        "value": "Introspection"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Sufficient delay to allow physical attacker to cross field.\u200b"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Delayed Fire Command"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.5"
+      }
+    },
+    "rels": {
+      "ma: leads to": [
+        {
+          "targetId": "3530de54-4204-40d5-ad71-09d1e0fd0133",
+          "attrs": {}
+        }
+      ],
+      "ma: targets": [
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
           "attrs": {}
         }
       ]
