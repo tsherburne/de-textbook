@@ -30,7 +30,8 @@ ra.ControlActionAnalysisTable()
 # Vulnerability Assessment
 va = manb.VulnerabilityAssesment(env)
 va.LossScenarioTable()
-va.LossScenarioAnalysisTable()
+va.ComponentAnalysisTable()
+va.LinkAnalysisTable()
 
 # Section Exercises
 ex = manb.Exercises(env, manb.Section.<section enum>)
