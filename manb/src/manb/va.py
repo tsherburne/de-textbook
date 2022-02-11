@@ -188,7 +188,7 @@ class VulnerabilityAssessment:
         data_table.enable_dataframe_formatter()
         this.caDT = data_table.DataTable(this.caDF, include_index=False)
         # Display dataframa via Colab datatable
-        display(this.lsDT)
+        display(this.caDT)
       except ModuleNotFoundError:
         # Display basic dataframe
         display(this.caDF)
