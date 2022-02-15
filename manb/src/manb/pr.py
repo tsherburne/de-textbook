@@ -5,6 +5,7 @@ from IPython.display import clear_output
 import json
 import os
 import urllib.request
+import operator
 
 
 # Project db - schema definition & entities
@@ -204,6 +205,12 @@ class Project:
           relEntry['targetId'] = ""
           relEntry['attrs'] = attrs
           relEntry['targetId'] = relationship['targetEntityId']
+          relEntry['targetNum'] = this.entities[relationship['targetEntityId']]\
+                                    ['attrs']['number']['value']
+          # store target Num as tuple for hierarchical sorting
+          relEntry['targetNumTuple'] = \
+              tuple([int(item) if item.isnumeric() else item
+                for item in relEntry['targetNum'].split('.')])
           if relName not in this.entities[relationship['sourceEntityId']]['rels']:
             this.entities[relationship['sourceEntityId']]['rels'][relName] = []
 
@@ -214,10 +221,22 @@ class Project:
           relRevEntry['targetId'] = ""
           relRevEntry['attrs'] = attrs
           relRevEntry['targetId'] = relationship['sourceEntityId']
+          relRevEntry['targetNum'] = this.entities[relationship['sourceEntityId']]\
+                                    ['attrs']['number']['value']
+          # store target Num as tuple for hierarchical sorting
+          relRevEntry['targetNumTuple'] = \
+              tuple([int(item) if item.isnumeric() else item
+                for item in relRevEntry['targetNum'].split('.')])
           if relRevName not in this.entities[relationship['targetEntityId']]['rels']:
             this.entities[relationship['targetEntityId']]['rels'][relRevName] = []
 
           this.entities[relationship['targetEntityId']]['rels'][relRevName].append(relRevEntry)
+
+      # sort related entites by number
+      for entity in this.entities:
+        if 'rels' in this.entities[entity]:
+          for rel in this.entities[entity]['rels']:
+            this.entities[entity]['rels'][rel].sort(key=operator.itemgetter('targetNumTuple'))
 
     clear_output()
     print("Entites Fetch Complete!")

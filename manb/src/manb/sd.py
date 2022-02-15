@@ -265,7 +265,7 @@ class SystemDescription:
             # create connection between actors and usecase with display 'hint' u/d/l/r
             f.write(db[invuc['targetId']]['attrs']['abbreviation']['value'] + ' -' +
                     invuc['attrs']['hint']['value'] + '-> ' +
-                    db[iuc['targetId']]['attrs']['number']['value']   + '\n')
+                    db[iuc['targetId']]['attrs']['number']['value'] + '\n')
 
         f.write('@enduml\n')
 
