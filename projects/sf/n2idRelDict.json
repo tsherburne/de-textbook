@@ -491,14 +491,16 @@
     "id": "033dadbd-8b46-4f8c-9bfa-a9300537ba01",
     "rev-id": "3495ced6-60d8-4700-bd73-b2fd3ce11ab9",
     "attrs": {
-      "portID": "45409b76-dca0-4909-88dc-06b71b9004e6"
+      "portID": "45409b76-dca0-4909-88dc-06b71b9004e6",
+      "hint": "5d970640-f142-4ac9-8161-4de7087713b3"
     }
   },
   "connected to": {
     "id": "3495ced6-60d8-4700-bd73-b2fd3ce11ab9",
     "rev-id": "033dadbd-8b46-4f8c-9bfa-a9300537ba01",
     "attrs": {
-      "portID": "45409b76-dca0-4909-88dc-06b71b9004e6"
+      "portID": "45409b76-dca0-4909-88dc-06b71b9004e6",
+      "hint": "5d970640-f142-4ac9-8161-4de7087713b3"
     }
   },
   "identifies": {
