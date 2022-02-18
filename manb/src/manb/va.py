@@ -9,6 +9,7 @@ from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
 import plantuml
+import copy
 
 
 class VulnerabilityAssessment:
@@ -32,6 +33,10 @@ class VulnerabilityAssessment:
     # component analysis table
     this.caDF = {}
     this.caDT = {}
+
+    # link analysis table
+    this.laDF = {}
+    this.laDT = {}
 
     clear_output()
     print("Vulnerability Assessment Complete!")
@@ -136,7 +141,7 @@ class VulnerabilityAssessment:
           bfcompNum = db[bfcomp['targetId']]['attrs']['number']['value']
 
 
-          f.write('  [' + bfcompNum + ': ' + bfcompName + '] as ' + bfcompAbbr +
+          f.write('  [' + bfcompAbbr + ': ' + bfcompName + '] as ' + bfcompAbbr +
               ' <<' + bfcompType + '>> #deepskyblue\n')
           compDict[bfcompAbbr] = ""
         f.write('}\n')
@@ -151,7 +156,7 @@ class VulnerabilityAssessment:
 
               # get 'other end' of connected to
               if ctcompName != pbName:
-                f.write('[' + ctcompName + '] as ' + ctcompAbbr +
+                f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' + ctcompAbbr +
                 ' <<' + ctcompType + '>> #deepskyblue\n')
                 compDict[ctcompAbbr] = ""
 
@@ -163,19 +168,22 @@ class VulnerabilityAssessment:
           if 'connected to' in db[bfcomp['targetId']]['rels']:
             for ctlink in db[bfcomp['targetId']]['rels']['connected to']:
               linkName = db[ctlink['targetId']]['attrs']['name']['value']
+              linkType = db[ctlink['targetId']]['attrs']['type']['value']
               linkHint = ctlink['attrs']['hint']['value']
-              # check if link already on the diagram - all links are bi-directional
-              if linkName not in linkDict:
-                linkDict[linkName] = linkHint
-                # retrieve endpoints of link
-                for ctcomp in db[ctlink['targetId']]['rels']['connects to']:
-                  ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
-                  # get 'other end' of connected to
-                  if ctcompAbbr != bfcompAbbr:
-                    # only ouput link if connect to component is on diagram
-                    if ctcompAbbr in compDict:
-                      f.write(bfcompAbbr + ' -' + linkHint + '- ' + ctcompAbbr +
-                        ' #yellow;line.bold : ' + linkName + '\n')
+              # do not display 'logical' interfaces
+              if linkType != 'Logical':
+                # check if link already on the diagram - all links are bi-directional
+                if linkName not in linkDict:
+                  linkDict[linkName] = linkHint
+                  # retrieve endpoints of link
+                  for ctcomp in db[ctlink['targetId']]['rels']['connects to']:
+                    ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
+                    # get 'other end' of connected to
+                    if ctcompAbbr != bfcompAbbr:
+                      # only ouput link if connect to component is on diagram
+                      if ctcompAbbr in compDict:
+                        f.write(bfcompAbbr + ' -' + linkHint + '- ' + ctcompAbbr +
+                          ' #yellow;line.bold : ' + linkName + '\n')
         f.write('@enduml\n')
 
       # create UML diagram
@@ -209,6 +217,8 @@ class VulnerabilityAssessment:
       if db[comp['targetId']]['attrs']['type']['value'] != 'Context':
         compId = db[comp['targetId']]['attrs']['number']['value']
         compTitle = db[comp['targetId']]['attrs']['title']['value']
+        compAbbr = db[comp['targetId']]['attrs']['abbreviation']['value']
+
         # retrieve functions
         if 'performs' in db[comp['targetId']]['rels']:
           for func in db[comp['targetId']]['rels']['performs']:
@@ -235,11 +245,10 @@ class VulnerabilityAssessment:
                   continue
 
                 # check if function is 'ma: targeted by' a loss scenario
-                lsList = this._get_targeted_by(func, itemFlow[0:4])
+                lsList = this._get_targeted_by(db[func['targetId']], itemFlow[0:4])
 
                 caItem = []
-                caItem.append(compId)
-                caItem.append(compTitle)
+                caItem.append(compAbbr + ':' + compTitle)
                 caItem.append('(' + ucNum + ') ' + funcName)
                 caItem.append(itemFlow)
                 caItem.append(lsList)
@@ -259,17 +268,16 @@ class VulnerabilityAssessment:
                   continue
 
                 # check if function is 'ma: targeted by' a loss scenario
-                lsList = this._get_targeted_by(func, itemFlow[0:4])
+                lsList = this._get_targeted_by(db[func['targetId']], itemFlow[0:4])
                 caItem = []
-                caItem.append(compId)
-                caItem.append(compTitle)
+                caItem.append(compAbbr + ':' + compTitle)
                 caItem.append('(' + ucNum + ') ' + funcName)
                 caItem.append(itemFlow)
                 caItem.append(lsList)
                 caTable.append(caItem)
 
 
-    this.caDF = pd.DataFrame(caTable, columns = ['ID', 'Title',\
+    this.caDF = pd.DataFrame(caTable, columns = ['Component',\
                       '(UC) Function', 'Item', 'targeted by:LS(sub-type)'])
 
     # setup output area
@@ -292,33 +300,202 @@ class VulnerabilityAssessment:
   # Links - Loss Scenario Analysis
   def LinkAnalysisTable(this):
     db = this.pr.entities
-    dbTypeList = this.pr.entitiesForTypeList
+    dbDict = this.pr.entitiesDict
+
+    # get category ID for Physical Architecture Links
+    linkCatId = dbDict['PA: Links']
+
+    linkTable = []
+
+    # retrieve links
+    for link in db[linkCatId]['rels']['categorizes']:
+      linkName = db[link['targetId']]['attrs']['name']['value']
+      level = 0
+
+      # messages that are 'transferred' over the link
+      messages = {}
+
+      # components path for link using component abbreviations
+      # for example: C1-C2:C3 where '-' represents link between
+      # components and ':' represents link within a component
+      components = []
+      this._decompose_link(level, components, messages, link)
+
+      for message in messages:
+
+        linkItem = []
+        linkItem.append(linkName)
+        linkItem.append(messages[message]['msgPath'])
+        linkItem.append(message)
+        linkItem.append(messages[message]['lsList'])
+        linkTable.append(linkItem)
+
+    this.laDF = pd.DataFrame(linkTable, columns = ['Link',\
+                      'Path', 'Item', 'targeted by:LS(sub-type)'])
+
+    # setup output area
+    this.output = widgets.Output(layout={'border': '1px solid black'})
+    display(this.output)
+
+    with this.output:
+      try:
+        from google.colab import data_table
+        data_table.enable_dataframe_formatter()
+        this.laDT = data_table.DataTable(this.laDF, include_index=False)
+        # Display dataframa via Colab datatable
+        display(this.laDT)
+      except ModuleNotFoundError:
+        # Display basic dataframe
+        display(this.laDF)
     return
 
+  # decompose link - return list of dict: {connects: str, transfer: str}
+  def _decompose_link(this, level:int, components:list, messages:dict, link:dict)->bool:
+    db = this.pr.entities
+
+    # retrieve link name and end-points
+    linkName = db[link['targetId']]['attrs']['name']['value']
+    ep1 = db[link['targetId']]['rels']['connects to'][0]
+    ep2 = db[link['targetId']]['rels']['connects to'][1]
+    ep1Dir = ep1['attrs']['hint']['value']
+    ep2Dir = ep2['attrs']['hint']['value']
+    ep1bf = db[ep1['targetId']]['rels']['built in'][0]
+    ep1bfAbbr = db[ep1bf['targetId']]['attrs']['abbreviation']['value']
+    ep2bf = db[ep2['targetId']]['rels']['built in'][0]
+    ep2bfAbbr = db[ep2bf['targetId']]['attrs']['abbreviation']['value']
+
+    epLName = ""
+    epLbfName = ""
+    epRName = ""
+    epRbfName = ""
+
+    # is current link processed as connecting component
+    cComp = False
+
+    if ep1Dir == 'd' or ep1Dir == 'r':
+      # read top to bottom / right to left
+      epLName = db[ep1['targetId']]['attrs']['abbreviation']['value']
+      epRName = db[ep2['targetId']]['attrs']['abbreviation']['value']
+      epLbfName = ep1bfAbbr
+      epRbfName = ep2bfAbbr
+    else:
+      # swap end-points based on direction hint
+      ep2Dir = ep1['attrs']['hint']['value']
+      ep1Dir = ep2['attrs']['hint']['value']
+      epRName = db[ep1['targetId']]['attrs']['abbreviation']['value']
+      epLName = db[ep2['targetId']]['attrs']['abbreviation']['value']
+      epRbfName = ep1bfAbbr
+      epLbfName = ep2bfAbbr
+
+    if len(components) == 0:
+      # start of link decomposition
+      components.append(epLName)
+      components.append('-')
+      components.append(epRName)
+    elif epLName in components:
+      if epRName not in components:
+        # check if epRName 'built from' in components
+        if epRbfName in components:
+          # add a 'sub' component - to end of parent component chain
+          try:
+            # insert before 'connecting' component - if exists
+            iPoint = components.index('-', components.index(epRbfName))
+            components.insert(iPoint - 1, ':')
+            components.insert(iPoint - 2, epRName)
+          except ValueError:
+            # no 'connecting' component - insert at end of chain
+            components.append(':')
+            components.append(epRName)
+        else:
+          # add as 'connecting' component
+          components.insert(components.index(epLName) + 1, '-')
+          components.insert(components.index(epLName) + 2, epRName)
+          cComp = True
+    elif epRName in components:
+      if epLName not in components:
+        # check if epLName 'built from' in components
+        if epLbfName in components:
+          # add a 'sub' component - to end of parent component chain
+          try:
+            # insert before 'connecting' component - if exists
+            iPoint = components.index('-', components.index(epLbfName))
+            components.insert(iPoint, ':')
+            components.insert(iPoint + 1, epLName)
+          except ValueError:
+            print("Error #1 decomposing Link: " + linkName)
+        else:
+          # add as a 'connecting' component
+          components.insert(components.index(epRName) - 1, '-')
+          components.insert(components.index(epLName) - 2, epLName)
+          cComp = True
+    else:
+      print("Error #2 decomposing Link: " + linkName)
+
+    icomponents = copy.deepcopy(components)
+
+    # decompose included links
+    if 'includes' in db[link['targetId']]['rels']:
+      for ilink in db[link['targetId']]['rels']['includes']:
+
+        level += 2
+        cComp = this._decompose_link(level, icomponents, messages, ilink)
+        level -= 2
+
+        # connecting components will be processed in pairs
+        if cComp != True:
+          # reset component list
+          icomponents = copy.deepcopy(components)
+
+    # output transfer messages
+    if 'transfers' in db[link['targetId']]['rels']:
+      level += 2
+      for item in db[link['targetId']]['rels']['transfers']:
+        msgType = ""
+        if db[item['targetId']]['type'] == 'ControlAction':
+          msgType = '->CA::'
+        elif db[item['targetId']]['type'] == 'Feedback':
+          msgType = '<-FB::'
+
+        msgName = msgType + db[item['targetId']]['attrs']['name']['value']
+
+        msgEntry = {}
+        msgEntry['msgPath'] = ''.join(icomponents)
+        msgEntry['lsList'] = this._get_targeted_by(db[item['targetId']], msgType[0:4])
+
+        messages[msgName] = msgEntry
+
+      level -= 2
+    return cComp
+
   # get 'ma: targeted by' loss scenario list
-  def _get_targeted_by(this, func: dict, itemFlow: str) -> str:
+  def _get_targeted_by(this, entity: dict, itemFlow: str) -> str:
     db = this.pr.entities
 
     lsList = " "
-    if 'ma: targeted by' in db[func['targetId']]['rels']:
+    if 'ma: targeted by' in entity['rels']:
       first = True
-      for ls in db[func['targetId']]['rels']['ma: targeted by']:
+      for ls in entity['rels']['ma: targeted by']:
         lsNum = db[ls['targetId']]['attrs']['number']['value']
         lsType = db[ls['targetId']]['attrs']['sub-type']['value']
-        # function is controller with output control action
-        if itemFlow == '->CA' and lsType[0:3] == 'a.1':
+        if entity['type'] == 'Function':
+          # function is controller with output control action
+          if itemFlow == '->CA' and lsType[0:3] == 'a.1':
+            pass
+          # function is controlled process with input control action
+          elif itemFlow == '<-CA' and lsType[0:3] == 'b.4':
+            pass
+          # function is controlled process with output feedback
+          elif itemFlow == '->FB' and lsType[0:3] == 'b.4':
+            pass
+          # function is controller with input feedback
+          elif itemFlow == '<-FB' and lsType[0:3] == 'a.1':
+            pass
+          else:
+            continue
+        elif entity['type'] == 'ControlAction':
           pass
-        # function is controlled process with input control action
-        elif itemFlow == '<-CA' and lsType[0:3] == 'b.4':
+        elif entity['type'] == 'Feedback':
           pass
-        # function is controlled process with output feedback
-        elif itemFlow == '->FB' and lsType[0:3] == 'b.4':
-          pass
-        # function is controller with input feedback
-        elif itemFlow == '<-FB' and lsType[0:3] == 'a.1':
-          pass
-        else:
-          continue
 
         if first == True:
           first = False

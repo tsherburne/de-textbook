@@ -30,6 +30,7 @@ ra.ControlActionAnalysisTable()
 # Vulnerability Assessment
 va = manb.VulnerabilityAssesment(env)
 va.LossScenarioTable()
+va.PhysicalBlockDiagrams()
 va.ComponentAnalysisTable()
 va.LinkAnalysisTable()
 
