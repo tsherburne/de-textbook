@@ -21,8 +21,8 @@
           "targetId": "cf869060-7310-42d4-aea8-2c0c25fb5475",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 1
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "C",
@@ -34,8 +34,8 @@
           "targetId": "46a1f930-5d12-4414-98a9-0c5d75049dc9",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 2
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "C.4",
@@ -48,8 +48,8 @@
           "targetId": "d9a3a7b3-ed1a-450e-acd1-ec2997fc0ded",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 3
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "C.4.3",
@@ -123,47 +123,100 @@
           ]
         },
         {
-          "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
+          "targetId": "566bc7e8-d703-4a80-8244-cfb5c4b7b139",
           "attrs": {
             "order": {
               "dataType": "",
               "value": ""
             }
           },
-          "targetNum": "OP.1.1",
+          "targetNum": "OP.1",
           "targetNumTuple": [
             "OP",
-            1,
             1
           ]
         },
         {
-          "targetId": "cc364bd2-37d0-4608-a1dd-f5129beecac2",
+          "targetId": "f0c55966-4b79-4239-b770-bf9cf4dba0c2",
           "attrs": {
             "order": {
               "dataType": "",
               "value": ""
             }
           },
-          "targetNum": "TN.1.1",
+          "targetNum": "PA.1",
+          "targetNumTuple": [
+            "PA",
+            1
+          ]
+        },
+        {
+          "targetId": "9c95d598-7b12-4fb6-89f3-00be45d23f0a",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        },
+        {
+          "targetId": "8875ca60-b877-4725-9b66-a08dbcee0aa5",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "SF.1",
+          "targetNumTuple": [
+            "SF",
+            1
+          ]
+        },
+        {
+          "targetId": "4c935d4d-15a1-447d-aa53-d38e0c3eb093",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "SF.2",
+          "targetNumTuple": [
+            "SF",
+            2
+          ]
+        },
+        {
+          "targetId": "2eb2eabc-b24e-4de7-b5b2-813c200a951b",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "TN.1",
           "targetNumTuple": [
             "TN",
-            1,
             1
           ]
         },
         {
-          "targetId": "7ee75b77-26ec-40a5-bc46-6487c0c5d052",
+          "targetId": "96d45e28-d404-4d18-bf40-3407f074217a",
           "attrs": {
             "order": {
               "dataType": "",
               "value": ""
             }
           },
-          "targetNum": "UAV.1.1",
+          "targetNum": "UAV.1",
           "targetNumTuple": [
             "UAV",
-            1,
             1
           ]
         }
@@ -1295,8 +1348,8 @@
           "targetId": "0ea6fbc7-3aee-4606-8bff-60754bf44f39",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 1
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "PA.1",
@@ -2237,8 +2290,8 @@
           "targetId": "0ea6fbc7-3aee-4606-8bff-60754bf44f39",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 2
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "PA.1",
@@ -2603,7 +2656,7 @@
           ]
         },
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
+          "targetId": "8875ca60-b877-4725-9b66-a08dbcee0aa5",
           "attrs": {
             "portID": {
               "dataType": "",
@@ -2618,6 +2671,43 @@
           "targetNumTuple": [
             "SF",
             1
+          ]
+        },
+        {
+          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "d"
+            }
+          },
+          "targetNum": "SF.1.1",
+          "targetNumTuple": [
+            "SF",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "4c935d4d-15a1-447d-aa53-d38e0c3eb093",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "d"
+            }
+          },
+          "targetNum": "SF.2",
+          "targetNumTuple": [
+            "SF",
+            2
           ]
         },
         {
@@ -3121,6 +3211,24 @@
           ]
         },
         {
+          "targetId": "4c935d4d-15a1-447d-aa53-d38e0c3eb093",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "u"
+            }
+          },
+          "targetNum": "SF.2",
+          "targetNumTuple": [
+            "SF",
+            2
+          ]
+        },
+        {
           "targetId": "01fe958f-3abe-49db-98db-72dc072233bd",
           "attrs": {
             "portID": {
@@ -3132,10 +3240,11 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.3",
+          "targetNum": "SF.2.1",
           "targetNumTuple": [
             "SF",
-            3
+            2,
+            1
           ]
         }
       ],
@@ -3271,8 +3380,8 @@
           "targetId": "0ea6fbc7-3aee-4606-8bff-60754bf44f39",
           "attrs": {
             "order": {
-              "dataType": "integer",
-              "value": 3
+              "dataType": "",
+              "value": ""
             }
           },
           "targetNum": "PA.1",
@@ -3363,6 +3472,24 @@
           ]
         },
         {
+          "targetId": "8875ca60-b877-4725-9b66-a08dbcee0aa5",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "u"
+            }
+          },
+          "targetNum": "SF.1",
+          "targetNumTuple": [
+            "SF",
+            1
+          ]
+        },
+        {
           "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
           "attrs": {
             "portID": {
@@ -3374,9 +3501,10 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.2",
+          "targetNum": "SF.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2
           ]
         }
@@ -3567,9 +3695,10 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.2.1.1",
+          "targetNum": "SF.1.2.1.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             1
@@ -3731,9 +3860,10 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.2.1.2",
+          "targetNum": "SF.1.2.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             2
@@ -3887,9 +4017,10 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -3906,9 +4037,10 @@
               "value": "d"
             }
           },
-          "targetNum": "SF.2.1.1",
+          "targetNum": "SF.1.2.1.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             1
@@ -3926,9 +4058,10 @@
               "value": "d"
             }
           },
-          "targetNum": "SF.2.1.2",
+          "targetNum": "SF.1.2.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             2
@@ -4040,9 +4173,10 @@
               "value": "u"
             }
           },
-          "targetNum": "SF.1",
+          "targetNum": "SF.1.1",
           "targetNumTuple": [
             "SF",
+            1,
             1
           ]
         },
@@ -4058,9 +4192,10 @@
               "value": "d"
             }
           },
-          "targetNum": "SF.2",
+          "targetNum": "SF.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2
           ]
         },
@@ -4076,9 +4211,10 @@
               "value": "d"
             }
           },
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -4095,10 +4231,11 @@
               "value": "d"
             }
           },
-          "targetNum": "SF.3",
+          "targetNum": "SF.2.1",
           "targetNumTuple": [
             "SF",
-            3
+            2,
+            1
           ]
         }
       ],
@@ -5171,28 +5308,6 @@
           ]
         }
       ],
-      "transferred by": [
-        {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
-          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
-          "attrs": {},
-          "targetNum": "SF.2.1.1",
-          "targetNumTuple": [
-            "SF",
-            2,
-            1,
-            1
-          ]
-        }
-      ],
       "ma: has variation": [
         {
           "targetId": "f6fda6fa-97b1-495c-8c35-02540dccd388",
@@ -5205,6 +5320,20 @@
           "targetNum": "HCA.1",
           "targetNumTuple": [
             "HCA",
+            1
+          ]
+        }
+      ],
+      "transferred by": [
+        {
+          "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
+          "attrs": {},
+          "targetNum": "SF.1.2.1.1",
+          "targetNumTuple": [
+            "SF",
+            1,
+            2,
+            1,
             1
           ]
         }
@@ -5286,20 +5415,12 @@
     "rels": {
       "transferred by": [
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -5415,20 +5536,12 @@
       ],
       "transferred by": [
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -6420,21 +6533,13 @@
       ],
       "transferred by": [
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
           "targetId": "01fe958f-3abe-49db-98db-72dc072233bd",
           "attrs": {},
-          "targetNum": "SF.3",
+          "targetNum": "SF.2.1",
           "targetNumTuple": [
             "SF",
-            3
+            2,
+            1
           ]
         }
       ],
@@ -6515,20 +6620,12 @@
     "rels": {
       "transferred by": [
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -6989,20 +7086,12 @@
       ],
       "transferred by": [
         {
-          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
-          "attrs": {},
-          "targetNum": "SF.1",
-          "targetNumTuple": [
-            "SF",
-            1
-          ]
-        },
-        {
           "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
           "attrs": {},
-          "targetNum": "SF.2.1.2",
+          "targetNum": "SF.1.2.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             2
@@ -11892,6 +11981,22 @@
             1
           ]
         }
+      ],
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
       ]
     }
   },
@@ -11960,22 +12065,6 @@
           "targetNumTuple": [
             "OP",
             1
-          ]
-        }
-      ],
-      "categorized by": [
-        {
-          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "PA.2",
-          "targetNumTuple": [
-            "PA",
-            2
           ]
         }
       ],
@@ -12097,6 +12186,22 @@
       }
     },
     "rels": {
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
+      ],
       "connects to": [
         {
           "targetId": "46a1f930-5d12-4414-98a9-0c5d75049dc9",
@@ -12713,6 +12818,22 @@
       }
     },
     "rels": {
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
+      ],
       "connects to": [
         {
           "targetId": "980d0b97-de40-4896-aafd-45d4cc00eca8",
@@ -12755,6 +12876,143 @@
         {
           "targetId": "a3b3d697-9172-4d32-b6a2-7b4579c2969b",
           "attrs": {},
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "8875ca60-b877-4725-9b66-a08dbcee0aa5": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Logical"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Logical interface between Control Station and Obstacle."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "CS:OBS Interface"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.1"
+      }
+    },
+    "rels": {
+      "includes": [
+        {
+          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
+          "attrs": {},
+          "targetNum": "SF.1.1",
+          "targetNumTuple": [
+            "SF",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
+          "attrs": {},
+          "targetNum": "SF.1.2",
+          "targetNumTuple": [
+            "SF",
+            1,
+            2
+          ]
+        }
+      ],
+      "connects to": [
+        {
+          "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "d"
+            }
+          },
+          "targetNum": "C.4.1",
+          "targetNumTuple": [
+            "C",
+            4,
+            1
+          ]
+        },
+        {
+          "targetId": "d9a3a7b3-ed1a-450e-acd1-ec2997fc0ded",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "u"
+            }
+          },
+          "targetNum": "C.4.3",
+          "targetNumTuple": [
+            "C",
+            4,
+            3
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
           "targetNum": "PA.2",
           "targetNumTuple": [
             "PA",
@@ -12817,66 +13075,10 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.1"
+        "value": "SF.1.1"
       }
     },
     "rels": {
-      "transfers": [
-        {
-          "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
-          "attrs": {},
-          "targetNum": "CS.1",
-          "targetNumTuple": [
-            "CS",
-            1
-          ]
-        },
-        {
-          "targetId": "08ba9dd3-5281-4539-88be-724493504db9",
-          "attrs": {},
-          "targetNum": "CS.2",
-          "targetNumTuple": [
-            "CS",
-            2
-          ]
-        },
-        {
-          "targetId": "8e74e996-6f9b-4b2a-8938-fab925543541",
-          "attrs": {},
-          "targetNum": "CS.3",
-          "targetNumTuple": [
-            "CS",
-            3
-          ]
-        },
-        {
-          "targetId": "f67cc3ea-c3c6-4f89-b5aa-bd82644044a5",
-          "attrs": {},
-          "targetNum": "IR.1",
-          "targetNumTuple": [
-            "IR",
-            1
-          ]
-        },
-        {
-          "targetId": "5d04500d-ca91-47b2-b5e1-694ab175a99f",
-          "attrs": {},
-          "targetNum": "OBS.1",
-          "targetNumTuple": [
-            "OBS",
-            1
-          ]
-        },
-        {
-          "targetId": "2c347fed-bb0c-4e98-a18d-0afc732e8d8f",
-          "attrs": {},
-          "targetNum": "SS.1",
-          "targetNumTuple": [
-            "SS",
-            1
-          ]
-        }
-      ],
       "connects to": [
         {
           "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
@@ -12914,6 +13116,26 @@
             "C",
             4,
             4
+          ]
+        }
+      ],
+      "included in": [
+        {
+          "targetId": "8875ca60-b877-4725-9b66-a08dbcee0aa5",
+          "attrs": {},
+          "targetNum": "SF.1",
+          "targetNumTuple": [
+            "SF",
+            1
+          ]
+        },
+        {
+          "targetId": "4c935d4d-15a1-447d-aa53-d38e0c3eb093",
+          "attrs": {},
+          "targetNum": "SF.2",
+          "targetNumTuple": [
+            "SF",
+            2
           ]
         }
       ]
@@ -12972,10 +13194,21 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.2"
+        "value": "SF.1.2"
       }
     },
     "rels": {
+      "included in": [
+        {
+          "targetId": "8875ca60-b877-4725-9b66-a08dbcee0aa5",
+          "attrs": {},
+          "targetNum": "SF.1",
+          "targetNumTuple": [
+            "SF",
+            1
+          ]
+        }
+      ],
       "connects to": [
         {
           "targetId": "d9a3a7b3-ed1a-450e-acd1-ec2997fc0ded",
@@ -13020,9 +13253,10 @@
         {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -13083,7 +13317,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.2.1"
+        "value": "SF.1.2.1"
       }
     },
     "rels": {
@@ -13161,9 +13395,10 @@
         {
           "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
           "attrs": {},
-          "targetNum": "SF.2.1.1",
+          "targetNum": "SF.1.2.1.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             1
@@ -13172,9 +13407,10 @@
         {
           "targetId": "db8476fe-4e38-4f82-b11f-2ca583ac40f3",
           "attrs": {},
-          "targetNum": "SF.2.1.2",
+          "targetNum": "SF.1.2.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1,
             2
@@ -13185,9 +13421,10 @@
         {
           "targetId": "9563b9f4-2ce3-4959-a2ae-aadaa213c433",
           "attrs": {},
-          "targetNum": "SF.2",
+          "targetNum": "SF.1.2",
           "targetNumTuple": [
             "SF",
+            1,
             2
           ]
         }
@@ -13247,7 +13484,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.2.1.1"
+        "value": "SF.1.2.1.1"
       }
     },
     "rels": {
@@ -13255,9 +13492,10 @@
         {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
-          "targetNum": "SF.2.1",
+          "targetNum": "SF.1.2.1",
           "targetNumTuple": [
             "SF",
+            1,
             2,
             1
           ]
@@ -13371,7 +13609,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.2.1.2"
+        "value": "SF.1.2.1.2"
       }
     },
     "rels": {
@@ -13432,11 +13670,149 @@
         {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
           "attrs": {},
+          "targetNum": "SF.1.2.1",
+          "targetNumTuple": [
+            "SF",
+            1,
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "4c935d4d-15a1-447d-aa53-d38e0c3eb093": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Logical"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Logical interface between Control Station and IR Sensor."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "CS:IR Interface"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.2"
+      }
+    },
+    "rels": {
+      "includes": [
+        {
+          "targetId": "3928fbbe-ec27-40c8-a1d4-036a47077468",
+          "attrs": {},
+          "targetNum": "SF.1.1",
+          "targetNumTuple": [
+            "SF",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "01fe958f-3abe-49db-98db-72dc072233bd",
+          "attrs": {},
           "targetNum": "SF.2.1",
           "targetNumTuple": [
             "SF",
             2,
             1
+          ]
+        }
+      ],
+      "connects to": [
+        {
+          "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "d"
+            }
+          },
+          "targetNum": "C.4.1",
+          "targetNumTuple": [
+            "C",
+            4,
+            1
+          ]
+        },
+        {
+          "targetId": "40acfde6-a735-4124-84c1-74323cf39cab",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "u"
+            }
+          },
+          "targetNum": "C.4.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            2
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
           ]
         }
       ]
@@ -13495,10 +13871,21 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "SF.3"
+        "value": "SF.2.1"
       }
     },
     "rels": {
+      "included in": [
+        {
+          "targetId": "4c935d4d-15a1-447d-aa53-d38e0c3eb093",
+          "attrs": {},
+          "targetNum": "SF.2",
+          "targetNumTuple": [
+            "SF",
+            2
+          ]
+        }
+      ],
       "connects to": [
         {
           "targetId": "40acfde6-a735-4124-84c1-74323cf39cab",
@@ -13609,6 +13996,22 @@
       }
     },
     "rels": {
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
+      ],
       "includes": [
         {
           "targetId": "cc364bd2-37d0-4608-a1dd-f5129beecac2",
@@ -13796,22 +14199,6 @@
             2
           ]
         }
-      ],
-      "categorized by": [
-        {
-          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "PA.2",
-          "targetNumTuple": [
-            "PA",
-            2
-          ]
-        }
       ]
     }
   },
@@ -13921,6 +14308,22 @@
             5
           ]
         }
+      ],
+      "categorized by": [
+        {
+          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "PA.2",
+          "targetNumTuple": [
+            "PA",
+            2
+          ]
+        }
       ]
     }
   },
@@ -13981,22 +14384,6 @@
       }
     },
     "rels": {
-      "categorized by": [
-        {
-          "targetId": "5248473e-dba4-4230-a2c6-142665fc85c2",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "PA.2",
-          "targetNumTuple": [
-            "PA",
-            2
-          ]
-        }
-      ],
       "included in": [
         {
           "targetId": "96d45e28-d404-4d18-bf40-3407f074217a",
