@@ -51,7 +51,7 @@ class SystemDescription:
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
 
-    lineColor = '#tan;line.bold;text:black'
+    lineColor = ' #tan;line.bold;text:black'
 
     with open('./diagrams/cs.txt', 'w') as f:
       f.write('skinparam roundCorner 15\n')
@@ -234,9 +234,9 @@ class SystemDescription:
     # retrieve categorized Use Cases
     for uc in db[ucCatId]['rels']['categorizes']:
       ucName = db[uc['targetId']]['attrs']['name']['value']
-      inputPath = "./diagrams/" + ucName.replace(" ", "") + ".txt"
-      outputPath = "./diagrams/" + ucName.replace(" ", "") + ".png"
-      errorPath = "./diagrams/" + ucName.replace(" ", "") + "_error.html"
+      inputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".txt"
+      outputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".png"
+      errorPath = "./diagrams/uc_" + ucName.replace(" ", "") + "_error.html"
 
       with open(inputPath, 'w') as f:
         f.write('@startuml\n')
@@ -245,7 +245,8 @@ class SystemDescription:
         # retrieve 'involves' Components (actors)
         for comp in db[uc['targetId']]['rels']['involves']:
           f.write('actor "' + db[comp['targetId']]['attrs']['title']['value'] + '" as ' +
-                   db[comp['targetId']]['attrs']['abbreviation']['value'] + '\n')
+                   db[comp['targetId']]['attrs']['abbreviation']['value'] +
+                   ' #deepskyblue\n')
 
         # retrieve 'describes' Component (single association [0])
         desId = db[uc['targetId']]['rels']['describes'][0]['targetId']
@@ -254,7 +255,8 @@ class SystemDescription:
         # retrieve 'includes' UseCases
         for iuc in db[uc['targetId']]['rels']['includes']:
           f.write('  usecase "' + db[iuc['targetId']]['attrs']['name']['value'] + '" as ' +
-                  db[iuc['targetId']]['attrs']['number']['value'] + '\n')
+                  db[iuc['targetId']]['attrs']['number']['value'] +
+                  ' #salmon\n')
 
         f.write('}\n')
 
@@ -295,13 +297,14 @@ class SystemDescription:
     for uc in db[ucCatId]['rels']['categorizes']:
       for uci in db[uc['targetId']]['rels']['includes']:
         ucItem = []
+        ucItem.append(db[uci['targetId']]['attrs']['number']['value'])
         ucItem.append(db[uci['targetId']]['attrs']['name']['value'])
         ucItem.append(db[uci['targetId']]['attrs']['description']['value'])
         ucItem.append(db[uci['targetId']]['attrs']['preconditions']['value'])
         ucItem.append(db[uci['targetId']]['attrs']['postconditions']['value'])
         ucTable.append(ucItem)
 
-    this.ucDF = pd.DataFrame(ucTable, columns = ['Name', 'Description',
+    this.ucDF = pd.DataFrame(ucTable, columns = ['ID', 'Use Case', 'Description',
                   'Pre-Conditions', 'Post-Conditions'])
 
     # setup output area
@@ -345,22 +348,26 @@ class SystemDescription:
 
         sortedPartList = sorted(partDict)
         ucName = db[iuc['targetId']]['attrs']['name']['value']
-        inputPath = "./diagrams/" + ucName.replace(" ", "") + ".txt"
-        outputPath = "./diagrams/" + ucName.replace(" ", "") + ".png"
-        errorPath = "./diagrams/" + ucName.replace(" ", "") + "_error.html"
+        inputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".txt"
+        outputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".png"
+        errorPath = "./diagrams/uc_" + ucName.replace(" ", "") + "_error.html"
 
         with open(inputPath, 'w') as f:
           f.write('@startuml\n')
+          f.write('skinparam sequenceArrowThickness 2\n')
+
           f.write('title MSC: ' + ucName + '\n')
 
           # output participants (swimlanes)
           for part in sortedPartList:
             if db[partDict[part]]['attrs']['type']['value'] == 'Human':
               f.write('actor "' + db[partDict[part]]['attrs']['title']['value'] +
-                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] + '\n')
+                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] +
+                      ' #deepskyblue\n')
             else:
               f.write('control "' + db[partDict[part]]['attrs']['title']['value'] +
-                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] + '\n')
+                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] +
+                      ' #deepskyblue\n')
           # parse call structure for included use case 'elaborated by' function
           constructs = structures[db[iuc['targetId']]['rels']['elaborated by'][0]\
                         ['targetId']]['mainBranch']['constructs']
@@ -439,6 +446,7 @@ class SystemDescription:
 
   def _process_function(this, f: _io.TextIOWrapper, level: int, functionId: str):
     db = this.pr.entities
+    lineColor = '#tan'
 
     # process 'outputs' items (control action / feedback)
     if 'outputs' in db[functionId]['rels']:
@@ -454,10 +462,10 @@ class SystemDescription:
         inAbbrv = db[inComp]['attrs']['abbreviation']['value']
 
         if itemType == 'ControlAction':
-          f.write(' '*level + outAbbrv + ' -> ' + inAbbrv +
+          f.write(' '*level + outAbbrv + ' -[' + lineColor + ']> ' + inAbbrv +
                   ' : <&caret-bottom>' + itemName + '\n')
         else:
-          f.write(' '*level + outAbbrv + ' -> ' + inAbbrv +
+          f.write(' '*level + outAbbrv + ' -[' + lineColor + ']> ' + inAbbrv +
                   ' : <&caret-top>' + itemName + '\n')
     return
 
