@@ -121,6 +121,20 @@
             2,
             3
           ]
+        },
+        {
+          "targetId": "a0548b76-8035-47e2-98af-6acd47586fdc",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 4
+            }
+          },
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
         }
       ]
     }
@@ -9380,18 +9394,6 @@
           ]
         }
       ],
-      "allocated to": [
-        {
-          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
-          "attrs": {},
-          "targetNum": "MA.2.2",
-          "targetNumTuple": [
-            "MA",
-            2,
-            2
-          ]
-        }
-      ],
       "inputs": [
         {
           "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
@@ -9409,6 +9411,36 @@
           "targetNumTuple": [
             "CS",
             1
+          ]
+        },
+        {
+          "targetId": "a0548b76-8035-47e2-98af-6acd47586fdc",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {},
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
           ]
         }
       ]
@@ -10061,6 +10093,17 @@
           "targetNum": "LS.1",
           "targetNumTuple": [
             "LS",
+            1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "a0548b76-8035-47e2-98af-6acd47586fdc",
+          "attrs": {},
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
             1
           ]
         }
@@ -14735,6 +14778,118 @@
           "targetNumTuple": [
             "H",
             2
+          ]
+        }
+      ]
+    }
+  },
+  "a0548b76-8035-47e2-98af-6acd47586fdc": {
+    "type": "Item",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Digital"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Log"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.1"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "attrs": {},
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 4
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
           ]
         }
       ]
