@@ -3,6 +3,8 @@ from IPython.display import clear_output, display
 from IPython.display import Image
 from .env import Environment
 from .pr import Project
+from .msc import drawMSC
+from .item import getItemList
 from pprint import pprint
 from io import _io
 import plantuml
@@ -109,7 +111,8 @@ class SystemDescription:
     return
 
 # recursively output built from
-  def _output_built_from(this, f: _io.TextIOWrapper, level: int, component: dict):
+  def _output_built_from(this, f: _io.TextIOWrapper, level: int,
+                                                        component: dict):
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
     csCompCatId = dbDict['SD: CS: Components']
@@ -171,37 +174,8 @@ class SystemDescription:
     this.itemList = []
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
-    csFuncCatId = dbDict['SD: CS: Functions']
 
-    # fetch output control actions and feedback items
-    for function in db[csFuncCatId]['rels']['categorizes']:
-      if 'outputs' in db[function['targetId']]['rels']:
-        for output in db[function['targetId']]['rels']['outputs']:
-          itemEntry = {}
-          itemEntry['ItemTitle'] = db[output['targetId']]['attrs']['title']['value']
-          itemEntry['itemDescription'] = db[output['targetId']]['attrs']\
-                    ['description']['value']
-          itemEntry['itemType'] = db[output['targetId']]['type']
-          itemEntry['inputComponent'] = ""
-          outCompId = db[function['targetId']]['rels']['allocated to'][0]
-          itemEntry['outputComponent'] = db[outCompId['targetId']]['attrs']\
-                    ['abbreviation']['value']
-
-          # add to list and dict
-          this.itemList.append(itemEntry['ItemTitle'])
-          this.itemByName[itemEntry['ItemTitle']] = itemEntry
-
-    # fetch input control actions and feedback items
-    for function in db[csFuncCatId]['rels']['categorizes']:
-      if 'inputs' in db[function['targetId']]['rels']:
-        for input in db[function['targetId']]['rels']['inputs']:
-          inCompId = db[function['targetId']]['rels']['allocated to'][0]
-          itemTitle = db[input['targetId']]['attrs']['title']['value']
-          # update input component
-          this.itemByName[itemTitle]['inputComponent'] = \
-                  db[inCompId['targetId']]['attrs']['abbreviation']['value']
-
-    this.itemList.sort()
+    this.itemList, this.itemByName = getItemList(this.env, this.pr)
 
     # combine items with same output/input pair into an arc
     for item in this.itemList:
@@ -244,7 +218,8 @@ class SystemDescription:
 
         # retrieve 'involves' Components (actors)
         for comp in db[uc['targetId']]['rels']['involves']:
-          f.write('actor "' + db[comp['targetId']]['attrs']['title']['value'] + '" as ' +
+          f.write('actor "' + db[comp['targetId']]['attrs']['title']['value'] +
+                  '" as ' +
                    db[comp['targetId']]['attrs']['abbreviation']['value'] +
                    ' #deepskyblue\n')
 
@@ -254,7 +229,9 @@ class SystemDescription:
 
         # retrieve 'includes' UseCases
         for iuc in db[uc['targetId']]['rels']['includes']:
-          f.write('  usecase "' + db[iuc['targetId']]['attrs']['name']['value'] + '" as ' +
+          f.write('  usecase "' +
+                  db[iuc['targetId']]['attrs']['name']['value'] +
+                  '" as ' +
                   db[iuc['targetId']]['attrs']['number']['value'] +
                   ' #salmon\n')
 
@@ -264,8 +241,10 @@ class SystemDescription:
         for iuc in db[uc['targetId']]['rels']['includes']:
           for invuc in db[iuc['targetId']]['rels']['involves']:
 
-            # create connection between actors and usecase with display 'hint' u/d/l/r
-            f.write(db[invuc['targetId']]['attrs']['abbreviation']['value'] + ' -' +
+            # create connection between actors and usecase with display
+            # 'hint' u/d/l/r
+            f.write(db[invuc['targetId']]['attrs']['abbreviation']['value'] +
+                    ' -' +
                     invuc['attrs']['hint']['value'] + '-> ' +
                     db[iuc['targetId']]['attrs']['number']['value'] + '\n')
 
@@ -340,133 +319,8 @@ class SystemDescription:
         # includes an 'ordered' list of participants (swimlanes)
         catById = db[iuc['targetId']]['rels']['categorized by'][0]
 
-        # need to sort the parts by 'order' relationship attribute
-        partDict = {}
-        for part in db[catById['targetId']]['rels']['categorizes']:
-          if db[part['targetId']]['type'] == 'Component':
-            partDict[part['attrs']['order']['value']] = part['targetId']
+        drawMSC(catById['targetId'], this.env, this.pr)
 
-        sortedPartList = sorted(partDict)
-        ucName = db[iuc['targetId']]['attrs']['name']['value']
-        inputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".txt"
-        outputPath = "./diagrams/uc_" + ucName.replace(" ", "") + ".png"
-        errorPath = "./diagrams/uc_" + ucName.replace(" ", "") + "_error.html"
-
-        with open(inputPath, 'w') as f:
-          f.write('@startuml\n')
-          f.write('skinparam sequenceArrowThickness 2\n')
-
-          f.write('title MSC: ' + ucName + '\n')
-
-          # output participants (swimlanes)
-          for part in sortedPartList:
-            if db[partDict[part]]['attrs']['type']['value'] == 'Human':
-              f.write('actor "' + db[partDict[part]]['attrs']['title']['value'] +
-                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] +
-                      ' #deepskyblue\n')
-            else:
-              f.write('control "' + db[partDict[part]]['attrs']['title']['value'] +
-                      '" as ' + db[partDict[part]]['attrs']['abbreviation']['value'] +
-                      ' #deepskyblue\n')
-          # parse call structure for included use case 'elaborated by' function
-          constructs = structures[db[iuc['targetId']]['rels']['elaborated by'][0]\
-                        ['targetId']]['mainBranch']['constructs']
-          this._process_constructs(f, 0, constructs)
-          f.write('@enduml\n')
-
-        # create UML diagram
-        server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
-        try:
-          ret = server.processes_file(inputPath, outputPath, errorPath)
-        except BaseException as err:
-          print(err)
-
-        # setup output area
-        this.output = widgets.Output(layout={'border': '1px solid black'})
-        display(this.output)
-        # display uc diagram to output area
-        with this.output:
-          display(Image(outputPath))
-      return
-
-  def _process_constructs(this, f: _io.TextIOWrapper, level: int, constructs: dict):
-    db = this.pr.entities
-
-    for construct in constructs:
-      if construct['constructType'] == 'function':
-        this.lastFunction = construct['functionId']
-        this._process_function(f, level, construct['functionId'])
-        # process function exits
-        exitCount = 0
-        for branch in construct['branches']:
-          exitCount += 1
-          exitName = db[branch['exitId']]['attrs']['name']['value']
-          if exitCount == 1:
-            f.write(' '*level + 'alt ' + exitName + '\n')
-          else:
-            f.write(' '*level + 'else ' + exitName + '\n')
-          level += 2
-          this._process_constructs(f, level, branch['constructs'])
-          level -= 2
-        if exitCount > 0:
-          f.write(' '*level + 'end\n')
-      elif construct['constructType'] == 'parallel':
-        f.write(' '*level + 'par\n')
-        for branch in construct['branches']:
-          level += 2
-          this._process_constructs(f, level, branch['constructs'])
-          level -= 2
-        f.write(' '*level + 'end par\n')
-      elif construct['constructType'] == 'loop':
-        if construct['annotation'] is not None:
-          f.write(' '*level + 'loop ' + construct['annotation'] + '\n')
-        else:
-          f.write(' '*level + 'loop\n')
-
-        level += 2
-        this._process_constructs(f, level, construct['branch']['constructs'])
-        level -= 2
-        f.write(' '*level + 'end loop\n')
-      elif construct['constructType'] == 'replicate':
-        # retrieve domain set name
-        dsName = db[construct['domainSetId']]['attrs']['name']['value']
-        f.write(' '*level + 'group repl[' + dsName + ']\n')
-
-        level += 2
-        this._process_constructs(f, level, construct['branch']['constructs'])
-        level -= 2
-        f.write(' '*level + 'end\n')
-      elif construct['constructType'] == 'loopExit':
-        comp = db[this.lastFunction]['rels']['allocated to'][0]['targetId']
-        compAbbrv = db[comp]['attrs']['abbreviation']['value']
-        f.write(' '*level + compAbbrv + ' --> ' + compAbbrv + ' : [Loop Exit]\n')
-      else:
-        print("Unknown Construct Type!")
-    return
-
-  def _process_function(this, f: _io.TextIOWrapper, level: int, functionId: str):
-    db = this.pr.entities
-    lineColor = '#tan'
-
-    # process 'outputs' items (control action / feedback)
-    if 'outputs' in db[functionId]['rels']:
-      for output in db[functionId]['rels']['outputs']:
-        itemType = db[output['targetId']]['type']
-        itemName = db[output['targetId']]['attrs']['name']['value']
-        # retrieve 'input to' endpoint
-        inFunc = db[output['targetId']]['rels']['input to'][0]['targetId']
-        # retrieve function 'allocated to' component abbreviation
-        outComp = db[functionId]['rels']['allocated to'][0]['targetId']
-        outAbbrv = db[outComp]['attrs']['abbreviation']['value']
-        inComp = db[inFunc]['rels']['allocated to'][0]['targetId']
-        inAbbrv = db[inComp]['attrs']['abbreviation']['value']
-
-        if itemType == 'ControlAction':
-          f.write(' '*level + outAbbrv + ' -[' + lineColor + ']> ' + inAbbrv +
-                  ' : <&caret-bottom>' + itemName + '\n')
-        else:
-          f.write(' '*level + outAbbrv + ' -[' + lineColor + ']> ' + inAbbrv +
-                  ' : <&caret-top>' + itemName + '\n')
     return
 
   # display table of control actions
@@ -480,7 +334,8 @@ class SystemDescription:
         caItem.append(this.itemByName[ca]['itemDescription'])
         caTable.append(caItem)
 
-    this.caDF = pd.DataFrame(caTable, columns = ['Control Action', 'Description'])
+    this.caDF = pd.DataFrame(caTable, columns = ['Control Action',
+                                                  'Description'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})

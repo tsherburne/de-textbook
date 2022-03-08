@@ -149,16 +149,18 @@ class VulnerabilityAssessment:
         # retrieve external 'connected to' components
         if 'connected to' in db[comp['targetId']]['rels']:
           for ccomp in db[comp['targetId']]['rels']['connected to']:
-            for ctcomp in db[ccomp['targetId']]['rels']['connects to']:
-              ctcompName = db[ctcomp['targetId']]['attrs']['title']['value']
-              ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
-              ctcompType = db[ctcomp['targetId']]['attrs']['type']['value']
+            # don't show 'logically' connected components
+            if db[ccomp['targetId']]['attrs']['type']['value'] != 'Logical':
+              for ctcomp in db[ccomp['targetId']]['rels']['connects to']:
+                ctcompName = db[ctcomp['targetId']]['attrs']['title']['value']
+                ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
+                ctcompType = db[ctcomp['targetId']]['attrs']['type']['value']
 
-              # get 'other end' of connected to
-              if ctcompName != pbName:
-                f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' + ctcompAbbr +
-                ' <<' + ctcompType + '>> #deepskyblue\n')
-                compDict[ctcompAbbr] = ""
+                # get 'other end' of connected to
+                if ctcompName != pbName:
+                  f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' + ctcompAbbr +
+                  ' <<' + ctcompType + '>> #deepskyblue\n')
+                  compDict[ctcompAbbr] = ""
 
         # retrieve internal links
         linkDict = {}

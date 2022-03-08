@@ -1,9 +1,8 @@
 from .env import Environment
 from .sd import SystemDescription
 from .pr import Project
-import requests
+from .item import getItemList
 from IPython.display import clear_output, display
-import sys
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
@@ -13,7 +12,8 @@ class RiskAssessment:
   def __init__(this, env: Environment):
     this.env = env
 
-    this.compTypes = ['Category', 'ControlAction', 'Hazard', 'Loss', 'HazardousAction']
+    this.compTypes = ['Category', 'Component', 'ControlAction', 'Function',
+                      'Hazard', 'Loss', 'HazardousAction']
 
     this.pr = Project(env)
     this.pr.FetchSchema()
@@ -120,8 +120,8 @@ class RiskAssessment:
 
       hazardTable.append(hazardItem)
 
-    this.hazardDF = pd.DataFrame(hazardTable, columns = ['ID', 'Title', 'Description', \
-                    'leads to: Loss', 'is caused by: Hazardous Action'])
+    this.hazardDF = pd.DataFrame(hazardTable, columns = ['ID', 'Title', \
+            'Description', 'leads to: Loss', 'is caused by: Hazardous Action'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
@@ -198,25 +198,28 @@ class RiskAssessment:
     db = this.pr.entities
     dbTypeList = this.pr.entitiesForTypeList
 
-    caaTable = []
-    for ca in dbTypeList['ControlAction']:
-      for hcaType in this.hcaTypes:
-        caItem = []
-        caItem.append(db[ca]['attrs']['title']['value'])
-        caItem.append(hcaType)
-        # check if hca of this type exists for this ca
-        if 'ma: has variation' in db[ca]['rels']:
-          for hca in db[ca]['rels']['ma: has variation']:
-            if db[hca['targetId']]['attrs']['variationType']['value'] == hcaType:
-              caItem.append(db[hca['targetId']]['attrs']['number']['value'])
-            else:
-              caItem.append(' ')
-        else:
-          caItem.append(' ')
+    itemList, itemByName = getItemList(this.env, this.pr)
 
-        # Todo: save / retrieve variation type justification
-        caItem.append(' ')
-        caaTable.append(caItem)
+    caaTable = []
+    for item in itemList:
+      if itemByName[item]['itemType'] == 'ControlAction':
+        for hcaType in this.hcaTypes:
+          caItem = []
+          caItem.append(itemByName[item]['itemTitle'])
+          caItem.append(hcaType)
+          # check if hca of this type exists for this ca
+          if 'ma: has variation' in db[itemByName[item]['itemId']]['rels']:
+            for hca in db[itemByName[item]['itemId']]['rels']['ma: has variation']:
+              if db[hca['targetId']]['attrs']['variationType']['value'] == hcaType:
+                caItem.append(db[hca['targetId']]['attrs']['number']['value'])
+              else:
+                caItem.append(' ')
+          else:
+            caItem.append(' ')
+
+          # Todo: save / retrieve variation type justification
+          caItem.append(' ')
+          caaTable.append(caItem)
 
     this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', 'Variation', \
                     'has variation: Hazardous Action', 'has variation: .justification'])

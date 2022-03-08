@@ -4,5 +4,6 @@ from .sd import SystemDescription
 from .ra import RiskAssessment
 from .va import VulnerabilityAssessment
 from .ex import Exercises
+from .arch import ResilienceArchitecture
 from .log import MANBLogHandler
 from .export import Export

@@ -1,4 +1,130 @@
 {
+  "911052dd-2803-4819-9fb4-83a873153074": {
+    "type": "Category",
+    "attrs": {
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "LS - Manipulated Fire Command"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1"
+      }
+    },
+    "rels": {
+      "categorized by": [
+        {
+          "targetId": "485d22d8-cc62-47bc-9b4c-5e703e1409e2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "RA.1",
+          "targetNumTuple": [
+            "RA",
+            1
+          ]
+        }
+      ],
+      "categorizes": [
+        {
+          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 1
+            }
+          },
+          "targetNum": "C.2",
+          "targetNumTuple": [
+            "C",
+            2
+          ]
+        },
+        {
+          "targetId": "c86c59c5-ab13-4db3-b22d-8491944734ee",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 7
+            }
+          },
+          "targetNum": "C.4.3.1",
+          "targetNumTuple": [
+            "C",
+            4,
+            3,
+            1
+          ]
+        },
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 3
+            }
+          },
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 5
+            }
+          },
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "f741e4ea-7e8d-48b6-83a9-e96e2c19028c",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 2
+            }
+          },
+          "targetNum": "MA.2.3",
+          "targetNumTuple": [
+            "MA",
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
   "0ea6fbc7-3aee-4606-8bff-60754bf44f39": {
     "type": "Category",
     "attrs": {
@@ -217,6 +343,41 @@
           "targetNum": "UAV.1",
           "targetNumTuple": [
             "UAV",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "485d22d8-cc62-47bc-9b4c-5e703e1409e2": {
+    "type": "Category",
+    "attrs": {
+      "description": {
+        "dataType": "text",
+        "value": "Resilience Architecture Loss Scenarios."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "RA: Loss Scenarios"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RA.1"
+      }
+    },
+    "rels": {
+      "categorizes": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
             1
           ]
         }
@@ -955,6 +1116,20 @@
           ]
         },
         {
+          "targetId": "2bcd6d2b-e925-4576-a70a-230bafff5e0a",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.1",
+          "targetNumTuple": [
+            "UC",
+            1
+          ]
+        },
+        {
           "targetId": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
           "attrs": {
             "order": {
@@ -962,10 +1137,10 @@
               "value": ""
             }
           },
-          "targetNum": "UC.2",
+          "targetNum": "UC.1",
           "targetNumTuple": [
             "UC",
-            2
+            1
           ]
         }
       ]
@@ -1108,6 +1283,20 @@
           ]
         },
         {
+          "targetId": "5dc8075e-343b-4d70-99e9-266cb2a2cc44",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.2",
+          "targetNumTuple": [
+            "UC",
+            2
+          ]
+        },
+        {
           "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
           "attrs": {
             "order": {
@@ -1115,10 +1304,10 @@
               "value": ""
             }
           },
-          "targetNum": "UC.1",
+          "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
-            1
+            2
           ]
         }
       ]
@@ -1499,7 +1688,7 @@
           ]
         },
         {
-          "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
+          "targetId": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
           "attrs": {
             "hint": {
               "dataType": "",
@@ -1513,7 +1702,7 @@
           ]
         },
         {
-          "targetId": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
+          "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
           "attrs": {
             "hint": {
               "dataType": "",
@@ -1717,6 +1906,16 @@
     "rels": {
       "performs": [
         {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {},
+          "targetNum": "LS.1.5",
+          "targetNumTuple": [
+            "LS",
+            1,
+            5
+          ]
+        },
+        {
           "targetId": "104db45f-ec0b-4588-b21f-972f1879e266",
           "attrs": {},
           "targetNum": "UC.2.9",
@@ -1779,14 +1978,28 @@
               "value": ""
             }
           },
-          "targetNum": "UC.1",
+          "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
-            1
+            2
           ]
         }
       ],
       "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 1
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
         {
           "targetId": "b21fd940-e4c6-4d25-80cf-7254cf57eae6",
           "attrs": {
@@ -2137,10 +2350,10 @@
               "value": ""
             }
           },
-          "targetNum": "UC.2",
+          "targetNum": "UC.1",
           "targetNumTuple": [
             "UC",
-            2
+            1
           ]
         }
       ]
@@ -2908,6 +3121,61 @@
             1
           ]
         }
+      ],
+      "connected to": [
+        {
+          "targetId": "d0bc1d1a-b427-4e15-94e3-173a16731c0b",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "r"
+            }
+          },
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "performs": [
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {},
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
+          ]
+        },
+        {
+          "targetId": "86e9d650-9e97-4eec-a359-b772b002e1f2",
+          "attrs": {},
+          "targetNum": "UC.2.12.2",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            2
+          ]
+        },
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {},
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
+          ]
+        }
       ]
     }
   },
@@ -3652,6 +3920,16 @@
     "rels": {
       "performs": [
         {
+          "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
+          "attrs": {},
+          "targetNum": "LS.1.7",
+          "targetNumTuple": [
+            "LS",
+            1,
+            7
+          ]
+        },
+        {
           "targetId": "6b57bb95-1aa3-4543-8c0d-3f93c14f0e23",
           "attrs": {},
           "targetNum": "UC.2.13",
@@ -3659,6 +3937,50 @@
             "UC",
             2,
             13
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 7
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
+          "targetId": "b21fd940-e4c6-4d25-80cf-7254cf57eae6",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "SD.2",
+          "targetNumTuple": [
+            "SD",
+            2
+          ]
+        },
+        {
+          "targetId": "6bed9181-5825-4b05-8711-1387720cc9f8",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 5
+            }
+          },
+          "targetNum": "UC.2",
+          "targetNumTuple": [
+            "UC",
+            2
           ]
         }
       ],
@@ -3702,36 +4024,6 @@
             2,
             1,
             1
-          ]
-        }
-      ],
-      "categorized by": [
-        {
-          "targetId": "b21fd940-e4c6-4d25-80cf-7254cf57eae6",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "SD.2",
-          "targetNumTuple": [
-            "SD",
-            2
-          ]
-        },
-        {
-          "targetId": "6bed9181-5825-4b05-8711-1387720cc9f8",
-          "attrs": {
-            "order": {
-              "dataType": "integer",
-              "value": 5
-            }
-          },
-          "targetNum": "UC.2",
-          "targetNumTuple": [
-            "UC",
-            2
           ]
         }
       ],
@@ -4502,10 +4794,10 @@
               "value": "l"
             }
           },
-          "targetNum": "UC.1",
+          "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
-            1
+            2
           ]
         }
       ]
@@ -4736,10 +5028,10 @@
               "value": "u"
             }
           },
-          "targetNum": "UC.1",
+          "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
-            1
+            2
           ]
         }
       ],
@@ -4793,6 +5085,847 @@
           "targetNum": "C",
           "targetNumTuple": [
             "C"
+          ]
+        }
+      ]
+    }
+  },
+  "d38e1959-b04e-4885-b833-6c798e6747db": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Context"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "MA"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Mission Aware"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "MA: Mission Aware"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA"
+      }
+    },
+    "rels": {
+      "built from": [
+        {
+          "targetId": "322bffa9-0cbb-4d33-8205-f8cd1f4385db",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.1",
+          "targetNumTuple": [
+            "MA",
+            1
+          ]
+        },
+        {
+          "targetId": "d2d7c8db-d296-4afb-a924-b10624476225",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2",
+          "targetNumTuple": [
+            "MA",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "322bffa9-0cbb-4d33-8205-f8cd1f4385db": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Sentinel"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "FS"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Field Sentinel"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Field Sentinel"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA.1"
+      }
+    },
+    "rels": {
+      "built in": [
+        {
+          "targetId": "d38e1959-b04e-4885-b833-6c798e6747db",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA",
+          "targetNumTuple": [
+            "MA"
+          ]
+        }
+      ]
+    }
+  },
+  "d2d7c8db-d296-4afb-a924-b10624476225": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Sentinel"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "VS"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Vehicle Sentinel"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Vehicle Sentinel"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA.2"
+      }
+    },
+    "rels": {
+      "built from": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "f741e4ea-7e8d-48b6-83a9-e96e2c19028c",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.3",
+          "targetNumTuple": [
+            "MA",
+            2,
+            3
+          ]
+        }
+      ],
+      "built in": [
+        {
+          "targetId": "d38e1959-b04e-4885-b833-6c798e6747db",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA",
+          "targetNumTuple": [
+            "MA"
+          ]
+        }
+      ]
+    }
+  },
+  "36dd4707-b873-49f8-aa98-93a7695400d3": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Software Item"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "SENMON"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Sentinel Monitor"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Monitor"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA.2.1"
+      }
+    },
+    "rels": {
+      "performs": [
+        {
+          "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
+          "attrs": {},
+          "targetNum": "LS.1.3",
+          "targetNumTuple": [
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "attrs": {},
+          "targetNum": "LS.1.4",
+          "targetNumTuple": [
+            "LS",
+            1,
+            4
+          ]
+        },
+        {
+          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "attrs": {},
+          "targetNum": "LS.1.6",
+          "targetNumTuple": [
+            "LS",
+            1,
+            6
+          ]
+        }
+      ],
+      "connected to": [
+        {
+          "targetId": "66677d72-b752-4197-8994-645ca0de3765",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        },
+        {
+          "targetId": "1937dad8-8b83-41de-8fba-b66edf6a5d30",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 3
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "built in": [
+        {
+          "targetId": "d2d7c8db-d296-4afb-a924-b10624476225",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2",
+          "targetNumTuple": [
+            "MA",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "8dce1305-b5b1-474b-afba-bfec2bb67155": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Software Item"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "SENPRO"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Sentinel Probe"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Probe"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA.2.2"
+      }
+    },
+    "rels": {
+      "built in": [
+        {
+          "targetId": "d2d7c8db-d296-4afb-a924-b10624476225",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2",
+          "targetNumTuple": [
+            "MA",
+            2
+          ]
+        }
+      ],
+      "performs": [
+        {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {},
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "attrs": {},
+          "targetNum": "LS.1.2",
+          "targetNumTuple": [
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "attrs": {},
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "connected to": [
+        {
+          "targetId": "1937dad8-8b83-41de-8fba-b66edf6a5d30",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        },
+        {
+          "targetId": "d0bc1d1a-b427-4e15-94e3-173a16731c0b",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "l"
+            }
+          },
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 5
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "f741e4ea-7e8d-48b6-83a9-e96e2c19028c": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Software Item"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "SENUI"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Sentinel UI"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC UI"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "MA.2.3"
+      }
+    },
+    "rels": {
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 2
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "built in": [
+        {
+          "targetId": "d2d7c8db-d296-4afb-a924-b10624476225",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2",
+          "targetNumTuple": [
+            "MA",
+            2
+          ]
+        }
+      ],
+      "connected to": [
+        {
+          "targetId": "66677d72-b752-4197-8994-645ca0de3765",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
           ]
         }
       ]
@@ -5289,6 +6422,25 @@
     "rels": {
       "input to": [
         {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
           "targetId": "6b57bb95-1aa3-4543-8c0d-3f93c14f0e23",
           "attrs": {
             "triggering": {
@@ -5324,6 +6476,18 @@
           ]
         }
       ],
+      "decomposed by": [
+        {
+          "targetId": "3be2e090-4690-40d7-b6bf-a17ec75cc592",
+          "attrs": {},
+          "targetNum": "CS.1.1",
+          "targetNumTuple": [
+            "CS",
+            1,
+            1
+          ]
+        }
+      ],
       "transferred by": [
         {
           "targetId": "97e928ad-cfaf-40b8-ac5c-58430d714a68",
@@ -5347,6 +6511,93 @@
             "UC",
             2,
             12
+          ]
+        }
+      ]
+    }
+  },
+  "3be2e090-4690-40d7-b6bf-a17ec75cc592": {
+    "type": "ControlAction",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "L2:MUN: Fire"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "CS.1.1"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {},
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
+          "attrs": {},
+          "targetNum": "CS.1",
+          "targetNumTuple": [
+            "CS",
+            1
           ]
         }
       ]
@@ -5570,6 +6821,102 @@
       ]
     }
   },
+  "21247592-6f04-4ced-b6c5-4c41ce9d760d": {
+    "type": "ControlAction",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Digital"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "MUN: Abort"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "CS.4"
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.7",
+          "targetNumTuple": [
+            "LS",
+            1,
+            7
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "attrs": {},
+          "targetNum": "LS.1.6",
+          "targetNumTuple": [
+            "LS",
+            1,
+            6
+          ]
+        }
+      ]
+    }
+  },
   "d90caf3e-347f-455b-9688-9fff90ff8b00": {
     "type": "ControlAction",
     "attrs": {
@@ -5756,6 +7103,18 @@
           ]
         }
       ],
+      "decomposed by": [
+        {
+          "targetId": "ea6ace8f-6058-463b-a6c3-26c351fc5b15",
+          "attrs": {},
+          "targetNum": "OP.1.1",
+          "targetNumTuple": [
+            "OP",
+            1,
+            1
+          ]
+        }
+      ],
       "transferred by": [
         {
           "targetId": "6f243b35-9468-43ab-a0b0-160e292fd0c5",
@@ -5798,6 +7157,102 @@
             "UC",
             2,
             11
+          ]
+        }
+      ]
+    }
+  },
+  "ea6ace8f-6058-463b-a6c3-26c351fc5b15": {
+    "type": "ControlAction",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Digital"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "CS: Fire"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Operator request to Fire one or more munitions."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "L2:CS: Fire"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "OP.1.1"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "72515235-8b3b-49d7-9a58-e6673e6a0b71",
+          "attrs": {},
+          "targetNum": "OP.1",
+          "targetNumTuple": [
+            "OP",
+            1
+          ]
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
           ]
         }
       ]
@@ -6121,6 +7576,24 @@
     "rels": {
       "exit for": [
         {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
           "targetId": "ced055f2-f31f-43b3-b774-a0ddccea018e",
           "attrs": {
             "selectionProbability": {
@@ -6137,6 +7610,25 @@
             "UC",
             2,
             10
+          ]
+        },
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "UC.2.12",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12
           ]
         }
       ]
@@ -6217,6 +7709,86 @@
             "UC",
             1,
             8
+          ]
+        }
+      ]
+    }
+  },
+  "06a0012e-1418-434d-afc2-f11196cef410": {
+    "type": "Exit",
+    "attrs": {
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Match"
+      },
+      "number": {
+        "dataType": "",
+        "value": ""
+      }
+    },
+    "rels": {
+      "exit for": [
+        {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "b891a3b5-51ae-45c0-8fa7-51d6c8b11757": {
+    "type": "Exit",
+    "attrs": {
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Tamper"
+      },
+      "number": {
+        "dataType": "",
+        "value": ""
+      }
+    },
+    "rels": {
+      "exit for": [
+        {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
           ]
         }
       ]
@@ -6432,6 +8004,103 @@
           "targetNumTuple": [
             "OP",
             1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "193dad25-aae1-44c4-97e3-ac78df77d316": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Digital"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "FCUI: Click"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "CS.3"
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {},
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
             1
           ]
         }
@@ -6990,6 +8659,102 @@
       ]
     }
   },
+  "aab428fc-b331-4d5a-b9a3-6113c0b4476f": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Digital"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: FC Tamper"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.1"
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.3",
+          "targetNumTuple": [
+            "LS",
+            1,
+            3
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "attrs": {},
+          "targetNum": "LS.1.2",
+          "targetNumTuple": [
+            "LS",
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
   "2c347fed-bb0c-4e98-a18d-0afc732e8d8f": {
     "type": "Feedback",
     "attrs": {
@@ -7208,6 +8973,1132 @@
       ]
     }
   },
+  "0aa4e47f-9f4c-4c97-9b01-54212fd7df15": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OP: FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "",
+        "value": ""
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.5",
+          "targetNumTuple": [
+            "LS",
+            1,
+            5
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "attrs": {},
+          "targetNum": "LS.1.4",
+          "targetNumTuple": [
+            "LS",
+            1,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "LS: Manipulated Fire Command"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1"
+      }
+    },
+    "rels": {
+      "decomposed by": [
+        {
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
+          "attrs": {},
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "attrs": {},
+          "targetNum": "LS.1.2",
+          "targetNumTuple": [
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
+          "attrs": {},
+          "targetNum": "LS.1.3",
+          "targetNumTuple": [
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "attrs": {},
+          "targetNum": "LS.1.4",
+          "targetNumTuple": [
+            "LS",
+            1,
+            4
+          ]
+        },
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {},
+          "targetNum": "LS.1.5",
+          "targetNumTuple": [
+            "LS",
+            1,
+            5
+          ]
+        },
+        {
+          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "attrs": {},
+          "targetNum": "LS.1.6",
+          "targetNumTuple": [
+            "LS",
+            1,
+            6
+          ]
+        },
+        {
+          "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
+          "attrs": {},
+          "targetNum": "LS.1.7",
+          "targetNumTuple": [
+            "LS",
+            1,
+            7
+          ]
+        },
+        {
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "attrs": {},
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "elaborates": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {
+            "flowType": {
+              "dataType": "enumeration",
+              "value": "Primary"
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
+          "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
+          "attrs": {
+            "flowType": {
+              "dataType": "enumeration",
+              "value": "Alternate"
+            }
+          },
+          "targetNum": "UC.2",
+          "targetNumTuple": [
+            "UC",
+            2
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "exits by": [
+        {
+          "targetId": "258756bd-0e3d-484f-9b1f-1e84d6ad8e6e",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "OP.2",
+          "targetNumTuple": [
+            "OP",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "7ba9658f-608b-46c0-a690-532f3f06d50b": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Monitor FC Network Message"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.1"
+      }
+    },
+    "rels": {
+      "exits by": [
+        {
+          "targetId": "b891a3b5-51ae-45c0-8fa7-51d6c8b11757",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        },
+        {
+          "targetId": "06a0012e-1418-434d-afc2-f11196cef410",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {},
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "607cf81f-f8b1-4129-8a1e-32da0c48dbd2",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "CS.1",
+          "targetNumTuple": [
+            "CS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "da715d4a-f808-4371-bbd4-e46e312af405": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Notify FC Tamper"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.2"
+      }
+    },
+    "rels": {
+      "allocated to": [
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {},
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "aab428fc-b331-4d5a-b9a3-6113c0b4476f",
+          "attrs": {},
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "1e093ee2-0ecb-4fb0-a8c5-27f16809a732": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Tamper Detected"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.3"
+      }
+    },
+    "rels": {
+      "inputs": [
+        {
+          "targetId": "aab428fc-b331-4d5a-b9a3-6113c0b4476f",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {},
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "76119749-6bd8-4c30-a08e-52c48515fe97": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Notify Operator FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.4"
+      }
+    },
+    "rels": {
+      "allocated to": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {},
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "0aa4e47f-9f4c-4c97-9b01-54212fd7df15",
+          "attrs": {},
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        }
+      ]
+    }
+  },
+  "52918e9f-e04b-4ed8-b672-3139c302d564": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OP: Notify FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.5"
+      }
+    },
+    "rels": {
+      "allocated to": [
+        {
+          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
+          "attrs": {},
+          "targetNum": "C.2",
+          "targetNumTuple": [
+            "C",
+            2
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "0aa4e47f-9f4c-4c97-9b01-54212fd7df15",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "",
+          "targetNumTuple": [
+            ""
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "bc978f35-d55a-442b-a462-72ec57409bf8": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Abort FC"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.6"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {},
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "21247592-6f04-4ced-b6c5-4c41ce9d760d",
+          "attrs": {},
+          "targetNum": "CS.4",
+          "targetNumTuple": [
+            "CS",
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "c270f2e8-6657-4883-9951-e3e9acc91444": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "MUN: Abort Fire"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.7"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "21247592-6f04-4ced-b6c5-4c41ce9d760d",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "CS.4",
+          "targetNumTuple": [
+            "CS",
+            4
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "c86c59c5-ab13-4db3-b22d-8491944734ee",
+          "attrs": {},
+          "targetNum": "C.4.3.1",
+          "targetNumTuple": [
+            "C",
+            4,
+            3,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "c2e07587-800f-4941-baa8-13f1aa2ba00d": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Monitor FC UI Click"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.8"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "193dad25-aae1-44c4-97e3-ac78df77d316",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "CS.3",
+          "targetNumTuple": [
+            "CS",
+            3
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {},
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        }
+      ]
+    }
+  },
   "2bcd6d2b-e925-4576-a70a-230bafff5e0a": {
     "type": "Function",
     "attrs": {
@@ -7397,10 +10288,26 @@
               "value": "Primary"
             }
           },
-          "targetNum": "UC.2",
+          "targetNum": "UC.1",
           "targetNumTuple": [
             "UC",
-            2
+            1
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "af615269-1b16-4741-b404-1be5eeb3e354",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.1",
+          "targetNumTuple": [
+            "UC",
+            1
           ]
         }
       ],
@@ -8984,6 +11891,22 @@
           ]
         }
       ],
+      "categorized by": [
+        {
+          "targetId": "6bed9181-5825-4b05-8711-1387720cc9f8",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.2",
+          "targetNumTuple": [
+            "UC",
+            2
+          ]
+        }
+      ],
       "relates to": [
         {
           "targetId": "d4e09a0c-ed95-47c3-9f2f-5c61b26a1f32",
@@ -9004,10 +11927,10 @@
               "value": "Primary"
             }
           },
-          "targetNum": "UC.1",
+          "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
-            1
+            2
           ]
         }
       ]
@@ -10503,6 +13426,26 @@
           ]
         }
       ],
+      "exits by": [
+        {
+          "targetId": "258756bd-0e3d-484f-9b1f-1e84d6ad8e6e",
+          "attrs": {
+            "selectionProbability": {
+              "dataType": "",
+              "value": ""
+            },
+            "type": {
+              "dataType": "enumeration",
+              "value": "Normal"
+            }
+          },
+          "targetNum": "OP.2",
+          "targetNumTuple": [
+            "OP",
+            2
+          ]
+        }
+      ],
       "allocated to": [
         {
           "targetId": "72877c5b-6edb-4dc4-99b0-e2ecc782fe94",
@@ -10512,6 +13455,41 @@
             "C",
             4,
             1
+          ]
+        }
+      ],
+      "decomposed by": [
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {},
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
+          ]
+        },
+        {
+          "targetId": "86e9d650-9e97-4eec-a359-b772b002e1f2",
+          "attrs": {},
+          "targetNum": "UC.2.12.2",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            2
+          ]
+        },
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {},
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
           ]
         }
       ],
@@ -10559,6 +13537,302 @@
           "targetNumTuple": [
             "CS",
             1
+          ]
+        }
+      ]
+    }
+  },
+  "5b2256d8-0e81-4819-856d-e91de6d22e44": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "CS: Handle UI Fire Request"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "UC.2.12.1"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
+          "attrs": {},
+          "targetNum": "UC.2.12",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {},
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "ea6ace8f-6058-463b-a6c3-26c351fc5b15",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "OP.1.1",
+          "targetNumTuple": [
+            "OP",
+            1,
+            1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "193dad25-aae1-44c4-97e3-ac78df77d316",
+          "attrs": {},
+          "targetNum": "CS.3",
+          "targetNumTuple": [
+            "CS",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "86e9d650-9e97-4eec-a359-b772b002e1f2": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "CS: Validate Fire Request"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "UC.2.12.2"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
+          "attrs": {},
+          "targetNum": "UC.2.12",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {},
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "1125083b-4254-4fee-9900-9ad19ed8e625": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "CS: Transmit Fire Request"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "UC.2.12.3"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
+          "attrs": {},
+          "targetNum": "UC.2.12",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "3be2e090-4690-40d7-b6bf-a17ec75cc592",
+          "attrs": {},
+          "targetNum": "CS.1.1",
+          "targetNumTuple": [
+            "CS",
+            1,
+            1
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {},
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
           ]
         }
       ]
@@ -11196,10 +14470,6 @@
   "becc28ce-1725-43a8-b7b0-09dc2171007b": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "NotProviding"
@@ -11222,10 +14492,6 @@
   "a6e5642d-b554-4e03-929c-8a3f7d45dc46": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "Providing"
@@ -11248,10 +14514,6 @@
   "89fa34c0-7d53-4598-85df-af8e9c6f57c9": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "TooEarlyTooLate"
@@ -11274,10 +14536,6 @@
   "efd9d35a-0404-4703-92a1-f531eac818ab": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "TooLongTooSoon"
@@ -11300,10 +14558,6 @@
   "f6fda6fa-97b1-495c-8c35-02540dccd388": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "Providing"
@@ -11365,10 +14619,6 @@
   "3530de54-4204-40d5-ad71-09d1e0fd0133": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "NotProviding"
@@ -11448,10 +14698,6 @@
   "8016dbd6-3803-4418-88b1-c3a60c2dfb8c": {
     "type": "HazardousAction",
     "attrs": {
-      "consequence": {
-        "dataType": "enumeration",
-        "value": 4
-      },
       "variationType": {
         "dataType": "enumeration",
         "value": "NotProviding"
@@ -12879,6 +16125,106 @@
           "targetNum": "PA.2",
           "targetNumTuple": [
             "PA",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "d0bc1d1a-b427-4e15-94e3-173a16731c0b": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Sentinel"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN:CS: Link"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.1"
+      }
+    },
+    "rels": {
+      "connects to": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "r"
+            }
+          },
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "string",
+              "value": "l"
+            }
+          },
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
             2
           ]
         }
@@ -14447,6 +17793,204 @@
       ]
     }
   },
+  "1937dad8-8b83-41de-8fba-b66edf6a5d30": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN:PROBE: Link"
+      },
+      "number": {
+        "dataType": "",
+        "value": ""
+      }
+    },
+    "rels": {
+      "connects to": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "66677d72-b752-4197-8994-645ca0de3765": {
+    "type": "Link",
+    "attrs": {
+      "outOfScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "protocol": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "delay": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "capacity": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "delayUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "capacityUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN:UI: Link"
+      },
+      "number": {
+        "dataType": "",
+        "value": ""
+      }
+    },
+    "rels": {
+      "connects to": [
+        {
+          "targetId": "36dd4707-b873-49f8-aa98-93a7695400d3",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.1",
+          "targetNumTuple": [
+            "MA",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "f741e4ea-7e8d-48b6-83a9-e96e2c19028c",
+          "attrs": {
+            "portID": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "MA.2.3",
+          "targetNumTuple": [
+            "MA",
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  },
   "eb89a944-23b0-4b6b-834b-918a1d2532a7": {
     "type": "Loss",
     "attrs": {
@@ -14617,6 +18161,10 @@
         "dataType": "",
         "value": ""
       },
+      "likelihood": {
+        "dataType": "enumeration",
+        "value": "Low"
+      },
       "threat-category": {
         "dataType": "enumeration",
         "value": "Tampering"
@@ -14643,6 +18191,22 @@
       }
     },
     "rels": {
+      "elaborated by": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {
+            "flowType": {
+              "dataType": "enumeration",
+              "value": "Primary"
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
       "ma: targets": [
         {
           "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
@@ -14674,6 +18238,10 @@
       "puid": {
         "dataType": "string",
         "value": ""
+      },
+      "likelihood": {
+        "dataType": "enumeration",
+        "value": "High"
       },
       "description": {
         "dataType": "text",
@@ -14731,6 +18299,10 @@
       "puid": {
         "dataType": "",
         "value": ""
+      },
+      "likelihood": {
+        "dataType": "enumeration",
+        "value": "Medium"
       },
       "threat-category": {
         "dataType": "enumeration",
@@ -14790,6 +18362,10 @@
         "dataType": "",
         "value": ""
       },
+      "likelihood": {
+        "dataType": "enumeration",
+        "value": "Medium"
+      },
       "threat-category": {
         "dataType": "enumeration",
         "value": "Tampering"
@@ -14847,6 +18423,10 @@
       "puid": {
         "dataType": "",
         "value": ""
+      },
+      "likelihood": {
+        "dataType": "enumeration",
+        "value": "Medium"
       },
       "threat-category": {
         "dataType": "enumeration",
@@ -15037,7 +18617,7 @@
       ],
       "includes": [
         {
-          "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
+          "targetId": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
           "attrs": {},
           "targetNum": "UC.1",
           "targetNumTuple": [
@@ -15046,12 +18626,123 @@
           ]
         },
         {
-          "targetId": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
+          "targetId": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd",
           "attrs": {},
           "targetNum": "UC.2",
           "targetNumTuple": [
             "UC",
             2
+          ]
+        }
+      ]
+    }
+  },
+  "0a6fd34c-85a5-415e-8af2-b97bb5631338": {
+    "type": "UseCase",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "preconditions": {
+        "dataType": "text",
+        "value": "Depot holds sufficient inventory of Obstacles ready for field deployment."
+      },
+      "primaryFlow": {
+        "dataType": "",
+        "value": ""
+      },
+      "alternateFlow": {
+        "dataType": "",
+        "value": ""
+      },
+      "postconditions": {
+        "dataType": "text",
+        "value": "Obstacles deployed to designated field location with latest software / configuration."
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Deploy Silverfish to field location."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "Deploy to Field"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "UC.1"
+      }
+    },
+    "rels": {
+      "involves": [
+        {
+          "targetId": "17afb204-81f3-418a-9c37-e26bef76ed92",
+          "attrs": {
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "C.1",
+          "targetNumTuple": [
+            "C",
+            1
+          ]
+        },
+        {
+          "targetId": "aea8e157-e45e-4385-8178-63b564d3aaf1",
+          "attrs": {
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "C.3",
+          "targetNumTuple": [
+            "C",
+            3
+          ]
+        }
+      ],
+      "elaborated by": [
+        {
+          "targetId": "2bcd6d2b-e925-4576-a70a-230bafff5e0a",
+          "attrs": {
+            "flowType": {
+              "dataType": "enumeration",
+              "value": "Primary"
+            }
+          },
+          "targetNum": "UC.1",
+          "targetNumTuple": [
+            "UC",
+            1
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "af615269-1b16-4741-b404-1be5eeb3e354",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.1",
+          "targetNumTuple": [
+            "UC",
+            1
+          ]
+        }
+      ],
+      "included in": [
+        {
+          "targetId": "9eeffbe7-5f14-4b76-afaa-7af71df23391",
+          "attrs": {},
+          "targetNum": "UC",
+          "targetNumTuple": [
+            "UC"
           ]
         }
       ]
@@ -15090,7 +18781,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "UC.1"
+        "value": "UC.2"
       }
     },
     "rels": {
@@ -15170,6 +18861,20 @@
       ],
       "elaborated by": [
         {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {
+            "flowType": {
+              "dataType": "enumeration",
+              "value": "Alternate"
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
           "targetId": "5dc8075e-343b-4d70-99e9-266cb2a2cc44",
           "attrs": {
             "flowType": {
@@ -15181,117 +18886,6 @@
           "targetNumTuple": [
             "UC",
             2
-          ]
-        }
-      ],
-      "included in": [
-        {
-          "targetId": "9eeffbe7-5f14-4b76-afaa-7af71df23391",
-          "attrs": {},
-          "targetNum": "UC",
-          "targetNumTuple": [
-            "UC"
-          ]
-        }
-      ]
-    }
-  },
-  "0a6fd34c-85a5-415e-8af2-b97bb5631338": {
-    "type": "UseCase",
-    "attrs": {
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "preconditions": {
-        "dataType": "text",
-        "value": "Depot holds sufficient inventory of Obstacles ready for field deployment."
-      },
-      "primaryFlow": {
-        "dataType": "",
-        "value": ""
-      },
-      "alternateFlow": {
-        "dataType": "",
-        "value": ""
-      },
-      "postconditions": {
-        "dataType": "text",
-        "value": "Obstacles deployed to designated field location with latest software / configuration."
-      },
-      "description": {
-        "dataType": "text",
-        "value": "Deploy Silverfish to field location."
-      },
-      "name": {
-        "dataType": "string",
-        "value": "Deploy to Field"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "UC.2"
-      }
-    },
-    "rels": {
-      "involves": [
-        {
-          "targetId": "17afb204-81f3-418a-9c37-e26bef76ed92",
-          "attrs": {
-            "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "C.1",
-          "targetNumTuple": [
-            "C",
-            1
-          ]
-        },
-        {
-          "targetId": "aea8e157-e45e-4385-8178-63b564d3aaf1",
-          "attrs": {
-            "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "C.3",
-          "targetNumTuple": [
-            "C",
-            3
-          ]
-        }
-      ],
-      "elaborated by": [
-        {
-          "targetId": "2bcd6d2b-e925-4576-a70a-230bafff5e0a",
-          "attrs": {
-            "flowType": {
-              "dataType": "enumeration",
-              "value": "Primary"
-            }
-          },
-          "targetNum": "UC.1",
-          "targetNumTuple": [
-            "UC",
-            1
-          ]
-        }
-      ],
-      "categorized by": [
-        {
-          "targetId": "af615269-1b16-4741-b404-1be5eeb3e354",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "UC.1",
-          "targetNumTuple": [
-            "UC",
-            1
           ]
         }
       ],

@@ -763,16 +763,6 @@
     "rev-id": "c83ea653-0c7b-4be6-ac52-556495cc6282",
     "attrs": {}
   },
-  "ma: operation altered by": {
-    "id": "9b2f8b25-fcca-442e-bf7d-7b5c9e7b83d6",
-    "rev-id": "56b59184-eb54-4e36-b8d9-05e417817b77",
-    "attrs": {}
-  },
-  "ma: provides alternate operation for": {
-    "id": "56b59184-eb54-4e36-b8d9-05e417817b77",
-    "rev-id": "9b2f8b25-fcca-442e-bf7d-7b5c9e7b83d6",
-    "attrs": {}
-  },
   "ma: variation of": {
     "id": "39a672b3-e1d1-4005-a4d4-6a6e45a847fa",
     "rev-id": "59e2ba52-0282-466c-8727-2e2835f741af",
@@ -840,20 +830,6 @@
     "id": "a813aa36-80d4-44a2-a2f8-3690c671f9fd",
     "rev-id": "fdaebc4f-e7ca-4c8e-ac27-9bec9e9a3536",
     "attrs": {}
-  },
-  "ma: recovers": {
-    "id": "b2d7f445-63e6-4c35-a327-7d8008890914",
-    "rev-id": "13c54975-3fe0-4c62-94c2-0fbb4b8cd760",
-    "attrs": {
-      "recoveryRatio": "963b9fba-f364-4db3-99df-1fcae95b90e2"
-    }
-  },
-  "ma: is recovered by": {
-    "id": "13c54975-3fe0-4c62-94c2-0fbb4b8cd760",
-    "rev-id": "b2d7f445-63e6-4c35-a327-7d8008890914",
-    "attrs": {
-      "recoveryRatio": "963b9fba-f364-4db3-99df-1fcae95b90e2"
-    }
   },
   "transfers": {
     "id": "fe282bc5-0849-414c-8e1a-78e847c7d86f",

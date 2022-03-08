@@ -3,7 +3,6 @@ import ipywidgets as widgets
 from ipywidgets import VBox
 import subprocess
 from IPython.display import clear_output, display
-from typing import Tuple
 import urllib.request
 import os
 from enum import Enum
@@ -19,6 +18,13 @@ class Section(Enum):
 class Environment:
 
   def __init__(this, domain: str, path: str):
+
+    # diagram colors
+    this.ReqColor = "#FC9494"
+    this.PhyColor = "#56C0FB"
+    this.FuncColor = "#C2FFBF"
+    this.IntfColor = "#FFFF09"
+    this.MAColor = "#FFE6CC"
 
     clear_output()
     # REST API base URL

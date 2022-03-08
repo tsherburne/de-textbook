@@ -380,7 +380,7 @@
     "id": "a4211211-cba0-4028-9c59-92ae4800251e",
     "attrs": {
       "type": "e8f51a8c-c53c-408c-8bb6-2d0bc09da9aa",
-      "justification": "8687c453-7944-4375-a95b-4e9911eb6051",
+      "reference": "3ead3ce1-d278-48bb-8d89-a4d33f505838",
       "description": "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817",
       "name": "743d424c-daae-4dc9-887c-a8c92b9f08a4",
       "number": "8a676ae6-2e9c-4f15-a037-b38d623adc1c"
@@ -462,18 +462,6 @@
       "number": "8a676ae6-2e9c-4f15-a037-b38d623adc1c"
     }
   },
-  "ResilientMode": {
-    "id": "c483e4ac-9438-4d15-9115-a5088349bf9e",
-    "attrs": {
-      "effectiveness": "cfa7ac0e-1938-4666-94df-264ec1d36029",
-      "complexity": "00b3d883-fc5b-461a-96a0-2c7b1e6c3dc9",
-      "title": "7adbe032-796a-40ab-81a3-420147a4a24a",
-      "puid": "4747151f-c719-4149-9ad7-b319cae416bb",
-      "description": "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817",
-      "name": "743d424c-daae-4dc9-887c-a8c92b9f08a4",
-      "number": "8a676ae6-2e9c-4f15-a037-b38d623adc1c"
-    }
-  },
   "ChangeRequestPackage": {
     "id": "13f2e066-7c55-469a-8dbf-a6fa1a96dc1f",
     "attrs": {
@@ -496,6 +484,15 @@
   "IDE_Element": {
     "id": "51ebce5b-0d76-49c6-9fd1-a768ed190fcf",
     "attrs": {
+      "description": "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817",
+      "name": "743d424c-daae-4dc9-887c-a8c92b9f08a4",
+      "number": "8a676ae6-2e9c-4f15-a037-b38d623adc1c"
+    }
+  },
+  "ResilientMode": {
+    "id": "33547fc0-71e6-477e-b19a-a830149c32bd",
+    "attrs": {
+      "effectiveness": "88ed955e-ee6c-4430-aebc-080e8004c291",
       "description": "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817",
       "name": "743d424c-daae-4dc9-887c-a8c92b9f08a4",
       "number": "8a676ae6-2e9c-4f15-a037-b38d623adc1c"
@@ -570,6 +567,7 @@
     "id": "f2d515b4-387b-4b22-a584-bf5ec58cf90b",
     "attrs": {
       "puid": "05efdb07-6b82-4203-8728-5202ce0f4300",
+      "likelihood": "96454348-09cc-4d2f-bb59-8d532276b7a7",
       "threat-category": "1c84ac8d-2d6f-4ab2-9e4d-c0737136d0ec",
       "sub-type": "88d6b1d3-9a7c-48c2-b322-e050ab8503db",
       "detect-pattern": "171cfeb9-ad0a-41af-bc92-efa9a4b5375a",
@@ -639,7 +637,6 @@
   "HazardousAction": {
     "id": "dd2870d1-a9ab-4c26-a1cf-d3efda1248ef",
     "attrs": {
-      "consequence": "33687e48-5580-4e59-941a-58e26fe6d510",
       "variationType": "a00302c6-3a7f-40e6-b382-88ab33cacca9",
       "description": "5d4a1782-8b0e-4b5d-b0f2-a0985f01c817",
       "name": "743d424c-daae-4dc9-887c-a8c92b9f08a4",

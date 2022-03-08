@@ -763,16 +763,6 @@
     "rev-name": "accomplishes",
     "attrs": {}
   },
-  "9b2f8b25-fcca-442e-bf7d-7b5c9e7b83d6": {
-    "name": "ma: operation altered by",
-    "rev-name": "ma: provides alternate operation for",
-    "attrs": {}
-  },
-  "56b59184-eb54-4e36-b8d9-05e417817b77": {
-    "name": "ma: provides alternate operation for",
-    "rev-name": "ma: operation altered by",
-    "attrs": {}
-  },
   "39a672b3-e1d1-4005-a4d4-6a6e45a847fa": {
     "name": "ma: variation of",
     "rev-name": "ma: has variation",
@@ -840,20 +830,6 @@
     "name": "verified by",
     "rev-name": "verifies",
     "attrs": {}
-  },
-  "b2d7f445-63e6-4c35-a327-7d8008890914": {
-    "name": "ma: recovers",
-    "rev-name": "ma: is recovered by",
-    "attrs": {
-      "963b9fba-f364-4db3-99df-1fcae95b90e2": "recoveryRatio"
-    }
-  },
-  "13c54975-3fe0-4c62-94c2-0fbb4b8cd760": {
-    "name": "ma: is recovered by",
-    "rev-name": "ma: recovers",
-    "attrs": {
-      "963b9fba-f364-4db3-99df-1fcae95b90e2": "recoveryRatio"
-    }
   },
   "fe282bc5-0849-414c-8e1a-78e847c7d86f": {
     "name": "transfers",

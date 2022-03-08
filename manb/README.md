@@ -34,6 +34,13 @@ va.PhysicalBlockDiagrams()
 va.ComponentAnalysisTable()
 va.LinkAnalysisTable()
 
+# Resilience Architecture
+arch = manb.ResilienceArchitecture(env)
+arch.ResilientModeTable()
+arch.LossScenarioElaborationTable()
+arch.LossScenarioMSCDiagrams()
+arch.ElictedRequirementsTable()
+
 # Section Exercises
 ex = manb.Exercises(env, manb.Section.<section enum>)
 ex.Edit()
