@@ -93,7 +93,7 @@ def drawMSC(catId:str, env: Environment, pr: Project) -> None:
     f.write('@enduml\n')
 
   # create UML diagram
-  server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
+  server = plantuml.PlantUML(env.plantuml)
   try:
     ret = server.processes_file(inputPath, outputPath, errorPath)
   except BaseException as err:

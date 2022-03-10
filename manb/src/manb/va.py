@@ -87,7 +87,7 @@ class VulnerabilityAssessment:
 
       lsTable.append(lsItem)
 
-    this.lsDF = pd.DataFrame(lsTable, columns = ['ID', 'Title', 'Sub-Type',\
+    this.lsDF = pd.DataFrame(lsTable, columns = ['ID', 'Name', 'Sub-Type',\
                       'targets: Item/Function', 'leads to: HCA'])
 
     # setup output area

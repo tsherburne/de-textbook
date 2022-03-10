@@ -11,13 +11,18 @@ import logging
 import json
 from pprint import pprint
 
+# https://github.com/mwouts/itables
+from itables import init_notebook_mode
+import itables.options as opt
+
 class Section(Enum):
   RISK_ASSESSMENT = 1
   VULNERABILITY_ASSESSMENT = 2
 
 class Environment:
 
-  def __init__(this, domain: str, path: str):
+  def __init__(this, domain: str, path: str,
+                    plantuml: str = "http://www.plantuml.com/plantuml/img/"):
 
     # diagram colors
     this.ReqColor = "#FC9494"
@@ -32,6 +37,9 @@ class Environment:
     this.path = path
     this.url = domain + path
 
+    # PlantUML Server
+    this.plantuml = plantuml
+
     # GENESYS API refresh token
     this.refresh_token = ""
 
@@ -45,6 +53,12 @@ class Environment:
                   'Authorization': "",
                   'Accept': 'application/json',
                   'Content-Type': ""}
+
+    # Initialize iTables
+    init_notebook_mode(all_interactive=True)
+    opt.columnDefs = [{"className": "dt-left", "targets": "_all"}]
+    opt.classes = ["display", "compact"]
+
     # Login widget handles
     this.output = {}
 
@@ -106,7 +120,6 @@ class Environment:
       # Download cloudflared CLI
       print("Downloading Tunnel Client...")
       this._get_cloudflared()
-      clear_output()
 
       process = subprocess.Popen(['./cloudflared', 'access', 'login', this.domain],
                                 stdout=subprocess.PIPE,
@@ -126,6 +139,7 @@ class Environment:
             count = 0
             for output in process.stdout.readlines():
               if output.strip() != "":
+                clear_output()
                 count += 1
                 if count == 2:
                   this.header['cf-access-token'] = output.strip()
