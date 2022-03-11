@@ -39,11 +39,9 @@ class SystemDescription:
 
     # control actions
     this.caDF = {}
-    this.caDT = {}
 
     # use cases
     this.ucDF = {}
-    this.ucDT = {}
     clear_output()
     print("System Description Initialization Complete!")
     return
@@ -53,10 +51,12 @@ class SystemDescription:
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
 
-    lineColor = ' #tan;line.bold;text:black'
+    lineColor = ' ' + this.env.MAColor + ';line.bold;text:black'
 
     with open('./diagrams/cs.txt', 'w') as f:
       f.write('skinparam roundCorner 15\n')
+      f.write('skinparam backgroundColor silver\n')
+
       f.write('scale .75\n')
       f.write('@startuml\n')
 
@@ -116,8 +116,8 @@ class SystemDescription:
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
     csCompCatId = dbDict['SD: CS: Components']
-    compColor = '#deepskyblue'
-    sysColor = '#white;line:grey;line.bold'
+    compColor = this.env.PhyColor
+    sysColor = '#silver;line:grey;line.bold'
 
     # check if component is to be included in control structure (by category)
     found = False
@@ -221,7 +221,7 @@ class SystemDescription:
           f.write('actor "' + db[comp['targetId']]['attrs']['title']['value'] +
                   '" as ' +
                    db[comp['targetId']]['attrs']['abbreviation']['value'] +
-                   ' #deepskyblue\n')
+                   ' ' + this.env.PhyColor+ '\n')
 
         # retrieve 'describes' Component (single association [0])
         desId = db[uc['targetId']]['rels']['describes'][0]['targetId']
@@ -233,7 +233,7 @@ class SystemDescription:
                   db[iuc['targetId']]['attrs']['name']['value'] +
                   '" as ' +
                   db[iuc['targetId']]['attrs']['number']['value'] +
-                  ' #salmon\n')
+                  ' ' + this.env.ReqColor +'\n')
 
         f.write('}\n')
 
@@ -291,15 +291,7 @@ class SystemDescription:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.ucDT = data_table.DataTable(this.ucDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.ucDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.ucDF)
+      display(this.ucDF)
     return
 
   # display use case message sequence diagrams
@@ -342,13 +334,5 @@ class SystemDescription:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.caDT = data_table.DataTable(this.caDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.caDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.caDF)
+      display(this.caDF)
     return

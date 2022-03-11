@@ -1,10 +1,8 @@
 from manb.sd import SystemDescription
 from .env import Environment
 from .pr import Project
-import requests
 from IPython.display import clear_output, display
 from IPython.display import Image
-import sys
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
@@ -28,15 +26,12 @@ class VulnerabilityAssessment:
 
     # loss scenario table
     this.lsDF = {}
-    this.lsDT = {}
 
     # component analysis table
     this.caDF = {}
-    this.caDT = {}
 
     # link analysis table
     this.laDF = {}
-    this.laDT = {}
 
     clear_output()
     print("Vulnerability Assessment Complete!")
@@ -95,15 +90,7 @@ class VulnerabilityAssessment:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.lsDT = data_table.DataTable(this.lsDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.lsDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.lsDF)
+      display(this.lsDF)
     return
 
   # Physical Block Diagrams
@@ -158,7 +145,8 @@ class VulnerabilityAssessment:
 
                 # get 'other end' of connected to
                 if ctcompName != pbName:
-                  f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' + ctcompAbbr +
+                  f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' +
+                  ctcompAbbr +
                   ' <<' + ctcompType + '>> #deepskyblue\n')
                   compDict[ctcompAbbr] = ""
 
@@ -174,17 +162,20 @@ class VulnerabilityAssessment:
               linkHint = ctlink['attrs']['hint']['value']
               # do not display 'logical' interfaces
               if linkType != 'Logical':
-                # check if link already on the diagram - all links are bi-directional
+                # check if link already on the diagram -
+                #    all links are bi-directional
                 if linkName not in linkDict:
                   linkDict[linkName] = linkHint
                   # retrieve endpoints of link
                   for ctcomp in db[ctlink['targetId']]['rels']['connects to']:
-                    ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
+                    ctcompAbbr = db[ctcomp['targetId']]['attrs']\
+                                          ['abbreviation']['value']
                     # get 'other end' of connected to
                     if ctcompAbbr != bfcompAbbr:
                       # only ouput link if connect to component is on diagram
                       if ctcompAbbr in compDict:
-                        f.write(bfcompAbbr + ' -' + linkHint + '- ' + ctcompAbbr +
+                        f.write(bfcompAbbr + ' -' + linkHint + '- ' +
+                          ctcompAbbr +
                           ' #yellow;line.bold : ' + linkName + '\n')
         f.write('@enduml\n')
 
@@ -247,7 +238,8 @@ class VulnerabilityAssessment:
                   continue
 
                 # check if function is 'ma: targeted by' a loss scenario
-                lsList = this._get_targeted_by(db[func['targetId']], itemFlow[0:4])
+                lsList = this._get_targeted_by(db[func['targetId']],
+                                                            itemFlow[0:4])
 
                 caItem = []
                 caItem.append(compAbbr + ':' + compTitle)
@@ -270,7 +262,8 @@ class VulnerabilityAssessment:
                   continue
 
                 # check if function is 'ma: targeted by' a loss scenario
-                lsList = this._get_targeted_by(db[func['targetId']], itemFlow[0:4])
+                lsList = this._get_targeted_by(db[func['targetId']],
+                                                            itemFlow[0:4])
                 caItem = []
                 caItem.append(compAbbr + ':' + compTitle)
                 caItem.append('(' + ucNum + ') ' + funcName)
@@ -287,15 +280,7 @@ class VulnerabilityAssessment:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.caDT = data_table.DataTable(this.caDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.caDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.caDF)
+      display(this.caDF)
     return
 
 
@@ -340,19 +325,12 @@ class VulnerabilityAssessment:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.laDT = data_table.DataTable(this.laDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.laDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.laDF)
+      display(this.laDF)
     return
 
   # decompose link - return list of dict: {connects: str, transfer: str}
-  def _decompose_link(this, level:int, components:list, messages:dict, link:dict)->bool:
+  def _decompose_link(this, level:int, components:list, messages:dict,
+                                                        link:dict)->bool:
     db = this.pr.entities
 
     # retrieve link name and end-points
@@ -462,7 +440,8 @@ class VulnerabilityAssessment:
 
         msgEntry = {}
         msgEntry['msgPath'] = ''.join(icomponents)
-        msgEntry['lsList'] = this._get_targeted_by(db[item['targetId']], msgType[0:4])
+        msgEntry['lsList'] = this._get_targeted_by(db[item['targetId']],
+                                                        msgType[0:4])
 
         messages[msgName] = msgEntry
 

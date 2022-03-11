@@ -23,11 +23,18 @@ python3 -m pip install --upgrade jupyterlab
 export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
 ```
 
-## Local Jupyter Lab Usage
+## Local Usage via VS Code
+
 ### NoteBook Module Reload Cell Magic
 ```
 %load_ext autoreload
 %autoreload 2
+```
+### Local PlantUML Server
+* https://github.com/plantuml/plantuml/releases
+* https://plantuml.com/picoweb
+```
+ java -jar plantuml-1.2022.2.jar -picoweb:8000:127.0.0.1
 ```
 
 ### Using Notebook Logger

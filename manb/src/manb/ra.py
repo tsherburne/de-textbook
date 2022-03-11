@@ -1,12 +1,10 @@
 from .env import Environment
-from .sd import SystemDescription
 from .pr import Project
 from .item import getItemList
 from IPython.display import clear_output, display
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
-
 
 class RiskAssessment:
   def __init__(this, env: Environment):
@@ -23,19 +21,15 @@ class RiskAssessment:
 
     # losses
     this.lossDF = {}
-    this.lossDT = {}
 
     # hazards
     this.hazardDF = {}
-    this.hazardDT = {}
 
     # hazardous control action
     this.hcaDF = {}
-    this.hcaDT = {}
 
     # control action analysis
     this.caaDF = {}
-    this.caaDT = {}
 
     this.hcaTypes = ['Providing', 'NotProviding', 'TooEarlyTooLate']
     return
@@ -65,23 +59,15 @@ class RiskAssessment:
       lossItem.append(hazardList)
       lossTable.append(lossItem)
 
-    this.lossDF = pd.DataFrame(lossTable, columns = ['ID', 'Title', 'Priority', \
-                                        'is caused by: Hazard'])
+    this.lossDF = pd.DataFrame(lossTable, columns = ['ID', 'Title', \
+                          'Priority', 'is caused by: Hazard'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.lossDT = data_table.DataTable(this.lossDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.lossDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.lossDF)
+      display(this.lossDF)
 
   def HazardTable(this):
     db = this.pr.entities
@@ -128,15 +114,7 @@ class RiskAssessment:
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.hazardDT = data_table.DataTable(this.hazardDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.hazardDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.hazardDF)
+      display(this.hazardDF)
 
   def HazardousActionTable(this):
     db = this.pr.entities
@@ -176,23 +154,16 @@ class RiskAssessment:
 
       hcaTable.append(hcaItem)
 
-    this.hcaDF = pd.DataFrame(hcaTable, columns = ['ID', 'Title', 'Description', \
-                    'Variation Type', 'leads to: Hazard', 'variation of: Control Action'])
+    this.hcaDF = pd.DataFrame(hcaTable, columns = ['ID', 'Title', \
+                    'Description', 'Variation Type', 'leads to: Hazard', \
+                    'variation of: Control Action'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.hcaDT = data_table.DataTable(this.hcaDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.hcaDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.hcaDF)
+      display(this.hcaDF)
 
   def ControlActionAnalysisTable(this):
     db = this.pr.entities
@@ -221,21 +192,14 @@ class RiskAssessment:
           caItem.append(' ')
           caaTable.append(caItem)
 
-    this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', 'Variation', \
-                    'has variation: Hazardous Action', 'has variation: .justification'])
+    this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', \
+                  'Variation', 'has variation: Hazardous Action', \
+                  'has variation: .justification'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
 
     with this.output:
-      try:
-        from google.colab import data_table
-        data_table.enable_dataframe_formatter()
-        this.caaDT = data_table.DataTable(this.caaDF, include_index=False)
-        # Display dataframa via Colab datatable
-        display(this.caaDT)
-      except ModuleNotFoundError:
-        # Display basic dataframe
-        display(this.caaDF)
+      display(this.caaDF)
 
