@@ -3190,6 +3190,22 @@
             3
           ]
         }
+      ],
+      "generalization of": [
+        {
+          "targetId": "2df3a9d6-51f2-4c83-b76f-417c0e1dd8f7",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "RM.2",
+          "targetNumTuple": [
+            "RM",
+            2
+          ]
+        }
       ]
     }
   },
@@ -3563,6 +3579,22 @@
             "UC",
             2,
             5
+          ]
+        }
+      ],
+      "generalization of": [
+        {
+          "targetId": "d0664f2f-2bf1-4673-a912-82435c6c8152",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "RM.3",
+          "targetNumTuple": [
+            "RM",
+            3
           ]
         }
       ]
@@ -4310,6 +4342,22 @@
       }
     },
     "rels": {
+      "generalization of": [
+        {
+          "targetId": "150df1e9-0df9-4097-b41f-346655df91eb",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "RM.4",
+          "targetNumTuple": [
+            "RM",
+            4
+          ]
+        }
+      ],
       "connected to": [
         {
           "targetId": "c784ba49-4e4e-4852-9efd-a933a98897f1",
@@ -4541,6 +4589,22 @@
           "targetNumTuple": [
             "SF",
             2,
+            1
+          ]
+        }
+      ],
+      "generalization of": [
+        {
+          "targetId": "1ec88614-affb-429f-ba78-18c4bc06346e",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "RM.1",
+          "targetNumTuple": [
+            "RM",
             1
           ]
         }
@@ -18374,6 +18438,28 @@
           ]
         }
       ],
+      "ma: is protected by": [
+        {
+          "targetId": "04c1c350-b64a-47fe-9865-df581c51e9ff",
+          "attrs": {},
+          "targetNum": "REM.1",
+          "targetNumTuple": [
+            "REM",
+            1
+          ]
+        }
+      ],
+      "ma: reconfigures using": [
+        {
+          "targetId": "2df3a9d6-51f2-4c83-b76f-417c0e1dd8f7",
+          "attrs": {},
+          "targetNum": "RM.2",
+          "targetNumTuple": [
+            "RM",
+            2
+          ]
+        }
+      ],
       "ma: leads to": [
         {
           "targetId": "f6fda6fa-97b1-495c-8c35-02540dccd388",
@@ -18435,6 +18521,17 @@
           ]
         }
       ],
+      "ma: is protected by": [
+        {
+          "targetId": "a217a17d-bba2-4b84-901e-d3cfa1d1ce12",
+          "attrs": {},
+          "targetNum": "REM.2",
+          "targetNumTuple": [
+            "REM",
+            2
+          ]
+        }
+      ],
       "ma: leads to": [
         {
           "targetId": "3530de54-4204-40d5-ad71-09d1e0fd0133",
@@ -18443,6 +18540,17 @@
           "targetNumTuple": [
             "HCA",
             2
+          ]
+        }
+      ],
+      "ma: reconfigures using": [
+        {
+          "targetId": "1ec88614-affb-429f-ba78-18c4bc06346e",
+          "attrs": {},
+          "targetNum": "RM.1",
+          "targetNumTuple": [
+            "RM",
+            1
           ]
         }
       ]
@@ -18507,6 +18615,28 @@
             2
           ]
         }
+      ],
+      "ma: is protected by": [
+        {
+          "targetId": "a217a17d-bba2-4b84-901e-d3cfa1d1ce12",
+          "attrs": {},
+          "targetNum": "REM.2",
+          "targetNumTuple": [
+            "REM",
+            2
+          ]
+        }
+      ],
+      "ma: reconfigures using": [
+        {
+          "targetId": "d0664f2f-2bf1-4673-a912-82435c6c8152",
+          "attrs": {},
+          "targetNum": "RM.3",
+          "targetNumTuple": [
+            "RM",
+            3
+          ]
+        }
       ]
     }
   },
@@ -18547,6 +18677,17 @@
       }
     },
     "rels": {
+      "ma: reconfigures using": [
+        {
+          "targetId": "150df1e9-0df9-4097-b41f-346655df91eb",
+          "attrs": {},
+          "targetNum": "RM.4",
+          "targetNumTuple": [
+            "RM",
+            4
+          ]
+        }
+      ],
       "ma: leads to": [
         {
           "targetId": "8016dbd6-3803-4418-88b1-c3a60c2dfb8c",
@@ -18555,6 +18696,17 @@
           "targetNumTuple": [
             "HCA",
             3
+          ]
+        }
+      ],
+      "ma: is protected by": [
+        {
+          "targetId": "a217a17d-bba2-4b84-901e-d3cfa1d1ce12",
+          "attrs": {},
+          "targetNum": "REM.2",
+          "targetNumTuple": [
+            "REM",
+            2
           ]
         }
       ],
@@ -18620,6 +18772,17 @@
           ]
         }
       ],
+      "ma: is protected by": [
+        {
+          "targetId": "04c1c350-b64a-47fe-9865-df581c51e9ff",
+          "attrs": {},
+          "targetNum": "REM.1",
+          "targetNumTuple": [
+            "REM",
+            1
+          ]
+        }
+      ],
       "ma: targets": [
         {
           "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
@@ -18629,6 +18792,315 @@
             "UC",
             2,
             12
+          ]
+        }
+      ]
+    }
+  },
+  "04c1c350-b64a-47fe-9865-df581c51e9ff": {
+    "type": "Remediation",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Mission Aware Sentinel"
+      },
+      "reference": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle-based Sentinel for weapon fire control monitoring."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "VS: Vehicle Sentinel"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "REM.1"
+      }
+    },
+    "rels": {
+      "ma: protects against": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
+          "targetId": "19bf942e-2d3a-483e-9877-9099cd133076",
+          "attrs": {},
+          "targetNum": "LS.5",
+          "targetNumTuple": [
+            "LS",
+            5
+          ]
+        }
+      ]
+    }
+  },
+  "a217a17d-bba2-4b84-901e-d3cfa1d1ce12": {
+    "type": "Remediation",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Mission Aware Sentinel"
+      },
+      "reference": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Field-based Sentinel for situational sensor monitoring."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "FS: Field Sentinel"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "REM.2"
+      }
+    },
+    "rels": {
+      "ma: protects against": [
+        {
+          "targetId": "10e7543e-9984-4edb-be50-5e3c1b8e5dc5",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        },
+        {
+          "targetId": "fff724b5-e8d1-40b0-b387-2d066dd3872c",
+          "attrs": {},
+          "targetNum": "LS.3",
+          "targetNumTuple": [
+            "LS",
+            3
+          ]
+        },
+        {
+          "targetId": "99f89a2c-f55d-424d-9092-7ff066c3a7a8",
+          "attrs": {},
+          "targetNum": "LS.4",
+          "targetNumTuple": [
+            "LS",
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "1ec88614-affb-429f-ba78-18c4bc06346e": {
+    "type": "ResilientMode",
+    "attrs": {
+      "effectiveness": {
+        "dataType": "enumeration",
+        "value": "High"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Active / Active diverse redundant wireless radio relay."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "DR: Radio Relay"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RM.1"
+      }
+    },
+    "rels": {
+      "ma: provides reconfiguration for": [
+        {
+          "targetId": "10e7543e-9984-4edb-be50-5e3c1b8e5dc5",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ],
+      "kind of": [
+        {
+          "targetId": "ffed91d7-6521-4bfe-b8c2-6c136182ba44",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "C.4.4",
+          "targetNumTuple": [
+            "C",
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "2df3a9d6-51f2-4c83-b76f-417c0e1dd8f7": {
+    "type": "ResilientMode",
+    "attrs": {
+      "effectiveness": {
+        "dataType": "enumeration",
+        "value": "High"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Active / Standby diverse redundant Fire Control Station."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "DR: Control Station"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RM.2"
+      }
+    },
+    "rels": {
+      "ma: provides reconfiguration for": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "kind of": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "d0664f2f-2bf1-4673-a912-82435c6c8152": {
+    "type": "ResilientMode",
+    "attrs": {
+      "effectiveness": {
+        "dataType": "enumeration",
+        "value": "High"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Active / Active diverse redundant IR sensors with full field visibility"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "DR: IR Sensor"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RM.3"
+      }
+    },
+    "rels": {
+      "ma: provides reconfiguration for": [
+        {
+          "targetId": "fff724b5-e8d1-40b0-b387-2d066dd3872c",
+          "attrs": {},
+          "targetNum": "LS.3",
+          "targetNumTuple": [
+            "LS",
+            3
+          ]
+        }
+      ],
+      "kind of": [
+        {
+          "targetId": "40acfde6-a735-4124-84c1-74323cf39cab",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "C.4.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "150df1e9-0df9-4097-b41f-346655df91eb": {
+    "type": "ResilientMode",
+    "attrs": {
+      "effectiveness": {
+        "dataType": "enumeration",
+        "value": "Medium"
+      },
+      "description": {
+        "dataType": "text",
+        "value": "The deployment \"golden\" configuration (sw / config files) is restored from the Sentinel to an Obstacle."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OBS: Golden Config"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RM.4"
+      }
+    },
+    "rels": {
+      "kind of": [
+        {
+          "targetId": "65a05462-5b94-4cca-b226-2e671456a65e",
+          "attrs": {
+            "type": {
+              "dataType": "enumeration",
+              "value": "Instance"
+            }
+          },
+          "targetNum": "C.4.3.3",
+          "targetNumTuple": [
+            "C",
+            4,
+            3,
+            3
+          ]
+        }
+      ],
+      "ma: provides reconfiguration for": [
+        {
+          "targetId": "99f89a2c-f55d-424d-9092-7ff066c3a7a8",
+          "attrs": {},
+          "targetNum": "LS.4",
+          "targetNumTuple": [
+            "LS",
+            4
           ]
         }
       ]

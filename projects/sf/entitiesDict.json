@@ -150,6 +150,12 @@
   "Situational Delay": "fff724b5-e8d1-40b0-b387-2d066dd3872c",
   "Tampered Deployment": "99f89a2c-f55d-424d-9092-7ff066c3a7a8",
   "Delayed Fire Command": "19bf942e-2d3a-483e-9877-9099cd133076",
+  "VS: Vehicle Sentinel": "04c1c350-b64a-47fe-9865-df581c51e9ff",
+  "FS: Field Sentinel": "a217a17d-bba2-4b84-901e-d3cfa1d1ce12",
+  "DR: Radio Relay": "1ec88614-affb-429f-ba78-18c4bc06346e",
+  "DR: Control Station": "2df3a9d6-51f2-4c83-b76f-417c0e1dd8f7",
+  "DR: IR Sensor": "d0664f2f-2bf1-4673-a912-82435c6c8152",
+  "OBS: Golden Config": "150df1e9-0df9-4097-b41f-346655df91eb",
   "Silverfish Functions": "9eeffbe7-5f14-4b76-afaa-7af71df23391",
   "Deploy to Field": "0a6fd34c-85a5-415e-8af2-b97bb5631338",
   "Protect Field": "edae0bd0-5f24-47ab-8d88-4c9dc69914bd"
