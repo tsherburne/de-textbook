@@ -8,4 +8,4 @@ Python Package Index: [https://pypi.org/project/manb/](https://pypi.org/project/
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
 ## Launch DE Textbook
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tsherburne/de-textbook/blob/main/01_SCRE_DE_Textbook.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tsherburne/de-textbook/blob/main/01_SCRE_DE_Textbook.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tsherburne/de-textbook/HEAD?labpath=01_SCRE_DE_Textbook.ipynb)
