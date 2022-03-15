@@ -30,5 +30,22 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
    *  All Control Actions for Functions of Control Stucture
 
 ## Vulnerability Assessment
+*  Loss Scenario Table
+*  Physical Block Diagram
+   * Physical Blocks to include **Category** Name: *'PA: Block Diagrams'*
+     * Each *categorized* Physical Block is a **Category** which includes:
+       *  All Components - one component identified as 'context' via *'hint'*
+       *  All Links - each Link has *'hint'* (l/r/u/d) for *connected*
+          components - hint is relative to Hierarchically ordered components *number*
+   * Sentinel components are excluded (see Resilience Architecture)
+*  Components - Loss Scenario Analysis Table
+*  Links - Loss Scenario Analysis Table
+   *  Links to include **Category** Name: *'PA: Links'*
+   *  Link Decomposition (*connects to*) - must consistently populate 'hints' direction (l/r/u/d)
 
 ## Resilience Architecture
+*  Physical Block Diagram
+   *  Sentinel components are included
+*  Loss Scenario Message Sequence Diagrams
+   *  All Loss Scenarios MSCs to include **Category** Name: *'RA: Loss Scenarios'*
+   *  See MSC conventions in System Description

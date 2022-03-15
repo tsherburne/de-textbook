@@ -1,12 +1,13 @@
+from tty import CC
 from manb.sd import SystemDescription
 from .env import Environment
 from .pr import Project
+from .comp import drawComp
 from IPython.display import clear_output, display
 from IPython.display import Image
 from pprint import pprint
 import pandas as pd
 import ipywidgets as widgets
-import plantuml
 import copy
 
 
@@ -102,96 +103,9 @@ class VulnerabilityAssessment:
     # get category ID for Physical Block Diagrams
     compCatId = dbDict['PA: Block Diagrams']
 
-    # retrieve physical block diagram components
-    for comp in db[compCatId]['rels']['categorizes']:
-      pbName = db[comp['targetId']]['attrs']['title']['value']
-      inputPath = "./diagrams/pb_" + pbName.replace(" ", "") + ".txt"
-      outputPath = "./diagrams/pb_" + pbName.replace(" ", "") + ".png"
-      errorPath = "./diagrams/pb_" + pbName.replace(" ", "") + "_error.html"
+    for bd in db[compCatId]['rels']['categorizes']:
+      drawComp(bd['targetId'], this.env, this.pr)
 
-      with open(inputPath, 'w') as f:
-        # dictionary of component abbreviations on diagram
-        compDict = {}
-
-        f.write('@startuml\n')
-        f.write('title Physical Block Diagram: ' + pbName + '\n')
-        f.write('skinparam componentStyle rectangle\n')
-        f.write('skinparam BackgroundColor silver\n')
-        f.write('skinparam roundCorner 15\n')
-        f.write('frame ' + pbName + ' {\n')
-
-        # retrive 'built from' components
-        for bfcomp in db[comp['targetId']]['rels']['built from']:
-          bfcompName = db[bfcomp['targetId']]['attrs']['title']['value']
-          bfcompAbbr = db[bfcomp['targetId']]['attrs']['abbreviation']['value']
-          bfcompType = db[bfcomp['targetId']]['attrs']['type']['value']
-          bfcompNum = db[bfcomp['targetId']]['attrs']['number']['value']
-
-
-          f.write('  [' + bfcompAbbr + ': ' + bfcompName + '] as ' + bfcompAbbr +
-              ' <<' + bfcompType + '>> #deepskyblue\n')
-          compDict[bfcompAbbr] = ""
-        f.write('}\n')
-
-        # retrieve external 'connected to' components
-        if 'connected to' in db[comp['targetId']]['rels']:
-          for ccomp in db[comp['targetId']]['rels']['connected to']:
-            # don't show 'logically' connected components
-            if db[ccomp['targetId']]['attrs']['type']['value'] != 'Logical':
-              for ctcomp in db[ccomp['targetId']]['rels']['connects to']:
-                ctcompName = db[ctcomp['targetId']]['attrs']['title']['value']
-                ctcompAbbr = db[ctcomp['targetId']]['attrs']['abbreviation']['value']
-                ctcompType = db[ctcomp['targetId']]['attrs']['type']['value']
-
-                # get 'other end' of connected to
-                if ctcompName != pbName:
-                  f.write('[' + ctcompAbbr + ': ' + ctcompName + '] as ' +
-                  ctcompAbbr +
-                  ' <<' + ctcompType + '>> #deepskyblue\n')
-                  compDict[ctcompAbbr] = ""
-
-        # retrieve internal links
-        linkDict = {}
-        for bfcomp in db[comp['targetId']]['rels']['built from']:
-          bfcompAbbr = db[bfcomp['targetId']]['attrs']['abbreviation']['value']
-          # retrieve 'connected to' components
-          if 'connected to' in db[bfcomp['targetId']]['rels']:
-            for ctlink in db[bfcomp['targetId']]['rels']['connected to']:
-              linkName = db[ctlink['targetId']]['attrs']['name']['value']
-              linkType = db[ctlink['targetId']]['attrs']['type']['value']
-              linkHint = ctlink['attrs']['hint']['value']
-              # do not display 'logical' interfaces
-              if linkType != 'Logical':
-                # check if link already on the diagram -
-                #    all links are bi-directional
-                if linkName not in linkDict:
-                  linkDict[linkName] = linkHint
-                  # retrieve endpoints of link
-                  for ctcomp in db[ctlink['targetId']]['rels']['connects to']:
-                    ctcompAbbr = db[ctcomp['targetId']]['attrs']\
-                                          ['abbreviation']['value']
-                    # get 'other end' of connected to
-                    if ctcompAbbr != bfcompAbbr:
-                      # only ouput link if connect to component is on diagram
-                      if ctcompAbbr in compDict:
-                        f.write(bfcompAbbr + ' -' + linkHint + '- ' +
-                          ctcompAbbr +
-                          ' #yellow;line.bold : ' + linkName + '\n')
-        f.write('@enduml\n')
-
-      # create UML diagram
-      server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
-      try:
-        ret = server.processes_file(inputPath, outputPath, errorPath)
-      except BaseException as err:
-        print(err)
-
-      # setup output area
-      this.output = widgets.Output(layout={'border': '1px solid black'})
-      display(this.output)
-      # display pb diagram to output area
-      with this.output:
-        display(Image(outputPath))
     return
 
 
@@ -302,11 +216,14 @@ class VulnerabilityAssessment:
       # messages that are 'transferred' over the link
       messages = {}
 
+      # is current link at 'level' depth a 'connected component'
+      cCompStack = []
+
       # components path for link using component abbreviations
       # for example: C1-C2:C3 where '-' represents link between
       # components and ':' represents link within a component
       components = []
-      this._decompose_link(level, components, messages, link)
+      this._decompose_link(level, cCompStack, components, messages, link)
 
       for message in messages:
 
@@ -329,8 +246,8 @@ class VulnerabilityAssessment:
     return
 
   # decompose link - return list of dict: {connects: str, transfer: str}
-  def _decompose_link(this, level:int, components:list, messages:dict,
-                                                        link:dict)->bool:
+  def _decompose_link(this, level:int, cCompStack:list, components:list,
+                                          messages:dict, link:dict):
     db = this.pr.entities
 
     # retrieve link name and end-points
@@ -413,17 +330,22 @@ class VulnerabilityAssessment:
 
     icomponents = copy.deepcopy(components)
 
+    # save connected component status
+    cCompStack.append(cComp)
     # decompose included links
     if 'includes' in db[link['targetId']]['rels']:
       for ilink in db[link['targetId']]['rels']['includes']:
 
         level += 2
-        cComp = this._decompose_link(level, icomponents, messages, ilink)
+        this._decompose_link(level, cCompStack, icomponents,
+                                                    messages, ilink)
         level -= 2
 
+        # if top of stack is a 'connecting component'
         # connecting components will be processed in pairs
-        if cComp != True:
+        if cCompStack[-1] != True:
           # reset component list
+          cCompStack.pop()
           icomponents = copy.deepcopy(components)
 
     # output transfer messages
@@ -446,7 +368,7 @@ class VulnerabilityAssessment:
         messages[msgName] = msgEntry
 
       level -= 2
-    return cComp
+    return
 
   # get 'ma: targeted by' loss scenario list
   def _get_targeted_by(this, entity: dict, itemFlow: str) -> str:

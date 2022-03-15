@@ -1,6 +1,7 @@
 from .env import Environment
 from .pr import Project
 from .msc import drawMSC
+from .comp import drawComp
 from IPython.display import clear_output, display
 from pprint import pprint
 import pandas as pd
@@ -101,6 +102,19 @@ class ResilienceArchitecture:
 
     with this.output:
       display(this.lsDF)
+    return
+
+  def ResilienceArchitecture(this):
+    db = this.pr.entities
+    dbDict = this.pr.entitiesDict
+    clear_output()
+
+    # get category ID for Resilience Block Diagrams
+    compCatId = dbDict['RA: Block Diagrams']
+
+    for bd in db[compCatId]['rels']['categorizes']:
+      drawComp(bd['targetId'], this.env, this.pr)
+
     return
 
   def LossScenarioMSCDiagrams(this):

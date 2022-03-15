@@ -56,7 +56,7 @@ class Project:
     this.structures = {}
 
     # check for local repository
-    if this.env.repository.value == 'Local':
+    if this.env.repository.value == 'Local ':
       with open('./projects/projects.json') as f:
         projects = json.load(f)
         found = False
@@ -127,7 +127,7 @@ class Project:
   def FetchEntities(this, entityList: list):
     clear_output()
     print("Fetch Entities....")
-    if this.env.repository.value != 'Local':
+    if this.env.repository.value != 'Local ':
       this.entities.clear()
       for entity in entityList:
         entityEntry = {}
@@ -247,7 +247,7 @@ class Project:
     clear_output()
     print("Fetch Schema Definition....")
 
-    if this.env.repository.value != 'Local':
+    if this.env.repository.value != 'Local ':
       # fetch project schema
       this.env._set_json_header()
       r = requests.get(this.env.url + 'projects/' +
@@ -347,7 +347,7 @@ class Project:
   def FetchStructure(this):
     clear_output()
     print("Fetch Structure Definition....")
-    if this.env.repository.value != 'Local':
+    if this.env.repository.value != 'Local ':
       this.structures.clear()
 
       # retrieve structure for functions

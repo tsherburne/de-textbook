@@ -61,14 +61,16 @@
     "name": "categorizes",
     "rev-name": "categorized by",
     "attrs": {
-      "98466800-9fc0-4aaf-9960-277e76487836": "order"
+      "98466800-9fc0-4aaf-9960-277e76487836": "order",
+      "002168af-1f65-46a2-9dec-9d6c49477ff5": "hint"
     }
   },
   "c2138bd9-06db-4146-bef2-1bbdeb5b6732": {
     "name": "categorized by",
     "rev-name": "categorizes",
     "attrs": {
-      "98466800-9fc0-4aaf-9960-277e76487836": "order"
+      "98466800-9fc0-4aaf-9960-277e76487836": "order",
+      "002168af-1f65-46a2-9dec-9d6c49477ff5": "hint"
     }
   },
   "661e87a1-72aa-4eb2-8cdf-7fb8507caa48": {
