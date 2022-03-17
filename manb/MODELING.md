@@ -37,7 +37,6 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
        *  All Components - one component identified as 'context' via *'hint'*
        *  All Links - each Link has *'hint'* (l/r/u/d) for *connected*
           components - hint is relative to Hierarchically ordered components *number*
-   * Sentinel components are excluded (see Resilience Architecture)
 *  Components - Loss Scenario Analysis Table
 *  Links - Loss Scenario Analysis Table
    *  Links to include **Category** Name: *'PA: Links'*
@@ -45,7 +44,7 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
 
 ## Resilience Architecture
 *  Physical Block Diagram
-   *  Sentinel components are included
+   *  See Vulnerability Assessment
 *  Loss Scenario Message Sequence Diagrams
    *  All Loss Scenarios MSCs to include **Category** Name: *'RA: Loss Scenarios'*
    *  See MSC conventions in System Description
