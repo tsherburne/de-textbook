@@ -51,3 +51,51 @@ env.loghandler.show_logs()
 env.logger.warning('a warning message')
 env.logger.warning('json message: ' + json.dumps(<dict>), indent=2)
 ```
+
+## Ideas for [Jupyter Lite](https://jupyterlite.readthedocs.io/en/latest/)
+
+*  Network Fetch - JSON DB Files
+```
+import json
+from js import fetch
+import pyodide_js, js
+```
+```
+res = await fetch('https://raw.githubusercontent.com/tsherburne/de-textbook/main/projects/sf/entities.json')
+text = await res.text()
+obj = json.loads(text)
+```
+*  iTables Usage
+```
+await piplite.install('itables')
+import itables
+from itables import init_notebook_mode
+init_notebook_mode(all_interactive=True)
+```
+```
+from itables.sample_dfs import get_countries
+df = get_countries()
+df
+```
+*  PlantUML Diagram Request
+```
+from zlib import compress
+import base64
+import string
+import six
+from six.moves.urllib.parse import urlencode
+from IPython.display import Image
+
+maketrans = bytes.maketrans
+plantuml_alphabet = string.digits + string.ascii_uppercase + string.ascii_lowercase + '-_'
+base64_alphabet   = string.ascii_uppercase + string.ascii_lowercase + string.digits + '+/'
+b64_to_plantuml = maketrans(base64_alphabet.encode('utf-8'), plantuml_alphabet.encode('utf-8'))
+
+diagram = "Bob->Alice : Hello!"
+diagram.encode('utf-8')
+zlibbed_str = compress(diagram.encode('utf-8'))
+compressed_string = zlibbed_str[2:-4]
+diagramurl = base64.b64encode(compressed_string).translate(b64_to_plantuml).decode('utf-8')
+fullurl = 'https://www.plantuml.com/plantuml/img/' + diagramurl
+Image(url=fullurl)
+```

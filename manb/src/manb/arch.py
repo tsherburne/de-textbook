@@ -2,6 +2,7 @@ from .env import Environment
 from .pr import Project
 from .msc import drawMSC
 from .comp import drawComp
+from .req import createReqTable
 from IPython.display import clear_output, display
 from pprint import pprint
 import pandas as pd
@@ -14,7 +15,8 @@ class ResilienceArchitecture:
     this.compTypes = ['Category', 'Component', 'ControlAction', 'Exit',
                       'Feedback', 'Function', 'Hazard', 'HazardousAction',
                       'Item', 'Link', 'Loss', 'LossScenario', 'Remediation',
-                      'Requirement', 'ResilientMode', 'Resource', 'UseCase']
+                      'Requirement', 'RequirementGroup', 'ResilientMode',
+                      'Resource', 'UseCase']
 
     this.pr = Project(env)
     this.pr.FetchSchema()
@@ -130,5 +132,10 @@ class ResilienceArchitecture:
 
     return
 
+  def RequirementTemplates(this):
+    reqGroups = ['REQ: CSA', 'REQ: TREE']
+    createReqTable(this.env, this.pr, reqGroups)
+
+    return
   def ElicitedRequirementsTable(this):
     return
