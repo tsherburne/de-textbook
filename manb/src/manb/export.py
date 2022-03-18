@@ -36,7 +36,8 @@ class Export:
     this.compTypes = ['Category', 'Component', 'ControlAction', 'DomainSet',
                       'Exit', 'Feedback', 'Function', 'Hazard', 'HazardousAction',
                       'Item', 'Link', 'Loss', 'LossScenario', 'Remediation',
-                      'ResilientMode', 'Requirement', 'Resource', 'UseCase']
+                      'ResilientMode', 'Requirement', 'RequirementGroup',
+                      'Resource', 'UseCase']
 
     this.pr = Project(this.env)
     this.pr.FetchSchema()
