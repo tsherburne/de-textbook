@@ -966,20 +966,41 @@
       ],
       "categorizes": [
         {
-          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
+          "targetId": "81dbc598-cf10-4e75-92db-e82dc4026cbb",
           "attrs": {
             "order": {
               "dataType": "integer",
               "value": 1
             },
             "hint": {
-              "dataType": "",
+              "dataType": "string",
               "value": ""
             }
           },
-          "targetNum": "C.2",
+          "targetNum": "C.2.1",
           "targetNumTuple": [
             "C",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 2
+            },
+            "hint": {
+              "dataType": "string",
+              "value": ""
+            }
+          },
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
             2
           ]
         },
@@ -1026,7 +1047,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 3
+              "value": 4
             },
             "hint": {
               "dataType": "",
@@ -1045,7 +1066,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 5
+              "value": 6
             },
             "hint": {
               "dataType": "",
@@ -1064,7 +1085,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 2
+              "value": 3
             },
             "hint": {
               "dataType": "",
@@ -1083,7 +1104,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 4
+              "value": 5
             },
             "hint": {
               "dataType": "",
@@ -3976,16 +3997,6 @@
       ],
       "performs": [
         {
-          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
-          "attrs": {},
-          "targetNum": "LS.1.5",
-          "targetNumTuple": [
-            "LS",
-            1,
-            5
-          ]
-        },
-        {
           "targetId": "104db45f-ec0b-4588-b21f-972f1879e266",
           "attrs": {},
           "targetNum": "UC.2.9",
@@ -4093,25 +4104,6 @@
           ]
         },
         {
-          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
-          "attrs": {
-            "order": {
-              "dataType": "integer",
-              "value": 1
-            },
-            "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "LS.1.1",
-          "targetNumTuple": [
-            "LS",
-            1,
-            1
-          ]
-        },
-        {
           "targetId": "f38e558d-8448-4b43-a8c4-e03b7da734dc",
           "attrs": {
             "order": {
@@ -4204,6 +4196,166 @@
           "targetNum": "C",
           "targetNumTuple": [
             "C"
+          ]
+        }
+      ],
+      "built from": [
+        {
+          "targetId": "81dbc598-cf10-4e75-92db-e82dc4026cbb",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "C.2.1",
+          "targetNumTuple": [
+            "C",
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "81dbc598-cf10-4e75-92db-e82dc4026cbb": {
+    "type": "Component",
+    "attrs": {
+      "type": {
+        "dataType": "enumeration",
+        "value": "Human"
+      },
+      "clin": {
+        "dataType": "",
+        "value": ""
+      },
+      "outOfScopeAttackAnalysis": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "inventory": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "outofScopeJustification": {
+        "dataType": "",
+        "value": ""
+      },
+      "mission": {
+        "dataType": "",
+        "value": ""
+      },
+      "operations": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "purpose": {
+        "dataType": "",
+        "value": ""
+      },
+      "receptions": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "abbreviation": {
+        "dataType": "string",
+        "value": "OP"
+      },
+      "title": {
+        "dataType": "string",
+        "value": "Operator"
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OP: FC Operator"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "C.2.1"
+      }
+    },
+    "rels": {
+      "performs": [
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {},
+          "targetNum": "LS.1.9",
+          "targetNumTuple": [
+            "LS",
+            1,
+            9
+          ]
+        },
+        {
+          "targetId": "b91f0e5b-509c-44fc-9ef8-703279953fd8",
+          "attrs": {},
+          "targetNum": "UC.2.11.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            11,
+            1
+          ]
+        }
+      ],
+      "built in": [
+        {
+          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
+          "attrs": {
+            "wholeMultiplicity": {
+              "dataType": "enumeration",
+              "value": 0
+            },
+            "partRole": {
+              "dataType": "",
+              "value": ""
+            },
+            "partMultiplicity": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "C.2",
+          "targetNumTuple": [
+            "C",
+            2
+          ]
+        }
+      ],
+      "categorized by": [
+        {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 1
+            },
+            "hint": {
+              "dataType": "string",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
           ]
         }
       ]
@@ -5390,6 +5542,25 @@
     "rels": {
       "categorized by": [
         {
+          "targetId": "911052dd-2803-4819-9fb4-83a873153074",
+          "attrs": {
+            "order": {
+              "dataType": "integer",
+              "value": 2
+            },
+            "hint": {
+              "dataType": "string",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1.1",
+          "targetNumTuple": [
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
           "targetId": "f38e558d-8448-4b43-a8c4-e03b7da734dc",
           "attrs": {
             "order": {
@@ -5423,6 +5594,51 @@
           "targetNumTuple": [
             "RA",
             2
+          ]
+        }
+      ],
+      "performs": [
+        {
+          "targetId": "fcb93ef8-5c3b-44ee-a3fe-242c87f6a3a7",
+          "attrs": {},
+          "targetNum": "LS.1.10",
+          "targetNumTuple": [
+            "LS",
+            1,
+            10
+          ]
+        },
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {},
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
+          ]
+        },
+        {
+          "targetId": "86e9d650-9e97-4eec-a359-b772b002e1f2",
+          "attrs": {},
+          "targetNum": "UC.2.12.2",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            2
+          ]
+        },
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {},
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
           ]
         }
       ],
@@ -5511,41 +5727,6 @@
             1,
             1,
             1
-          ]
-        }
-      ],
-      "performs": [
-        {
-          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
-          "attrs": {},
-          "targetNum": "UC.2.12.1",
-          "targetNumTuple": [
-            "UC",
-            2,
-            12,
-            1
-          ]
-        },
-        {
-          "targetId": "86e9d650-9e97-4eec-a359-b772b002e1f2",
-          "attrs": {},
-          "targetNum": "UC.2.12.2",
-          "targetNumTuple": [
-            "UC",
-            2,
-            12,
-            2
-          ]
-        },
-        {
-          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
-          "attrs": {},
-          "targetNum": "UC.2.12.3",
-          "targetNumTuple": [
-            "UC",
-            2,
-            12,
-            3
           ]
         }
       ],
@@ -6601,11 +6782,11 @@
         {
           "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
           "attrs": {},
-          "targetNum": "LS.1.7",
+          "targetNum": "LS.1.12",
           "targetNumTuple": [
             "LS",
             1,
-            7
+            12
           ]
         },
         {
@@ -8576,31 +8757,31 @@
         {
           "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
           "attrs": {},
-          "targetNum": "LS.1.3",
-          "targetNumTuple": [
-            "LS",
-            1,
-            3
-          ]
-        },
-        {
-          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
-          "attrs": {},
-          "targetNum": "LS.1.4",
-          "targetNumTuple": [
-            "LS",
-            1,
-            4
-          ]
-        },
-        {
-          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
-          "attrs": {},
           "targetNum": "LS.1.6",
           "targetNumTuple": [
             "LS",
             1,
             6
+          ]
+        },
+        {
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "attrs": {},
+          "targetNum": "LS.1.7",
+          "targetNumTuple": [
+            "LS",
+            1,
+            7
+          ]
+        },
+        {
+          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "attrs": {},
+          "targetNum": "LS.1.11",
+          "targetNumTuple": [
+            "LS",
+            1,
+            11
           ]
         }
       ],
@@ -8648,7 +8829,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 3
+              "value": 4
             },
             "hint": {
               "dataType": "",
@@ -8798,17 +8979,7 @@
       ],
       "performs": [
         {
-          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
-          "attrs": {},
-          "targetNum": "LS.1.1",
-          "targetNumTuple": [
-            "LS",
-            1,
-            1
-          ]
-        },
-        {
-          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
           "attrs": {},
           "targetNum": "LS.1.2",
           "targetNumTuple": [
@@ -8818,13 +8989,23 @@
           ]
         },
         {
-          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
           "attrs": {},
-          "targetNum": "LS.1.8",
+          "targetNum": "LS.1.4",
           "targetNumTuple": [
             "LS",
             1,
-            8
+            4
+          ]
+        },
+        {
+          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "attrs": {},
+          "targetNum": "LS.1.5",
+          "targetNumTuple": [
+            "LS",
+            1,
+            5
           ]
         }
       ],
@@ -8834,7 +9015,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 5
+              "value": 6
             },
             "hint": {
               "dataType": "",
@@ -9039,7 +9220,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 2
+              "value": 3
             },
             "hint": {
               "dataType": "",
@@ -9093,6 +9274,18 @@
           "targetNumTuple": [
             "MA",
             2
+          ]
+        }
+      ],
+      "performs": [
+        {
+          "targetId": "260ac283-35bc-4723-bcdf-6484474b12be",
+          "attrs": {},
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
           ]
         }
       ]
@@ -9738,11 +9931,11 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "LS.1.1",
+          "targetNum": "LS.1.4",
           "targetNumTuple": [
             "LS",
             1,
-            1
+            4
           ]
         }
       ],
@@ -10064,11 +10257,11 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "LS.1.7",
+          "targetNum": "LS.1.12",
           "targetNumTuple": [
             "LS",
             1,
-            7
+            12
           ]
         }
       ],
@@ -10076,11 +10269,11 @@
         {
           "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
           "attrs": {},
-          "targetNum": "LS.1.6",
+          "targetNum": "LS.1.11",
           "targetNumTuple": [
             "LS",
             1,
-            6
+            11
           ]
         }
       ]
@@ -10423,6 +10616,115 @@
             2,
             12,
             1
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "b91f0e5b-509c-44fc-9ef8-703279953fd8",
+          "attrs": {},
+          "targetNum": "UC.2.11.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            11,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "8b4ce4a4-d8ce-4300-a4b2-01acd57c447b": {
+    "type": "ControlAction",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "FC: Switch Active"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "OP.2"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {},
+          "targetNum": "LS.1.9",
+          "targetNumTuple": [
+            "LS",
+            1,
+            9
+          ]
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "fcb93ef8-5c3b-44ee-a3fe-242c87f6a3a7",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.10",
+          "targetNumTuple": [
+            "LS",
+            1,
+            10
           ]
         }
       ]
@@ -10914,11 +11216,11 @@
               "value": "Normal"
             }
           },
-          "targetNum": "LS.1.1",
+          "targetNum": "LS.1.4",
           "targetNumTuple": [
             "LS",
             1,
-            1
+            4
           ]
         }
       ]
@@ -10954,11 +11256,11 @@
               "value": "Normal"
             }
           },
-          "targetNum": "LS.1.1",
+          "targetNum": "LS.1.4",
           "targetNumTuple": [
             "LS",
             1,
-            1
+            4
           ]
         }
       ]
@@ -11255,11 +11557,11 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "LS.1.8",
+          "targetNum": "LS.1.2",
           "targetNumTuple": [
             "LS",
             1,
-            8
+            2
           ]
         }
       ],
@@ -11904,11 +12206,11 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "LS.1.3",
+          "targetNum": "LS.1.6",
           "targetNumTuple": [
             "LS",
             1,
-            3
+            6
           ]
         }
       ],
@@ -11916,11 +12218,203 @@
         {
           "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
           "attrs": {},
-          "targetNum": "LS.1.2",
+          "targetNum": "LS.1.5",
           "targetNumTuple": [
             "LS",
             1,
-            2
+            5
+          ]
+        }
+      ]
+    }
+  },
+  "9afe3d90-cedf-4fcf-975e-ed533207cc2a": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "UI: FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.2"
+      }
+    },
+    "rels": {
+      "input to": [
+        {
+          "targetId": "260ac283-35bc-4723-bcdf-6484474b12be",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "output from": [
+        {
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "attrs": {},
+          "targetNum": "LS.1.7",
+          "targetNumTuple": [
+            "LS",
+            1,
+            7
+          ]
+        }
+      ]
+    }
+  },
+  "0aa4e47f-9f4c-4c97-9b01-54212fd7df15": {
+    "type": "Feedback",
+    "attrs": {
+      "range": {
+        "dataType": "",
+        "value": ""
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "accuracy": {
+        "dataType": "",
+        "value": ""
+      },
+      "fields": {
+        "dataType": "collection",
+        "value": ""
+      },
+      "precision": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "size": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "sizeUnits": {
+        "dataType": "",
+        "value": ""
+      },
+      "priority": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "OP: FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.3"
+      }
+    },
+    "rels": {
+      "output from": [
+        {
+          "targetId": "260ac283-35bc-4723-bcdf-6484474b12be",
+          "attrs": {},
+          "targetNum": "LS.1.8",
+          "targetNumTuple": [
+            "LS",
+            1,
+            8
+          ]
+        }
+      ],
+      "input to": [
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "LS.1.9",
+          "targetNumTuple": [
+            "LS",
+            1,
+            9
           ]
         }
       ]
@@ -12144,102 +12638,6 @@
       ]
     }
   },
-  "0aa4e47f-9f4c-4c97-9b01-54212fd7df15": {
-    "type": "Feedback",
-    "attrs": {
-      "range": {
-        "dataType": "",
-        "value": ""
-      },
-      "units": {
-        "dataType": "",
-        "value": ""
-      },
-      "accuracy": {
-        "dataType": "",
-        "value": ""
-      },
-      "fields": {
-        "dataType": "collection",
-        "value": ""
-      },
-      "precision": {
-        "dataType": "",
-        "value": ""
-      },
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "size": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "sizeUnits": {
-        "dataType": "",
-        "value": ""
-      },
-      "priority": {
-        "dataType": "",
-        "value": ""
-      },
-      "type": {
-        "dataType": "enumeration",
-        "value": "nil"
-      },
-      "title": {
-        "dataType": "",
-        "value": ""
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "OP: FC Cyber Attack"
-      },
-      "number": {
-        "dataType": "",
-        "value": ""
-      }
-    },
-    "rels": {
-      "input to": [
-        {
-          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
-          "attrs": {
-            "triggering": {
-              "dataType": "boolean",
-              "value": ""
-            },
-            "queueType": {
-              "dataType": "enumeration",
-              "value": "FIFO"
-            }
-          },
-          "targetNum": "LS.1.5",
-          "targetNumTuple": [
-            "LS",
-            1,
-            5
-          ]
-        }
-      ],
-      "output from": [
-        {
-          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
-          "attrs": {},
-          "targetNum": "LS.1.4",
-          "targetNumTuple": [
-            "LS",
-            1,
-            4
-          ]
-        }
-      ]
-    }
-  },
   "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2": {
     "type": "Function",
     "attrs": {
@@ -12299,17 +12697,7 @@
     "rels": {
       "decomposed by": [
         {
-          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
-          "attrs": {},
-          "targetNum": "LS.1.1",
-          "targetNumTuple": [
-            "LS",
-            1,
-            1
-          ]
-        },
-        {
-          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
+          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
           "attrs": {},
           "targetNum": "LS.1.2",
           "targetNumTuple": [
@@ -12319,17 +12707,7 @@
           ]
         },
         {
-          "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
-          "attrs": {},
-          "targetNum": "LS.1.3",
-          "targetNumTuple": [
-            "LS",
-            1,
-            3
-          ]
-        },
-        {
-          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
+          "targetId": "7ba9658f-608b-46c0-a690-532f3f06d50b",
           "attrs": {},
           "targetNum": "LS.1.4",
           "targetNumTuple": [
@@ -12339,7 +12717,7 @@
           ]
         },
         {
-          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "targetId": "da715d4a-f808-4371-bbd4-e46e312af405",
           "attrs": {},
           "targetNum": "LS.1.5",
           "targetNumTuple": [
@@ -12349,7 +12727,7 @@
           ]
         },
         {
-          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "targetId": "1e093ee2-0ecb-4fb0-a8c5-27f16809a732",
           "attrs": {},
           "targetNum": "LS.1.6",
           "targetNumTuple": [
@@ -12359,7 +12737,7 @@
           ]
         },
         {
-          "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
+          "targetId": "76119749-6bd8-4c30-a08e-52c48515fe97",
           "attrs": {},
           "targetNum": "LS.1.7",
           "targetNumTuple": [
@@ -12369,13 +12747,75 @@
           ]
         },
         {
-          "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
+          "targetId": "260ac283-35bc-4723-bcdf-6484474b12be",
           "attrs": {},
           "targetNum": "LS.1.8",
           "targetNumTuple": [
             "LS",
             1,
             8
+          ]
+        },
+        {
+          "targetId": "52918e9f-e04b-4ed8-b672-3139c302d564",
+          "attrs": {},
+          "targetNum": "LS.1.9",
+          "targetNumTuple": [
+            "LS",
+            1,
+            9
+          ]
+        },
+        {
+          "targetId": "fcb93ef8-5c3b-44ee-a3fe-242c87f6a3a7",
+          "attrs": {},
+          "targetNum": "LS.1.10",
+          "targetNumTuple": [
+            "LS",
+            1,
+            10
+          ]
+        },
+        {
+          "targetId": "bc978f35-d55a-442b-a462-72ec57409bf8",
+          "attrs": {},
+          "targetNum": "LS.1.11",
+          "targetNumTuple": [
+            "LS",
+            1,
+            11
+          ]
+        },
+        {
+          "targetId": "c270f2e8-6657-4883-9951-e3e9acc91444",
+          "attrs": {},
+          "targetNum": "LS.1.12",
+          "targetNumTuple": [
+            "LS",
+            1,
+            12
+          ]
+        },
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {},
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
+          ]
+        },
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {},
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
           ]
         }
       ],
@@ -12452,6 +12892,119 @@
       ]
     }
   },
+  "c2e07587-800f-4941-baa8-13f1aa2ba00d": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Monitor FC UI Click"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.2"
+      }
+    },
+    "rels": {
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "a0548b76-8035-47e2-98af-6acd47586fdc",
+          "attrs": {},
+          "targetNum": "SEN.1",
+          "targetNumTuple": [
+            "SEN",
+            1
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "193dad25-aae1-44c4-97e3-ac78df77d316",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "CS.3",
+          "targetNumTuple": [
+            "CS",
+            3
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
+          "attrs": {},
+          "targetNum": "MA.2.2",
+          "targetNumTuple": [
+            "MA",
+            2,
+            2
+          ]
+        }
+      ]
+    }
+  },
   "7ba9658f-608b-46c0-a690-532f3f06d50b": {
     "type": "Function",
     "attrs": {
@@ -12505,7 +13058,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.1"
+        "value": "LS.1.4"
       }
     },
     "rels": {
@@ -12662,7 +13215,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.2"
+        "value": "LS.1.5"
       }
     },
     "rels": {
@@ -12755,7 +13308,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.3"
+        "value": "LS.1.6"
       }
     },
     "rels": {
@@ -12853,11 +13406,11 @@
       },
       "name": {
         "dataType": "string",
-        "value": "SEN: Notify Operator FC Cyber Attack"
+        "value": "SEN: Notify FC Cyber Attack"
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.4"
+        "value": "LS.1.7"
       }
     },
     "rels": {
@@ -12870,6 +13423,107 @@
             "MA",
             2,
             1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "9afe3d90-cedf-4fcf-975e-ed533207cc2a",
+          "attrs": {},
+          "targetNum": "SEN.2",
+          "targetNumTuple": [
+            "SEN",
+            2
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "260ac283-35bc-4723-bcdf-6484474b12be": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: Notify Operator FC Cyber Attack"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.8"
+      }
+    },
+    "rels": {
+      "inputs": [
+        {
+          "targetId": "9afe3d90-cedf-4fcf-975e-ed533207cc2a",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "SEN.2",
+          "targetNumTuple": [
+            "SEN",
+            2
           ]
         }
       ],
@@ -12888,9 +13542,22 @@
         {
           "targetId": "0aa4e47f-9f4c-4c97-9b01-54212fd7df15",
           "attrs": {},
-          "targetNum": "",
+          "targetNum": "SEN.3",
           "targetNumTuple": [
-            ""
+            "SEN",
+            3
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "f741e4ea-7e8d-48b6-83a9-e96e2c19028c",
+          "attrs": {},
+          "targetNum": "MA.2.3",
+          "targetNumTuple": [
+            "MA",
+            2,
+            3
           ]
         }
       ]
@@ -12949,21 +13616,10 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.5"
+        "value": "LS.1.9"
       }
     },
     "rels": {
-      "allocated to": [
-        {
-          "targetId": "781f5b7e-2f57-4a76-b6d4-0cb058e95ba7",
-          "attrs": {},
-          "targetNum": "C.2",
-          "targetNumTuple": [
-            "C",
-            2
-          ]
-        }
-      ],
       "inputs": [
         {
           "targetId": "0aa4e47f-9f4c-4c97-9b01-54212fd7df15",
@@ -12977,9 +13633,10 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "",
+          "targetNum": "SEN.3",
           "targetNumTuple": [
-            ""
+            "SEN",
+            3
           ]
         }
       ],
@@ -12991,6 +13648,148 @@
           "targetNumTuple": [
             "LS",
             1
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "8b4ce4a4-d8ce-4300-a4b2-01acd57c447b",
+          "attrs": {},
+          "targetNum": "OP.2",
+          "targetNumTuple": [
+            "OP",
+            2
+          ]
+        }
+      ],
+      "allocated to": [
+        {
+          "targetId": "81dbc598-cf10-4e75-92db-e82dc4026cbb",
+          "attrs": {},
+          "targetNum": "C.2.1",
+          "targetNumTuple": [
+            "C",
+            2,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "fcb93ef8-5c3b-44ee-a3fe-242c87f6a3a7": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "FC: Switch Active Standby"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "LS.1.10"
+      }
+    },
+    "rels": {
+      "allocated to": [
+        {
+          "targetId": "f6901aca-e56c-464d-9272-614b8fecf2b4",
+          "attrs": {},
+          "targetNum": "C.4.1.2",
+          "targetNumTuple": [
+            "C",
+            4,
+            1,
+            2
+          ]
+        }
+      ],
+      "ma: manages": [
+        {
+          "targetId": "2df3a9d6-51f2-4c83-b76f-417c0e1dd8f7",
+          "attrs": {
+            "actionType": {
+              "dataType": "enumeration",
+              "value": "activate"
+            }
+          },
+          "targetNum": "RM.2",
+          "targetNumTuple": [
+            "RM",
+            2
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "targetId": "8b4ce4a4-d8ce-4300-a4b2-01acd57c447b",
+          "attrs": {
+            "triggering": {
+              "dataType": "boolean",
+              "value": ""
+            },
+            "queueType": {
+              "dataType": "enumeration",
+              "value": "FIFO"
+            }
+          },
+          "targetNum": "OP.2",
+          "targetNumTuple": [
+            "OP",
+            2
           ]
         }
       ]
@@ -13049,7 +13848,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.6"
+        "value": "LS.1.11"
       }
     },
     "rels": {
@@ -13142,7 +13941,7 @@
       },
       "number": {
         "dataType": "hierarchicalNumber",
-        "value": "LS.1.7"
+        "value": "LS.1.12"
       }
     },
     "rels": {
@@ -13187,119 +13986,6 @@
             4,
             3,
             1
-          ]
-        }
-      ]
-    }
-  },
-  "c2e07587-800f-4941-baa8-13f1aa2ba00d": {
-    "type": "Function",
-    "attrs": {
-      "puid": {
-        "dataType": "",
-        "value": ""
-      },
-      "duration": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "endLogic": {
-        "dataType": "",
-        "value": ""
-      },
-      "executeDecomposition": {
-        "dataType": "boolean",
-        "value": ""
-      },
-      "beginLogic": {
-        "dataType": "",
-        "value": ""
-      },
-      "behaviorType": {
-        "dataType": "enumeration",
-        "value": "Standard"
-      },
-      "exitLogic": {
-        "dataType": "",
-        "value": ""
-      },
-      "logMessage": {
-        "dataType": "",
-        "value": ""
-      },
-      "timeout": {
-        "dataType": "numberSpec",
-        "value": ""
-      },
-      "title": {
-        "dataType": "",
-        "value": ""
-      },
-      "description": {
-        "dataType": "",
-        "value": ""
-      },
-      "name": {
-        "dataType": "string",
-        "value": "SEN: Monitor FC UI Click"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "LS.1.8"
-      }
-    },
-    "rels": {
-      "decomposes": [
-        {
-          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
-          "attrs": {},
-          "targetNum": "LS.1",
-          "targetNumTuple": [
-            "LS",
-            1
-          ]
-        }
-      ],
-      "outputs": [
-        {
-          "targetId": "a0548b76-8035-47e2-98af-6acd47586fdc",
-          "attrs": {},
-          "targetNum": "SEN.1",
-          "targetNumTuple": [
-            "SEN",
-            1
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "targetId": "193dad25-aae1-44c4-97e3-ac78df77d316",
-          "attrs": {
-            "triggering": {
-              "dataType": "boolean",
-              "value": ""
-            },
-            "queueType": {
-              "dataType": "enumeration",
-              "value": "FIFO"
-            }
-          },
-          "targetNum": "CS.3",
-          "targetNumTuple": [
-            "CS",
-            3
-          ]
-        }
-      ],
-      "allocated to": [
-        {
-          "targetId": "8dce1305-b5b1-474b-afba-bfec2bb67155",
-          "attrs": {},
-          "targetNum": "MA.2.2",
-          "targetNumTuple": [
-            "MA",
-            2,
-            2
           ]
         }
       ]
@@ -16607,6 +17293,19 @@
           ]
         }
       ],
+      "decomposed by": [
+        {
+          "targetId": "b91f0e5b-509c-44fc-9ef8-703279953fd8",
+          "attrs": {},
+          "targetNum": "UC.2.11.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            11,
+            1
+          ]
+        }
+      ],
       "categorized by": [
         {
           "targetId": "d50153f0-d136-42f8-a04c-a9c89bcf21c1",
@@ -16634,6 +17333,101 @@
           "targetNum": "OP.1",
           "targetNumTuple": [
             "OP",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "b91f0e5b-509c-44fc-9ef8-703279953fd8": {
+    "type": "Function",
+    "attrs": {
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "duration": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "endLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "executeDecomposition": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "beginLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "behaviorType": {
+        "dataType": "enumeration",
+        "value": "Standard"
+      },
+      "exitLogic": {
+        "dataType": "",
+        "value": ""
+      },
+      "logMessage": {
+        "dataType": "",
+        "value": ""
+      },
+      "timeout": {
+        "dataType": "numberSpec",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "L2:OP: Fire Weapon"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "UC.2.11.1"
+      }
+    },
+    "rels": {
+      "allocated to": [
+        {
+          "targetId": "81dbc598-cf10-4e75-92db-e82dc4026cbb",
+          "attrs": {},
+          "targetNum": "C.2.1",
+          "targetNumTuple": [
+            "C",
+            2,
+            1
+          ]
+        }
+      ],
+      "decomposes": [
+        {
+          "targetId": "d42bd190-b540-460d-965b-a34639b7af05",
+          "attrs": {},
+          "targetNum": "UC.2.11",
+          "targetNumTuple": [
+            "UC",
+            2,
+            11
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "targetId": "ea6ace8f-6058-463b-a6c3-26c351fc5b15",
+          "attrs": {},
+          "targetNum": "OP.1.1",
+          "targetNumTuple": [
+            "OP",
+            1,
             1
           ]
         }
@@ -16905,7 +17699,32 @@
       }
     },
     "rels": {
+      "ma: enables detection of": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {
+            "constraint": {
+              "dataType": "collection",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
       "decomposes": [
+        {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
         {
           "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
           "attrs": {},
@@ -17107,6 +17926,15 @@
     "rels": {
       "decomposes": [
         {
+          "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        },
+        {
           "targetId": "d44205ce-c94c-43b9-87a4-a428f271d916",
           "attrs": {},
           "targetNum": "UC.2.12",
@@ -17114,6 +17942,22 @@
             "UC",
             2,
             12
+          ]
+        }
+      ],
+      "ma: enables detection of": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {
+            "constraint": {
+              "dataType": "collection",
+              "value": ""
+            }
+          },
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
           ]
         }
       ],
@@ -18127,11 +18971,11 @@
         {
           "targetId": "c2e07587-800f-4941-baa8-13f1aa2ba00d",
           "attrs": {},
-          "targetNum": "LS.1.8",
+          "targetNum": "LS.1.2",
           "targetNumTuple": [
             "LS",
             1,
-            8
+            2
           ]
         }
       ],
@@ -18148,11 +18992,11 @@
               "value": "FIFO"
             }
           },
-          "targetNum": "LS.1.1",
+          "targetNum": "LS.1.4",
           "targetNumTuple": [
             "LS",
             1,
-            1
+            4
           ]
         }
       ],
@@ -18162,7 +19006,7 @@
           "attrs": {
             "order": {
               "dataType": "integer",
-              "value": 4
+              "value": 5
             },
             "hint": {
               "dataType": "",
@@ -23741,6 +24585,140 @@
       }
     },
     "rels": {
+      "elicits": [
+        {
+          "targetId": "21349dbd-acb7-4752-bf02-6d913aba7cbd",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.1",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "7a00fd00-f95a-424f-b606-40d6bd74026e",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "fff3fdf0-cc5c-4f6c-b3d5-e5281b9aa3ca",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "3bc48615-a5e7-4aae-9769-2e586e874315",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            4
+          ]
+        },
+        {
+          "targetId": "dc4902e6-e06c-4e10-a751-21d36ab8b085",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.5",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            5
+          ]
+        },
+        {
+          "targetId": "5284ea3f-ac48-41ac-96cb-f6930fb3ac1d",
+          "attrs": {},
+          "targetNum": "SF.LS.1.1",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "c8d39b93-cc28-4e71-8001-ff149dd1f5d1",
+          "attrs": {},
+          "targetNum": "SF.LS.1.2",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "174d7604-a479-43a5-b32f-c114df8e07ca",
+          "attrs": {},
+          "targetNum": "SF.LS.1.3",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "f4424ddb-39eb-46c2-b4f0-d1d28a0effe2",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "d726b9c7-4468-4404-a169-ec878141a320",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "d24b63a5-e714-4bc7-bbdf-2a3649ed62b6",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "ec22cc0d-b8a3-40d9-871a-d561cd8ec4ae",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            4
+          ]
+        }
+      ],
       "elaborated by": [
         {
           "targetId": "39cfdbd7-cc49-4790-b0b7-bc1da282c6c2",
@@ -23766,6 +24744,40 @@
             "UC",
             2,
             12
+          ]
+        }
+      ],
+      "ma: detected by monitoring": [
+        {
+          "targetId": "5b2256d8-0e81-4819-856d-e91de6d22e44",
+          "attrs": {
+            "constraint": {
+              "dataType": "collection",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.2.12.1",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            1
+          ]
+        },
+        {
+          "targetId": "1125083b-4254-4fee-9900-9ad19ed8e625",
+          "attrs": {
+            "constraint": {
+              "dataType": "collection",
+              "value": ""
+            }
+          },
+          "targetNum": "UC.2.12.3",
+          "targetNumTuple": [
+            "UC",
+            2,
+            12,
+            3
           ]
         }
       ],
@@ -24303,6 +25315,23 @@
       }
     },
     "rels": {
+      "ma: managed by": [
+        {
+          "targetId": "fcb93ef8-5c3b-44ee-a3fe-242c87f6a3a7",
+          "attrs": {
+            "actionType": {
+              "dataType": "enumeration",
+              "value": "activate"
+            }
+          },
+          "targetNum": "LS.1.10",
+          "targetNumTuple": [
+            "LS",
+            1,
+            10
+          ]
+        }
+      ],
       "ma: provides reconfiguration for": [
         {
           "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
@@ -24450,7 +25479,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -24506,6 +25535,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
+      ],
       "refined by": [
         {
           "targetId": "f0eba21f-34b6-4931-a901-85bea4b0e313",
@@ -24533,7 +25573,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -24600,6 +25640,17 @@
             2
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -24616,7 +25667,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -24672,6 +25723,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
+      ],
       "refined by": [
         {
           "targetId": "41d0291b-e7e7-4145-b677-9e4e12d13e24",
@@ -24699,7 +25761,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -24846,6 +25908,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -24862,7 +25935,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -24918,6 +25991,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
+      ],
       "refined by": [
         {
           "targetId": "b408d33e-8738-40ee-9c5e-a9766675829e",
@@ -24945,7 +26029,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -25162,6 +26246,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -25178,7 +26273,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -25395,6 +26490,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -25411,7 +26517,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -25628,6 +26734,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -25644,7 +26761,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -25861,6 +26978,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -25877,7 +27005,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -25974,6 +27102,17 @@
             4
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -25990,7 +27129,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -26067,6 +27206,17 @@
             2
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
       ]
     }
   },
@@ -26083,7 +27233,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Composite"
       },
       "rationale": {
         "dataType": "",
@@ -26139,6 +27289,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "d878999f-df2d-4888-9952-91be294531f6",
+          "attrs": {},
+          "targetNum": "RG.1",
+          "targetNumTuple": [
+            "RG",
+            1
+          ]
+        }
+      ],
       "refined by": [
         {
           "targetId": "473ba4f8-d337-4c22-8694-cf8b176734f2",
@@ -26163,7 +27324,427 @@
       ]
     }
   },
-  "f0eba21f-34b6-4931-a901-85bea4b0e313": {
+  "21349dbd-acb7-4752-bf02-6d913aba7cbd": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle Sentinel shall sense LS.1: Manipulated Fire Command Loss Scenario within .5 seconds."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.1 - Sense Time"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.1.1"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "4306a90a-ae23-41cc-b68b-a44279f6d308",
+          "attrs": {},
+          "targetNum": "T.1.5",
+          "targetNumTuple": [
+            "T",
+            1,
+            5
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "7a00fd00-f95a-424f-b606-40d6bd74026e": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle Sentinel shall sense LS.1 Manipulated Fire Command with 99% accuracy."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.1 - Sense Accuracy"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.1.2"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "a7e8c451-911c-4b8e-b23c-01cb7c57c5fc",
+          "attrs": {},
+          "targetNum": "T.1.6",
+          "targetNumTuple": [
+            "T",
+            1,
+            6
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "fff3fdf0-cc5c-4f6c-b3d5-e5281b9aa3ca": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle Sentinel shall isolate 'FC Station' as the source of LS.1: Manipulated Fire Control Loss Scenario within .5 seconds."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.1 - Isolate Time"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.1.3"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "79e39aed-290a-406a-803a-3aafda0da6eb",
+          "attrs": {},
+          "targetNum": "T.2.3",
+          "targetNumTuple": [
+            "T",
+            2,
+            3
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "3bc48615-a5e7-4aae-9769-2e586e874315": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle Sentinel shall isolate 'Fire Control Station' as the source of LS.1: Manipulated Fire Control Loss Scenario with 99% accuracy."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.1 - Isolate Accuracy"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.1.4"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "f0bad46b-24e6-42a0-ba14-8fe54a829353",
+          "attrs": {},
+          "targetNum": "T.2.4",
+          "targetNumTuple": [
+            "T",
+            2,
+            4
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "dc4902e6-e06c-4e10-a751-21d36ab8b085": {
     "type": "Requirement",
     "attrs": {
       "weightFactor": {
@@ -26177,6 +27758,426 @@
       "type": {
         "dataType": "enumeration",
         "value": "Functional"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Vehicle Sentinel shall abort 'Fire Munition Function' upon sensing LS.1: Manipulated Fire Command Loss Scenario."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.1 - Abort Unsafe"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.1.5"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "b408d33e-8738-40ee-9c5e-a9766675829e",
+          "attrs": {},
+          "targetNum": "T.3.2",
+          "targetNumTuple": [
+            "T",
+            3,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "5284ea3f-ac48-41ac-96cb-f6930fb3ac1d": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Constraint"
+      },
+      "rationale": {
+        "dataType": "text",
+        "value": "for Sentinel monitor of control consistency."
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Silverfish shall provide fire control  action monitor."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SF: LS.1 - FC Action Monitor"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.LS.1.1"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "f0eba21f-34b6-4931-a901-85bea4b0e313",
+          "attrs": {},
+          "targetNum": "T.1.1",
+          "targetNumTuple": [
+            "T",
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "c8d39b93-cc28-4e71-8001-ff149dd1f5d1": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Functional"
+      },
+      "rationale": {
+        "dataType": "text",
+        "value": "for Sentinel resilience control"
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Silverfish shall provide fire control redundancy management controls."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SF: LS.1 - FC Redundancy Controls"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.LS.1.2"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "85adc390-bce5-40bb-922e-bbe7c31685e1",
+          "attrs": {},
+          "targetNum": "T.3.1",
+          "targetNumTuple": [
+            "T",
+            3,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "174d7604-a479-43a5-b32f-c114df8e07ca": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Functional"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "",
+        "value": ""
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SF: LS.1 - FC Self Test"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SF.LS.1.3"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "2bd53c38-f662-45e2-a283-acf0914ed627",
+          "attrs": {},
+          "targetNum": "T.5.1",
+          "targetNumTuple": [
+            "T",
+            5,
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "f0eba21f-34b6-4931-a901-85bea4b0e313": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26232,6 +28233,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "03c110e2-22e9-4b35-8dc8-916e0684baf5",
@@ -26240,6 +28252,19 @@
           "targetNumTuple": [
             "CSA",
             7,
+            1
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "5284ea3f-ac48-41ac-96cb-f6930fb3ac1d",
+          "attrs": {},
+          "targetNum": "SF.LS.1.1",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
             1
           ]
         }
@@ -26259,7 +28284,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26326,6 +28351,17 @@
             2
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -26342,7 +28378,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26398,6 +28434,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "bd6fccb1-ca7e-4614-8254-9d515cd80e63",
@@ -26425,7 +28472,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26481,6 +28528,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
@@ -26508,7 +28566,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26564,6 +28622,30 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "21349dbd-acb7-4752-bf02-6d913aba7cbd",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.1",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            1
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
@@ -26591,7 +28673,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26647,6 +28729,30 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "7a00fd00-f95a-424f-b606-40d6bd74026e",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            2
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
@@ -26674,7 +28780,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26730,6 +28836,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
@@ -26757,7 +28874,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26824,6 +28941,17 @@
             1
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -26840,7 +28968,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26896,6 +29024,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
@@ -26923,7 +29062,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -26990,6 +29129,17 @@
             1
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27006,7 +29156,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27073,6 +29223,30 @@
             1
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "fff3fdf0-cc5c-4f6c-b3d5-e5281b9aa3ca",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            3
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27089,7 +29263,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27156,6 +29330,30 @@
             1
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "3bc48615-a5e7-4aae-9769-2e586e874315",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            4
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27172,7 +29370,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27269,6 +29467,30 @@
             6
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "c8d39b93-cc28-4e71-8001-ff149dd1f5d1",
+          "attrs": {},
+          "targetNum": "SF.LS.1.2",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            2
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27285,7 +29507,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27341,6 +29563,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "dc4902e6-e06c-4e10-a751-21d36ab8b085",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.5",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            5
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "ed9e3c67-cf89-4bd2-b215-766473918342",
@@ -27349,6 +29584,17 @@
           "targetNumTuple": [
             "CSA",
             8,
+            2
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
             2
           ]
         }
@@ -27368,11 +29614,11 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
-        "dataType": "",
-        "value": ""
+        "dataType": "text",
+        "value": "Composability is a system design principle that deals with the inter-relationships of components. A highly composable system provides components that can be selected and assembled in various combinations to satisfy specific user requirements."
       },
       "incentivePerformanceParameter": {
         "dataType": "boolean",
@@ -27465,6 +29711,30 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "f4424ddb-39eb-46c2-b4f0-d1d28a0effe2",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            1
+          ]
+        }
       ]
     }
   },
@@ -27481,11 +29751,11 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
-        "dataType": "",
-        "value": ""
+        "dataType": "text",
+        "value": "In a distributed system, failure transparency refers to the extent to which errors and subsequent recoveries of hosts and services within the system are invisible to users and applications."
       },
       "incentivePerformanceParameter": {
         "dataType": "boolean",
@@ -27525,7 +29795,7 @@
       },
       "description": {
         "dataType": "text",
-        "value": "The test support system shall provide mechanisms for operator evaluation of sytem failure transparency for <id:name> Resilient Mode."
+        "value": "The test support system shall provide mechanisms for operator evaluation of system failure transparency for <id:name> Resilient Mode."
       },
       "name": {
         "dataType": "string",
@@ -27578,6 +29848,30 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "d726b9c7-4468-4404-a169-ec878141a320",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            2
+          ]
+        }
       ]
     }
   },
@@ -27594,7 +29888,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27691,6 +29985,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27707,7 +30012,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27804,6 +30109,30 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "d24b63a5-e714-4bc7-bbdf-2a3649ed62b6",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            3
+          ]
+        }
       ]
     }
   },
@@ -27820,7 +30149,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27876,6 +30205,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "ec22cc0d-b8a3-40d9-871a-d561cd8ec4ae",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            4
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
@@ -27917,6 +30259,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -27933,7 +30286,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -27989,6 +30342,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
@@ -28046,7 +30410,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28143,6 +30507,30 @@
             6
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "174d7604-a479-43a5-b32f-c114df8e07ca",
+          "attrs": {},
+          "targetNum": "SF.LS.1.3",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            3
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28159,7 +30547,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28256,6 +30644,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28272,7 +30671,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28369,6 +30768,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28385,7 +30795,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28482,6 +30892,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28498,7 +30919,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28595,6 +31016,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28611,7 +31043,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28708,6 +31140,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28724,7 +31167,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28821,6 +31264,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28837,7 +31291,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -28934,6 +31388,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -28950,7 +31415,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29047,6 +31512,17 @@
             6
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -29063,7 +31539,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Functional"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29130,6 +31606,17 @@
             1
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -29146,7 +31633,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29202,6 +31689,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "22480357-96c4-46ab-b21f-81b74846c936",
@@ -29229,7 +31727,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29296,6 +31794,17 @@
             1
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -29312,7 +31821,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29368,6 +31877,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "22480357-96c4-46ab-b21f-81b74846c936",
@@ -29395,7 +31915,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29472,6 +31992,17 @@
             2
           ]
         }
+      ],
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
       ]
     }
   },
@@ -29488,7 +32019,7 @@
       },
       "type": {
         "dataType": "enumeration",
-        "value": "Performance"
+        "value": "Template"
       },
       "rationale": {
         "dataType": "",
@@ -29544,6 +32075,17 @@
       }
     },
     "rels": {
+      "grouped by": [
+        {
+          "targetId": "647d8137-e289-43d2-b499-910040ae141c",
+          "attrs": {},
+          "targetNum": "RG.2",
+          "targetNumTuple": [
+            "RG",
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "a8bff847-dd0e-4cf6-ac36-9ef2412b22fe",
@@ -29563,6 +32105,1163 @@
             "CSA",
             10,
             2
+          ]
+        }
+      ]
+    }
+  },
+  "f4424ddb-39eb-46c2-b4f0-d1d28a0effe2": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "text",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'composability' rating for RM.2: Diverse Redundant Fire Control"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.1 - Composability Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.1.1"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "2c39c30b-3832-49ca-882f-7e81adc98e69",
+          "attrs": {},
+          "targetNum": "T.3.3",
+          "targetNumTuple": [
+            "T",
+            3,
+            3
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "d726b9c7-4468-4404-a169-ec878141a320": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'failure transparency' rating for RM.2: Diverse Redundant Fire Control."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.1 - Failure Transparency Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.1.2"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "caf2823a-c002-4abf-b7ba-5801aa227805",
+          "attrs": {},
+          "targetNum": "T.4.1",
+          "targetNumTuple": [
+            "T",
+            4,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "d24b63a5-e714-4bc7-bbdf-2a3649ed62b6": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'usability' rating for RM.2: Diverse Redundant Fire Control."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.1 - Usability Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.1.3"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "79a89cc8-0aff-4f2d-8bd7-e4fae66dd874",
+          "attrs": {},
+          "targetNum": "T.4.3",
+          "targetNumTuple": [
+            "T",
+            4,
+            3
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "ec22cc0d-b8a3-40d9-871a-d561cd8ec4ae": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall measure 'timeliness' of operator evaluation of RM.2: Diverse Redundant Fire Control."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.1 - Evaluation Timeliness"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.1.4"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "c7cd7a28-3e8f-42e6-81d9-4de7045c83f1",
+          "attrs": {},
+          "targetNum": "LS.1",
+          "targetNumTuple": [
+            "LS",
+            1
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "f76d7b91-ab59-4317-9ad2-e03c12cf371e",
+          "attrs": {},
+          "targetNum": "T.4.4",
+          "targetNumTuple": [
+            "T",
+            4,
+            4
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "d878999f-df2d-4888-9952-91be294531f6": {
+    "type": "RequirementGroup",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Cyber Survivability Attribute based Requirements."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "REQ: CSA"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RG.1"
+      }
+    },
+    "rels": {
+      "groups": [
+        {
+          "targetId": "03c110e2-22e9-4b35-8dc8-916e0684baf5",
+          "attrs": {},
+          "targetNum": "CSA.7.1",
+          "targetNumTuple": [
+            "CSA",
+            7,
+            1
+          ]
+        },
+        {
+          "targetId": "0e7750f8-003f-420f-a656-bc49b743ec2a",
+          "attrs": {},
+          "targetNum": "CSA.7.2",
+          "targetNumTuple": [
+            "CSA",
+            7,
+            2
+          ]
+        },
+        {
+          "targetId": "bd6fccb1-ca7e-4614-8254-9d515cd80e63",
+          "attrs": {},
+          "targetNum": "CSA.7.3",
+          "targetNumTuple": [
+            "CSA",
+            7,
+            3
+          ]
+        },
+        {
+          "targetId": "424db78c-cfbc-45ee-a2cb-24feae77a425",
+          "attrs": {},
+          "targetNum": "CSA.8.1",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            1
+          ]
+        },
+        {
+          "targetId": "ed9e3c67-cf89-4bd2-b215-766473918342",
+          "attrs": {},
+          "targetNum": "CSA.8.2",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            2
+          ]
+        },
+        {
+          "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
+          "attrs": {},
+          "targetNum": "CSA.8.3",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            3
+          ]
+        },
+        {
+          "targetId": "6ba3bf7b-0001-4f4a-9d32-b523e9c5f6a9",
+          "attrs": {},
+          "targetNum": "CSA.8.4",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            4
+          ]
+        },
+        {
+          "targetId": "c81fa942-bb1c-47e5-8587-2d2aaadb768b",
+          "attrs": {},
+          "targetNum": "CSA.8.5",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            5
+          ]
+        },
+        {
+          "targetId": "83af1e9a-a5d1-4d55-85b1-b612ffe31577",
+          "attrs": {},
+          "targetNum": "CSA.8.6",
+          "targetNumTuple": [
+            "CSA",
+            8,
+            6
+          ]
+        },
+        {
+          "targetId": "22480357-96c4-46ab-b21f-81b74846c936",
+          "attrs": {},
+          "targetNum": "CSA.9.1",
+          "targetNumTuple": [
+            "CSA",
+            9,
+            1
+          ]
+        },
+        {
+          "targetId": "a8bff847-dd0e-4cf6-ac36-9ef2412b22fe",
+          "attrs": {},
+          "targetNum": "CSA.10.1",
+          "targetNumTuple": [
+            "CSA",
+            10,
+            1
+          ]
+        },
+        {
+          "targetId": "7858fa2b-2059-4c05-bb53-10e91405430c",
+          "attrs": {},
+          "targetNum": "CSA.10.2",
+          "targetNumTuple": [
+            "CSA",
+            10,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "647d8137-e289-43d2-b499-910040ae141c": {
+    "type": "RequirementGroup",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Testable Requirements Elicitation Element requirement templates."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "REQ: TREE"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RG.2"
+      }
+    },
+    "rels": {
+      "groups": [
+        {
+          "targetId": "f0eba21f-34b6-4931-a901-85bea4b0e313",
+          "attrs": {},
+          "targetNum": "T.1.1",
+          "targetNumTuple": [
+            "T",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "e4b084ee-563c-4405-a3ea-71b7de9ce3ff",
+          "attrs": {},
+          "targetNum": "T.1.2",
+          "targetNumTuple": [
+            "T",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "41d0291b-e7e7-4145-b677-9e4e12d13e24",
+          "attrs": {},
+          "targetNum": "T.1.3",
+          "targetNumTuple": [
+            "T",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "bc062999-9256-424f-9982-09d95fe2fe32",
+          "attrs": {},
+          "targetNum": "T.1.4",
+          "targetNumTuple": [
+            "T",
+            1,
+            4
+          ]
+        },
+        {
+          "targetId": "4306a90a-ae23-41cc-b68b-a44279f6d308",
+          "attrs": {},
+          "targetNum": "T.1.5",
+          "targetNumTuple": [
+            "T",
+            1,
+            5
+          ]
+        },
+        {
+          "targetId": "a7e8c451-911c-4b8e-b23c-01cb7c57c5fc",
+          "attrs": {},
+          "targetNum": "T.1.6",
+          "targetNumTuple": [
+            "T",
+            1,
+            6
+          ]
+        },
+        {
+          "targetId": "cc30deb8-b8bf-4575-a43e-f2d60a71e634",
+          "attrs": {},
+          "targetNum": "T.1.7",
+          "targetNumTuple": [
+            "T",
+            1,
+            7
+          ]
+        },
+        {
+          "targetId": "30c03352-82d2-435d-828e-4104f4ba67b1",
+          "attrs": {},
+          "targetNum": "T.1.8",
+          "targetNumTuple": [
+            "T",
+            1,
+            8
+          ]
+        },
+        {
+          "targetId": "2ec313c4-e2f8-4be6-9d83-573419ccad82",
+          "attrs": {},
+          "targetNum": "T.2.1",
+          "targetNumTuple": [
+            "T",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "eba1dbeb-6948-4cea-a931-f8bae0f75969",
+          "attrs": {},
+          "targetNum": "T.2.2",
+          "targetNumTuple": [
+            "T",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "79e39aed-290a-406a-803a-3aafda0da6eb",
+          "attrs": {},
+          "targetNum": "T.2.3",
+          "targetNumTuple": [
+            "T",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "f0bad46b-24e6-42a0-ba14-8fe54a829353",
+          "attrs": {},
+          "targetNum": "T.2.4",
+          "targetNumTuple": [
+            "T",
+            2,
+            4
+          ]
+        },
+        {
+          "targetId": "85adc390-bce5-40bb-922e-bbe7c31685e1",
+          "attrs": {},
+          "targetNum": "T.3.1",
+          "targetNumTuple": [
+            "T",
+            3,
+            1
+          ]
+        },
+        {
+          "targetId": "b408d33e-8738-40ee-9c5e-a9766675829e",
+          "attrs": {},
+          "targetNum": "T.3.2",
+          "targetNumTuple": [
+            "T",
+            3,
+            2
+          ]
+        },
+        {
+          "targetId": "2c39c30b-3832-49ca-882f-7e81adc98e69",
+          "attrs": {},
+          "targetNum": "T.3.3",
+          "targetNumTuple": [
+            "T",
+            3,
+            3
+          ]
+        },
+        {
+          "targetId": "caf2823a-c002-4abf-b7ba-5801aa227805",
+          "attrs": {},
+          "targetNum": "T.4.1",
+          "targetNumTuple": [
+            "T",
+            4,
+            1
+          ]
+        },
+        {
+          "targetId": "689e1727-67d9-49d3-bbc1-a38533d076c1",
+          "attrs": {},
+          "targetNum": "T.4.2",
+          "targetNumTuple": [
+            "T",
+            4,
+            2
+          ]
+        },
+        {
+          "targetId": "79a89cc8-0aff-4f2d-8bd7-e4fae66dd874",
+          "attrs": {},
+          "targetNum": "T.4.3",
+          "targetNumTuple": [
+            "T",
+            4,
+            3
+          ]
+        },
+        {
+          "targetId": "f76d7b91-ab59-4317-9ad2-e03c12cf371e",
+          "attrs": {},
+          "targetNum": "T.4.4",
+          "targetNumTuple": [
+            "T",
+            4,
+            4
+          ]
+        },
+        {
+          "targetId": "96dbd761-7b50-4915-ad46-44855f4b2b08",
+          "attrs": {},
+          "targetNum": "T.4.5",
+          "targetNumTuple": [
+            "T",
+            4,
+            5
+          ]
+        },
+        {
+          "targetId": "2bd53c38-f662-45e2-a283-acf0914ed627",
+          "attrs": {},
+          "targetNum": "T.5.1",
+          "targetNumTuple": [
+            "T",
+            5,
+            1
+          ]
+        },
+        {
+          "targetId": "ade8bb61-9564-4c1f-bd50-e11ef10f10e2",
+          "attrs": {},
+          "targetNum": "T.5.2",
+          "targetNumTuple": [
+            "T",
+            5,
+            2
+          ]
+        },
+        {
+          "targetId": "26e4ceb1-6c03-4d2d-ad53-9a9c0353e146",
+          "attrs": {},
+          "targetNum": "T.5.3",
+          "targetNumTuple": [
+            "T",
+            5,
+            3
+          ]
+        },
+        {
+          "targetId": "1c16d10f-4a32-449f-8a9d-322925a01b29",
+          "attrs": {},
+          "targetNum": "T.5.4",
+          "targetNumTuple": [
+            "T",
+            5,
+            4
+          ]
+        },
+        {
+          "targetId": "b4e1faa4-c2ae-4432-b703-7369055a01f8",
+          "attrs": {},
+          "targetNum": "T.5.5",
+          "targetNumTuple": [
+            "T",
+            5,
+            5
+          ]
+        },
+        {
+          "targetId": "00ff4008-ee64-4f77-9c25-abebc6ad3c7f",
+          "attrs": {},
+          "targetNum": "T.6.1",
+          "targetNumTuple": [
+            "T",
+            6,
+            1
+          ]
+        },
+        {
+          "targetId": "856c75fb-1347-411b-9059-43620beda557",
+          "attrs": {},
+          "targetNum": "T.6.2",
+          "targetNumTuple": [
+            "T",
+            6,
+            2
+          ]
+        },
+        {
+          "targetId": "4525a71a-0c14-4e06-a4e4-2888a2835b81",
+          "attrs": {},
+          "targetNum": "T.6.3",
+          "targetNumTuple": [
+            "T",
+            6,
+            3
+          ]
+        },
+        {
+          "targetId": "a3f56f66-1b65-4b98-bdc8-899a7ea842fd",
+          "attrs": {},
+          "targetNum": "T.6.4",
+          "targetNumTuple": [
+            "T",
+            6,
+            4
+          ]
+        },
+        {
+          "targetId": "a0028371-ad0f-48e5-8ec6-e6aec8b108d9",
+          "attrs": {},
+          "targetNum": "T.7.1",
+          "targetNumTuple": [
+            "T",
+            7,
+            1
+          ]
+        },
+        {
+          "targetId": "07470b5f-8808-4364-994c-4927afe3d7dc",
+          "attrs": {},
+          "targetNum": "T.7.2",
+          "targetNumTuple": [
+            "T",
+            7,
+            2
+          ]
+        },
+        {
+          "targetId": "7385c37f-4e01-4c77-b21b-30167ad3c466",
+          "attrs": {},
+          "targetNum": "T.7.3",
+          "targetNumTuple": [
+            "T",
+            7,
+            3
+          ]
+        },
+        {
+          "targetId": "98083373-3e13-40f3-b2b1-c181bb0d363f",
+          "attrs": {},
+          "targetNum": "T.7.4",
+          "targetNumTuple": [
+            "T",
+            7,
+            4
+          ]
+        },
+        {
+          "targetId": "473ba4f8-d337-4c22-8694-cf8b176734f2",
+          "attrs": {},
+          "targetNum": "T.8.1",
+          "targetNumTuple": [
+            "T",
+            8,
+            1
+          ]
+        },
+        {
+          "targetId": "e6710219-8697-4733-8eeb-e1fc2fba9a1b",
+          "attrs": {},
+          "targetNum": "T.8.2",
+          "targetNumTuple": [
+            "T",
+            8,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "06cece27-97a1-4ec3-969b-4e3d4bf42a87": {
+    "type": "RequirementGroup",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Mission Aware Elicited Requirements."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "REQ: MA Elicited"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RG.3"
+      }
+    },
+    "rels": {
+      "groups": [
+        {
+          "targetId": "21349dbd-acb7-4752-bf02-6d913aba7cbd",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.1",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "7a00fd00-f95a-424f-b606-40d6bd74026e",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "fff3fdf0-cc5c-4f6c-b3d5-e5281b9aa3ca",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "3bc48615-a5e7-4aae-9769-2e586e874315",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            4
+          ]
+        },
+        {
+          "targetId": "dc4902e6-e06c-4e10-a751-21d36ab8b085",
+          "attrs": {},
+          "targetNum": "SEN.LS.1.5",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            1,
+            5
+          ]
+        },
+        {
+          "targetId": "5284ea3f-ac48-41ac-96cb-f6930fb3ac1d",
+          "attrs": {},
+          "targetNum": "SF.LS.1.1",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "c8d39b93-cc28-4e71-8001-ff149dd1f5d1",
+          "attrs": {},
+          "targetNum": "SF.LS.1.2",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "174d7604-a479-43a5-b32f-c114df8e07ca",
+          "attrs": {},
+          "targetNum": "SF.LS.1.3",
+          "targetNumTuple": [
+            "SF",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "f4424ddb-39eb-46c2-b4f0-d1d28a0effe2",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            1
+          ]
+        },
+        {
+          "targetId": "d726b9c7-4468-4404-a169-ec878141a320",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            2
+          ]
+        },
+        {
+          "targetId": "d24b63a5-e714-4bc7-bbdf-2a3649ed62b6",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            3
+          ]
+        },
+        {
+          "targetId": "ec22cc0d-b8a3-40d9-871a-d561cd8ec4ae",
+          "attrs": {},
+          "targetNum": "TSS.LS.1.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            1,
+            4
           ]
         }
       ]
