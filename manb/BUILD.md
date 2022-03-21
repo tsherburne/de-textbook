@@ -18,6 +18,8 @@ python3 -m twine upload --repository pypi dist/*
 ```
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade jupyterlab
+
+jupyter lab --no-browser --ip="0.0.0.0"
 ```
 ```
 export PYTHONPATH=/home/ubuntu/pypi/de-textbook/manb/src
@@ -96,6 +98,11 @@ diagram.encode('utf-8')
 zlibbed_str = compress(diagram.encode('utf-8'))
 compressed_string = zlibbed_str[2:-4]
 diagramurl = base64.b64encode(compressed_string).translate(b64_to_plantuml).decode('utf-8')
-fullurl = 'https://www.plantuml.com/plantuml/img/' + diagramurl
+fullurl = 'https://www.plantuml.com/plantuml/png/' + diagramurl
 Image(url=fullurl)
+```
+*  Check Python Platform (Jupyter Light is 'emscripten')
+```
+import sys
+sys.platform
 ```

@@ -55,11 +55,25 @@ class ResilienceArchitecture:
           lsList += lsNum
 
       rmItem.append(lsList)
+
+      mabList = " "
+      if 'ma: managed by' in db[rm]['rels']:
+        first = True
+        for func in db[rm]['rels']['ma: managed by']:
+          mabNum = db[func['targetId']]['attrs']['name']['value']
+          if first == True:
+            first = False
+          else:
+            mabList += ','
+          mabList += mabNum
+
+      rmItem.append(mabList)
+
       rmTable.append(rmItem)
 
     this.rmDF = pd.DataFrame(rmTable, columns = ['ID', 'Resilient Mode',\
                       'Description', 'Effectiveness',
-                      'provides reconfig for: LS'])
+                      'provides reconfig for: LS', 'managed by: Function'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
@@ -80,6 +94,19 @@ class ResilienceArchitecture:
       lsItem.append(db[ls]['attrs']['detect-pattern']['value'])
       lsItem.append(db[ls]['attrs']['likelihood']['value'])
 
+      dbmList = " "
+      if 'ma: detected by monitoring' in db[ls]['rels']:
+        first = True
+        for mon in db[ls]['rels']['ma: detected by monitoring']:
+          monNum = db[mon['targetId']]['attrs']['name']['value']
+          if first == True:
+            first = False
+          else:
+            dbmList += ','
+          dbmList += monNum
+
+      lsItem.append(dbmList)
+
       rmList = " "
       if 'ma: reconfigures using' in db[ls]['rels']:
         first = True
@@ -96,6 +123,7 @@ class ResilienceArchitecture:
 
     this.lsDF = pd.DataFrame(lsTable, columns = ['ID', 'Name',\
                       'Detect Pattern', 'Likelihood',
+                      'detected by monitoring: Entity',
                       'reconfigures uing: RM'])
 
     # setup output area
@@ -138,4 +166,6 @@ class ResilienceArchitecture:
 
     return
   def ElicitedRequirementsTable(this):
+    reqGroups = ['REQ: MA Elicited']
+    createReqTable(this.env, this.pr, reqGroups)
     return

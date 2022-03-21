@@ -18,6 +18,7 @@ def createReqTable(env: Environment, pr: Project, groups: list):
       reqItem.append(db[req['targetId']]['attrs']['number']['value'])
       reqItem.append(db[req['targetId']]['attrs']['name']['value'])
       reqItem.append(db[req['targetId']]['attrs']['description']['value'])
+      reqItem.append(db[req['targetId']]['attrs']['type']['value'])
 
       refineList = " "
       if 'refines' in db[req['targetId']]['rels']:
@@ -34,7 +35,7 @@ def createReqTable(env: Environment, pr: Project, groups: list):
       reqTable.append(reqItem)
 
   reqDF = pd.DataFrame(reqTable, columns = ['ID', 'Title',\
-                    'Description', 'refines: Requirment'])
+                    'Description', 'Type', 'refines: Requirement'])
 
   # setup output area
   output = widgets.Output(layout={'border': '1px solid black'})
