@@ -50,6 +50,7 @@ class SystemDescription:
   def ControlStructureDiagram(this):
     db = this.pr.entities
     dbDict = this.pr.entitiesDict
+    csCompCatId = dbDict['SD: CS: Components']
 
     lineColor = ' ' + this.env.MAColor + ';line.bold;text:black'
 
@@ -65,6 +66,14 @@ class SystemDescription:
       # every control structure starts with 'System Context' component
       for bf_component in db[contextId]['rels']['built from']:
         this._output_built_from(f, 0, bf_component)
+
+      # connect any 'kind of' relationships
+      for comp in db[csCompCatId]['rels']['categorizes']:
+        if 'kind of' in db[comp['targetId']]['rels']:
+          for kocomp in db[comp['targetId']]['rels']['kind of']:
+            f.write(db[comp['targetId']]['attrs']['abbreviation']['value'] +
+                              '-u-|>' +
+                db[kocomp['targetId']]['attrs']['abbreviation']['value'] + '\n')
 
       this._create_control_structure_arcs()
       for arc in this.arcList:

@@ -6,6 +6,7 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
 
 *  Use Case Diagrams
    *  Use Case Diagrams to include **Category** Name: *'SD: UC'*
+   *  Components populate: **Title** and **Abbreviation**
    *  Optional display **hint** (l/r/u/d) for each Use Case **involves** Components
 *  Use Case Table
    *  All Use Cases within Use Case Diagrams
@@ -15,6 +16,7 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
    *  Functions to include **Category** Name: *'SD: CS: Functions'*
 *  Control Action Table
    *  All Control Actions for Functions of Control Stucture
+   *  Using **title**
 *  Message Sequence Diagrams
    *  All Use Cases within Use Case Diagrams - each Use Case is *categorized* - **Category** includes:
       *  Single *Fuction* being elaborated

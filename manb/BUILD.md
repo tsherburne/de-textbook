@@ -79,7 +79,7 @@ from itables.sample_dfs import get_countries
 df = get_countries()
 df
 ```
-*  PlantUML Diagram Request
+*  [PlantUML Diagram Request](https://github.com/dougn/python-plantuml/blob/master/plantuml.py)
 ```
 from zlib import compress
 import base64
@@ -94,14 +94,13 @@ base64_alphabet   = string.ascii_uppercase + string.ascii_lowercase + string.dig
 b64_to_plantuml = maketrans(base64_alphabet.encode('utf-8'), plantuml_alphabet.encode('utf-8'))
 
 diagram = "Bob->Alice : Hello!"
-diagram.encode('utf-8')
 zlibbed_str = compress(diagram.encode('utf-8'))
 compressed_string = zlibbed_str[2:-4]
 diagramurl = base64.b64encode(compressed_string).translate(b64_to_plantuml).decode('utf-8')
 fullurl = 'https://www.plantuml.com/plantuml/png/' + diagramurl
 Image(url=fullurl)
 ```
-*  Check Python Platform (Jupyter Light is 'emscripten')
+*  Check Python Platform (Jupyter Light is ['emscripten'](https://emscripten.org/))
 ```
 import sys
 sys.platform

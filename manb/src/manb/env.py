@@ -22,7 +22,7 @@ class Section(Enum):
 class Environment:
 
   def __init__(this, domain: str, path: str,
-                    plantuml: str = "http://www.plantuml.com/plantuml/img/"):
+                    plantuml: str = "https://www.plantuml.com/plantuml/png/"):
 
     # diagram colors
     this.ReqColor = "#FC9494"
