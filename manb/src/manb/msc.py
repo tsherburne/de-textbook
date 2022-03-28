@@ -5,7 +5,7 @@ from .env import Environment
 from .pr import Project
 from pprint import pprint
 from io import _io
-import plantuml
+from .puml import displayPlantUML
 
 lastFunction = ""
 partList = []
@@ -92,19 +92,12 @@ def drawMSC(catId:str, env: Environment, pr: Project) -> None:
     _process_constructs(env, db, f, 0, constructs)
     f.write('@enduml\n')
 
-  # create UML diagram
-  server = plantuml.PlantUML(env.plantuml)
-  try:
-    ret = server.processes_file(inputPath, outputPath, errorPath)
-  except BaseException as err:
-    print(err)
-
   # setup output area
   output = widgets.Output(layout={'border': '1px solid black'})
   display(output)
   # display uc diagram to output area
   with output:
-    display(Image(outputPath))
+    displayPlantUML(env.plantuml, inputPath)
   return
 
 def _process_constructs(env: Environment, db: dict, f: _io.TextIOWrapper,

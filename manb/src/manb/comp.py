@@ -5,7 +5,7 @@ from .env import Environment
 from .pr import Project
 from pprint import pprint
 from io import _io
-import plantuml
+from .puml import displayPlantUML
 
 def drawComp(catId:str, env: Environment, pr: Project) -> None:
   db = pr.entities
@@ -84,18 +84,11 @@ def drawComp(catId:str, env: Environment, pr: Project) -> None:
 
     f.write('@enduml\n')
 
-  # create UML diagram
-  server = plantuml.PlantUML(env.plantuml)
-  try:
-    ret = server.processes_file(inputPath, outputPath, errorPath)
-  except BaseException as err:
-    print(err)
-
   # setup output area
   output = widgets.Output(layout={'border': '1px solid black'})
   display(output)
   # display pb diagram to output area
   with output:
-    display(Image(outputPath))
+    displayPlantUML(env.plantuml, inputPath)
 
   return

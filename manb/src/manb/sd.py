@@ -7,8 +7,8 @@ from .msc import drawMSC
 from .item import getItemList
 from pprint import pprint
 from io import _io
-import plantuml
 import pandas as pd
+from .puml import displayPlantUML
 
 class SystemDescription:
   def __init__(this, env: Environment):
@@ -103,20 +103,12 @@ class SystemDescription:
 
       f.write('@enduml\n')
 
-    server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
-    try:
-      ret = server.processes_file('./diagrams/cs.txt',
-                            './diagrams/cs.png', './diagrams/cs_error.html')
-    except BaseException as err:
-      print(err)
-
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
     display(this.output)
-    this.csImage = Image('./diagrams/cs.png')
     # display cs diagram to output area
     with this.output:
-      display(this.csImage)
+      displayPlantUML(this.env.plantuml, './diagrams/cs.txt')
     return
 
 # recursively output built from
@@ -259,19 +251,12 @@ class SystemDescription:
 
         f.write('@enduml\n')
 
-      # create UML diagram
-      server = plantuml.PlantUML('http://www.plantuml.com/plantuml/img/')
-      try:
-        ret = server.processes_file(inputPath, outputPath, errorPath)
-      except BaseException as err:
-        print(err)
-
       # setup output area
       this.output = widgets.Output(layout={'border': '1px solid black'})
       display(this.output)
       # display uc diagram to output area
       with this.output:
-        display(Image(outputPath))
+        displayPlantUML(this.env.plantuml, inputPath)
 
   # display use case table
   def UseCaseTable(this):
