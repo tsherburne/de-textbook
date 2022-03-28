@@ -10,6 +10,8 @@ from .log import MANBLogHandler
 import logging
 import json
 from pprint import pprint
+import sys
+from .gfile import getJSON
 
 # https://github.com/mwouts/itables
 from itables import init_notebook_mode
@@ -90,13 +92,17 @@ class Environment:
     if not os.path.exists('./projects'):
       os.makedirs('./projects')
 
+    disallow_remote = False
+    # for now, only 'local' db for JupyterLite
+    if sys.platform == 'emscripten':
+      disallow_remote = True
+
     # form to select local / remote repository
     this.repository = widgets.ToggleButtons(
       options=['Local ', 'Remote '],
       value='Local ',
       description='Repository:',
-      disabled=False,
-      #button_style='info',
+      disabled=disallow_remote,
       tooltips=['Read-Only via Github JSON File',
                 'Read-Write via GENESYS REST-API'],
       icons=['file','database']
@@ -162,14 +168,9 @@ class Environment:
       # no login for local repository
       this.vbox_items = [this.project]
 
-      # retrieve local project list
-      if not os.path.exists('./projects/projects.json'):
-        url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-              'main/projects/projects.json'
-        urllib.request.urlretrieve(url, './projects/projects.json')
-
-      with open('./projects/projects.json') as f:
-        projects = json.load(f)
+      # retrieve projects list
+      projects = getJSON('https://raw.githubusercontent.com/tsherburne/' \
+              'de-textbook/main/projects/projects.json')
 
       # build project list and dict
       this.projectList = []

@@ -4,8 +4,8 @@ from pprint import pprint
 from IPython.display import clear_output
 import json
 import os
-import urllib.request
 import operator
+from .gfile import getJSON
 
 
 # Project db - schema definition & entities
@@ -57,70 +57,37 @@ class Project:
 
     # check for local repository
     if this.env.repository.value == 'Local ':
-      with open('./projects/projects.json') as f:
-        projects = json.load(f)
-        found = False
-        for proj in projects:
-          if proj['name'] == this.env.project.value:
-            this.projPath = proj['path']
-            found = True
-            # check if project needs to be retrieved from GitHub
-            if not os.path.exists('./projects/' + this.projPath):
-              os.makedirs('./projects/' + this.projPath)
 
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/entities.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/entities.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/entitiesDict.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/entitiesDict.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/entitiesForTypeList.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/entitiesForTypeList.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/id2nEntityDict.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/id2nEntityDict.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/id2nRelDict.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/id2nRelDict.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/n2idEntityDict.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/n2idEntityDict.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/n2idRelDict.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/n2idRelDict.json')
-              url = 'https://raw.githubusercontent.com/tsherburne/de-textbook/' \
-                    'main/projects/' + this.projPath + '/structures.json'
-              urllib.request.urlretrieve(url, './projects/' +
-                                        this.projPath + '/structures.json')
-            break
+      this.projPath = this.env.projectDict[this.env.project.value]
 
-        if found != True:
-          print("Selected project not found in projects.json")
-        else:
-          with open('./projects/' + this.projPath + '/entities.json') as f:
-            this.entities = json.load(f)
-          with open('./projects/' + this.projPath + '/entitiesDict.json') as f:
-            this.entitiesDict = json.load(f)
-          with open('./projects/' + this.projPath + '/entitiesForTypeList.json') as f:
-            this.entitiesForTypeList = json.load(f)
-          with open('./projects/' + this.projPath + '/id2nEntityDict.json') as f:
-            this.id2nEntityDict = json.load(f)
-          with open('./projects/' + this.projPath + '/id2nRelDict.json') as f:
-            this.id2nRelDict = json.load(f)
-          with open('./projects/' + this.projPath + '/n2idEntityDict.json') as f:
-            this.n2idEntityDict = json.load(f)
-          with open('./projects/' + this.projPath + '/n2idRelDict.json') as f:
-            this.n2idRelDict = json.load(f)
-          with open('./projects/' + this.projPath + '/structures.json') as f:
-            this.structures = json.load(f)
+      # check if project path needs to be created
+      if not os.path.exists('./projects/' + this.projPath):
+        os.makedirs('./projects/' + this.projPath)
+
+      this.entities = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/entities.json')
+      this.entitiesDict = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/entitiesDict.json')
+      this.entitiesForTypeList = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/entitiesForTypeList.json')
+      this.id2nEntityDict = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/id2nEntityDict.json')
+      this.id2nRelDict = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/id2nRelDict.json')
+      this.n2idEntityDict = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/n2idEntityDict.json')
+      this.n2idRelDict = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/n2idRelDict.json')
+      this.structures = getJSON('https://raw.githubusercontent.com/' \
+            'tsherburne/de-textbook/' \
+            'main/projects/' + this.projPath + '/structures.json')
     return
 
   # fetch and save entities
