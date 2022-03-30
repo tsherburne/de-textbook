@@ -4,6 +4,7 @@ from .env import Environment
 from .pr import Project
 from pprint import pprint
 import pandas as pd
+import html
 
 def createReqTable(env: Environment, pr: Project, groups: list):
 
@@ -17,7 +18,8 @@ def createReqTable(env: Environment, pr: Project, groups: list):
       reqItem = []
       reqItem.append(db[req['targetId']]['attrs']['number']['value'])
       reqItem.append(db[req['targetId']]['attrs']['name']['value'])
-      reqItem.append(db[req['targetId']]['attrs']['description']['value'])
+      reqItem.append(html.escape(db[req['targetId']]['attrs']\
+                                                ['description']['value']))
       reqItem.append(db[req['targetId']]['attrs']['type']['value'])
 
       refineList = " "
