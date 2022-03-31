@@ -189,12 +189,11 @@ class RiskAssessment:
             caItem.append(' ')
 
           # Todo: save / retrieve variation type justification
-          caItem.append(' ')
+          # caItem.append(' ')
           caaTable.append(caItem)
 
     this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', \
-                  'Variation', 'has variation: Hazardous Action', \
-                  'has variation: .justification'])
+                  'Variation', 'has variation: Hazardous Action'])
 
     # setup output area
     this.output = widgets.Output(layout={'border': '1px solid black'})
