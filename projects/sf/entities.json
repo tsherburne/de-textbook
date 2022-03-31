@@ -18633,94 +18633,6 @@
       ]
     }
   },
-  "becc28ce-1725-43a8-b7b0-09dc2171007b": {
-    "type": "HazardousAction",
-    "attrs": {
-      "variationType": {
-        "dataType": "enumeration",
-        "value": "NotProviding"
-      },
-      "description": {
-        "dataType": "text",
-        "value": "Not Applicable - Control Action (Not Providing) variation.  'variation of' association includes 'justification' for N/A decision."
-      },
-      "name": {
-        "dataType": "string",
-        "value": "NA - Not Providing"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "HCA.0.0"
-      }
-    },
-    "rels": {}
-  },
-  "a6e5642d-b554-4e03-929c-8a3f7d45dc46": {
-    "type": "HazardousAction",
-    "attrs": {
-      "variationType": {
-        "dataType": "enumeration",
-        "value": "Providing"
-      },
-      "description": {
-        "dataType": "text",
-        "value": "Not Applicable - Control Action (Providing) variation.  'variation of' association includes 'justification' for N/A decision."
-      },
-      "name": {
-        "dataType": "string",
-        "value": "NA - Providing"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "HCA.0.1"
-      }
-    },
-    "rels": {}
-  },
-  "89fa34c0-7d53-4598-85df-af8e9c6f57c9": {
-    "type": "HazardousAction",
-    "attrs": {
-      "variationType": {
-        "dataType": "enumeration",
-        "value": "TooEarlyTooLate"
-      },
-      "description": {
-        "dataType": "text",
-        "value": "Not Applicable - Control Action (Too  Early / Tool Late) variation.  'variation of' association includes 'justification' for N/A decision."
-      },
-      "name": {
-        "dataType": "string",
-        "value": "NA - Too Early / Too Late"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "HCA.0.2"
-      }
-    },
-    "rels": {}
-  },
-  "efd9d35a-0404-4703-92a1-f531eac818ab": {
-    "type": "HazardousAction",
-    "attrs": {
-      "variationType": {
-        "dataType": "enumeration",
-        "value": "TooLongTooSoon"
-      },
-      "description": {
-        "dataType": "text",
-        "value": "Not Applicable - Control Action (Too Long / Too Soon) variation.  'variation of' association includes 'justification' for N/A decision."
-      },
-      "name": {
-        "dataType": "string",
-        "value": "NA - Too Long / Too Soon"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "HCA.0.3"
-      }
-    },
-    "rels": {}
-  },
   "f6fda6fa-97b1-495c-8c35-02540dccd388": {
     "type": "HazardousAction",
     "attrs": {
@@ -28115,8 +28027,8 @@
         "value": ""
       },
       "description": {
-        "dataType": "",
-        "value": ""
+        "dataType": "text",
+        "value": "Silverfish shall provide fire control self test operations."
       },
       "name": {
         "dataType": "string",
