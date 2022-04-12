@@ -14,6 +14,9 @@ def drawComp(catId:str, env: Environment, pr: Project) -> None:
   linkDict = {}
   pbName = ""
   pbTitle = ""
+  diagName = ""
+
+  diagName = db[catId]['attrs']['name']['value']
 
   # retrieve physical block diagram components
   for entity in db[catId]['rels']['categorizes']:
@@ -29,9 +32,9 @@ def drawComp(catId:str, env: Environment, pr: Project) -> None:
     else:
       print("Invalid categorized type: " + db[entity['targetId']]['type'])
 
-  inputPath = "./diagrams/pb_" + pbTitle.replace(" ", "") + ".txt"
-  outputPath = "./diagrams/pb_" + pbTitle.replace(" ", "") + ".png"
-  errorPath = "./diagrams/pb_" + pbTitle.replace(" ", "") + "_error.html"
+  inputPath = "./diagrams/pb_" + diagName.replace(" ", "") + ".txt"
+  outputPath = "./diagrams/pb_" + diagName.replace(" ", "") + ".png"
+  errorPath = "./diagrams/pb_" + diagName.replace(" ", "") + "_error.html"
 
   if pbName == "":
     print("No 'context' set for: " + db[catId]['attrs']['name']['value'])
@@ -40,7 +43,7 @@ def drawComp(catId:str, env: Environment, pr: Project) -> None:
   with open(inputPath, 'w') as f:
 
     f.write('@startuml\n')
-    f.write('title Physical Block Diagram: ' + pbTitle + '\n')
+    f.write('title Physical Block Diagram: ' + diagName + '\n')
     f.write('skinparam componentStyle rectangle\n')
     f.write('skinparam BackgroundColor silver\n')
     f.write('skinparam roundCorner 15\n')

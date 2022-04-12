@@ -16,6 +16,8 @@ def getItemList(env: Environment, pr: Project) -> Tuple[list, dict]:
       for output in db[function['targetId']]['rels']['outputs']:
         itemEntry = {}
         itemEntry['itemId'] = output['targetId']
+        itemEntry['itemNumber'] = db[output['targetId']]['attrs']['number']\
+                  ['value']
         itemEntry['itemTitle'] = db[output['targetId']]['attrs']['title']\
                   ['value']
         itemEntry['itemDescription'] = db[output['targetId']]['attrs']\

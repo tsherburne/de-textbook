@@ -37,12 +37,14 @@ For usage of Mission Aware NoteBook ([MANB](https://pypi.org/project/manb/)) Pac
    * Physical Blocks to include **Category** Name: *'PA: Block Diagrams'*
      * Each *categorized* Physical Block is a **Category** which includes:
        *  All Components - one component identified as 'context' via *'hint'*
+       *  Components ordered in diagram by Hiearchical numbering
        *  All Links - each Link has *'hint'* (l/r/u/d) for *connected*
           components - hint is relative to Hierarchically ordered components *number*
 *  Components - Loss Scenario Analysis Table
 *  Links - Loss Scenario Analysis Table
    *  Links to include **Category** Name: *'PA: Links'*
    *  Link Decomposition (*connects to*) - must consistently populate 'hints' direction (l/r/u/d)
+   *  Sub-Links ordered by Hiearchical number must consistently align with hints direction.
 
 ## Resilience Architecture
 *  Physical Block Diagram

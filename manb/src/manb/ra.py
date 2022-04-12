@@ -176,6 +176,7 @@ class RiskAssessment:
       if itemByName[item]['itemType'] == 'ControlAction':
         for hcaType in this.hcaTypes:
           caItem = []
+          caItem.append(itemByName[item]['itemNumber'])
           caItem.append(itemByName[item]['itemTitle'])
           caItem.append(hcaType)
           # check if hca of this type exists for this ca
@@ -192,7 +193,7 @@ class RiskAssessment:
           # caItem.append(' ')
           caaTable.append(caItem)
 
-    this.caaDF = pd.DataFrame(caaTable, columns = ['Control Action', \
+    this.caaDF = pd.DataFrame(caaTable, columns = ['ID', 'Control Action', \
                   'Variation', 'has variation: Hazardous Action'])
 
     # setup output area
