@@ -72,9 +72,16 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.f372bf1de02fb50ae6e0.js",
+        "load": "static/remoteEntry.730e734f0ef88fa439e8.js",
         "mimeExtension": "./mimeExtension",
         "name": "jupyterlab-plotly"
+      },
+      {
+        "extension": "./extension",
+        "liteExtension": false,
+        "load": "static/remoteEntry.80b3e67b9de9b245d27f.js",
+        "name": "jupyterlab_pygments",
+        "style": "./style"
       }
     ],
     "fullLabextensionsUrl": "./extensions",
