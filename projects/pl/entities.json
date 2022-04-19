@@ -22073,6 +22073,129 @@
       }
     },
     "rels": {
+      "elicits": [
+        {
+          "targetId": "b0706cfd-7d04-4eee-a569-6ad5b7ed83f1",
+          "attrs": {},
+          "targetNum": "PL.LS.2.1",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "50dfc15b-2a23-41b4-a9bd-09c014258470",
+          "attrs": {},
+          "targetNum": "PL.LS.2.2",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "2df022de-6510-4d53-8db4-bc4965691e04",
+          "attrs": {},
+          "targetNum": "PL.LS.2.3",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "b4ad08f4-dda4-414c-896c-a05055822c53",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.1",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "3ea37afa-23b3-4909-a129-5adc24b29c7e",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "69d44caa-a6a6-440c-8c50-dd4f9ef6b496",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "7add6512-d493-46d1-a99e-8be9aff16e26",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            4
+          ]
+        },
+        {
+          "targetId": "3e6c8749-eac4-45d5-a75d-ec0e49ddcf35",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "4ec711d7-98c3-4aac-b217-b29a72ae724e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "f726e3b1-9d7e-4023-8c3b-a31a053ac31f",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "b51ac729-d532-4db4-905e-01be4287546e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            4
+          ]
+        }
+      ],
       "ma: targets": [
         {
           "targetId": "2372e732-d297-4a52-b99e-72b4f5b097f6",
@@ -22093,19 +22216,6 @@
           "targetNumTuple": [
             "REM",
             2
-          ]
-        }
-      ],
-      "elicits": [
-        {
-          "targetId": "b4ad08f4-dda4-414c-896c-a05055822c53",
-          "attrs": {},
-          "targetNum": "SEN.LS.2.1",
-          "targetNumTuple": [
-            "SEN",
-            "LS",
-            2,
-            1
           ]
         }
       ],
@@ -24343,6 +24453,321 @@
       ]
     }
   },
+  "b0706cfd-7d04-4eee-a569-6ad5b7ed83f1": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Constraint"
+      },
+      "rationale": {
+        "dataType": "text",
+        "value": "for Sentinel attestation of software / configuration integrity."
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "The pipeline order management system shall incorporate a TPM to enable a secure, measured boot."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "PL: LS.2 - OM TPM"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PL.LS.2.1"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "f0eba21f-34b6-4931-a901-85bea4b0e313",
+          "attrs": {},
+          "targetNum": "T.1.1",
+          "targetNumTuple": [
+            "T",
+            1,
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "50dfc15b-2a23-41b4-a9bd-09c014258470": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Functional"
+      },
+      "rationale": {
+        "dataType": "text",
+        "value": "for Sentinel resilience control"
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "The pipeline order management system shall provide redundancy management controls."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "PL: LS.2 - OM Redundancy Controls"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PL.LS.2.2"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "85adc390-bce5-40bb-922e-bbe7c31685e1",
+          "attrs": {},
+          "targetNum": "T.3.1",
+          "targetNumTuple": [
+            "T",
+            3,
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "2df022de-6510-4d53-8db4-bc4965691e04": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Functional"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Design Decision"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "The pipeline order management system shall provide self test operations."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "PL: LS.2 - OM Self Test"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "PL.LS.2.3"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "2bd53c38-f662-45e2-a283-acf0914ed627",
+          "attrs": {},
+          "targetNum": "T.5.1",
+          "targetNumTuple": [
+            "T",
+            5,
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
   "b4ad08f4-dda4-414c-896c-a05055822c53": {
     "type": "Requirement",
     "attrs": {
@@ -24400,7 +24825,7 @@
       },
       "description": {
         "dataType": "text",
-        "value": "Control Room Sentinel shall sense LS.2: Disable Order Management Loss Scenario within 10 minutes."
+        "value": "Control Room Sentinel shall sense LS.2: Disable Order Management Loss Scenario within 30 minutes."
       },
       "name": {
         "dataType": "string",
@@ -24432,6 +24857,321 @@
           "targetNumTuple": [
             "LS",
             2
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "3ea37afa-23b3-4909-a129-5adc24b29c7e": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Control Room Sentinel shall sense LS.2: Disable Order Management Loss Scenario with 99% accuracy."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.2 - Sense Accuracy"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.2.2"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "a7e8c451-911c-4b8e-b23c-01cb7c57c5fc",
+          "attrs": {},
+          "targetNum": "T.1.6",
+          "targetNumTuple": [
+            "T",
+            1,
+            6
+          ]
+        }
+      ]
+    }
+  },
+  "69d44caa-a6a6-440c-8c50-dd4f9ef6b496": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Control Room Sentinel shall isolate 'Order Management' as the source of LS.2: Disable Order Management Loss Scenario within 1 minute."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.2 - Isolate Accuracy"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.2.3"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "79e39aed-290a-406a-803a-3aafda0da6eb",
+          "attrs": {},
+          "targetNum": "T.2.3",
+          "targetNumTuple": [
+            "T",
+            2,
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "7add6512-d493-46d1-a99e-8be9aff16e26": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Control Room Sentinel shall isolate 'Order Management' as the source of LS.2: Disable Order Management Loss Scenario with 99% accuracy."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "SEN: LS.2 - Isolate Time"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "SEN.LS.2.4"
+      }
+    },
+    "rels": {
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "f0bad46b-24e6-42a0-ba14-8fe54a829353",
+          "attrs": {},
+          "targetNum": "T.2.4",
+          "targetNumTuple": [
+            "T",
+            2,
+            4
           ]
         }
       ],
@@ -24525,6 +25265,19 @@
           "targetNumTuple": [
             "RG",
             2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "b0706cfd-7d04-4eee-a569-6ad5b7ed83f1",
+          "attrs": {},
+          "targetNum": "PL.LS.2.1",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            1
           ]
         }
       ],
@@ -25000,6 +25753,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "3ea37afa-23b3-4909-a129-5adc24b29c7e",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            2
+          ]
+        }
+      ],
       "grouped by": [
         {
           "targetId": "647d8137-e289-43d2-b499-910040ae141c",
@@ -25482,6 +26248,19 @@
           ]
         }
       ],
+      "refined by": [
+        {
+          "targetId": "69d44caa-a6a6-440c-8c50-dd4f9ef6b496",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            3
+          ]
+        }
+      ],
       "grouped by": [
         {
           "targetId": "647d8137-e289-43d2-b499-910040ae141c",
@@ -25576,6 +26355,19 @@
           ]
         }
       ],
+      "refined by": [
+        {
+          "targetId": "7add6512-d493-46d1-a99e-8be9aff16e26",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            4
+          ]
+        }
+      ],
       "grouped by": [
         {
           "targetId": "647d8137-e289-43d2-b499-910040ae141c",
@@ -25658,6 +26450,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "50dfc15b-2a23-41b4-a9bd-09c014258470",
+          "attrs": {},
+          "targetNum": "PL.LS.2.2",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
@@ -25928,6 +26733,19 @@
             2
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "3e6c8749-eac4-45d5-a75d-ec0e49ddcf35",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            1
+          ]
+        }
       ]
     }
   },
@@ -26000,6 +26818,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "4ec711d7-98c3-4aac-b217-b29a72ae724e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            2
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
@@ -26300,6 +27131,19 @@
             2
           ]
         }
+      ],
+      "refined by": [
+        {
+          "targetId": "f726e3b1-9d7e-4023-8c3b-a31a053ac31f",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            3
+          ]
+        }
       ]
     }
   },
@@ -26422,6 +27266,19 @@
           "targetNumTuple": [
             "RG",
             2
+          ]
+        }
+      ],
+      "refined by": [
+        {
+          "targetId": "b51ac729-d532-4db4-905e-01be4287546e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            4
           ]
         }
       ]
@@ -26620,6 +27477,19 @@
       }
     },
     "rels": {
+      "refined by": [
+        {
+          "targetId": "2df022de-6510-4d53-8db4-bc4965691e04",
+          "attrs": {},
+          "targetNum": "PL.LS.2.3",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            3
+          ]
+        }
+      ],
       "refines": [
         {
           "targetId": "9ff34987-b746-4d6c-996f-8534dacee209",
@@ -28251,6 +29121,426 @@
       ]
     }
   },
+  "3e6c8749-eac4-45d5-a75d-ec0e49ddcf35": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'composability' rating for RM.1: Diverse Redundant Order Management."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.2 - Composability Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.2.1"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "2c39c30b-3832-49ca-882f-7e81adc98e69",
+          "attrs": {},
+          "targetNum": "T.3.3",
+          "targetNumTuple": [
+            "T",
+            3,
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "4ec711d7-98c3-4aac-b217-b29a72ae724e": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'failure transparency' rating for RM.1: Diverse Redundant Order Management."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.2 - Failure Transparency Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.2.2"
+      }
+    },
+    "rels": {
+      "refines": [
+        {
+          "targetId": "caf2823a-c002-4abf-b7ba-5801aa227805",
+          "attrs": {},
+          "targetNum": "T.4.1",
+          "targetNumTuple": [
+            "T",
+            4,
+            1
+          ]
+        }
+      ],
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "f726e3b1-9d7e-4023-8c3b-a31a053ac31f": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall provide an operator 'usability' rating for RM.1: Diverse Redundant Order Management."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.2 - Usability Rating"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.2.3"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "79a89cc8-0aff-4f2d-8bd7-e4fae66dd874",
+          "attrs": {},
+          "targetNum": "T.4.3",
+          "targetNumTuple": [
+            "T",
+            4,
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ]
+    }
+  },
+  "b51ac729-d532-4db4-905e-01be4287546e": {
+    "type": "Requirement",
+    "attrs": {
+      "weightFactor": {
+        "dataType": "",
+        "value": ""
+      },
+      "title": {
+        "dataType": "",
+        "value": ""
+      },
+      "type": {
+        "dataType": "enumeration",
+        "value": "Performance"
+      },
+      "rationale": {
+        "dataType": "",
+        "value": ""
+      },
+      "incentivePerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "keyPerformanceParameter": {
+        "dataType": "boolean",
+        "value": ""
+      },
+      "value": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphNumber": {
+        "dataType": "",
+        "value": ""
+      },
+      "paragraphTitle": {
+        "dataType": "",
+        "value": ""
+      },
+      "puid": {
+        "dataType": "",
+        "value": ""
+      },
+      "origin": {
+        "dataType": "enumeration",
+        "value": "Derived"
+      },
+      "performanceParameterType": {
+        "dataType": "enumeration",
+        "value": "nil"
+      },
+      "units": {
+        "dataType": "",
+        "value": ""
+      },
+      "description": {
+        "dataType": "text",
+        "value": "Test Support System shall measure 'timeliness' of operator evaluation of RM.1: Diverse Redundant Order Management."
+      },
+      "name": {
+        "dataType": "string",
+        "value": "TSS: LS.2 - Evaluation Timeliness"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "TSS.LS.2.4"
+      }
+    },
+    "rels": {
+      "grouped by": [
+        {
+          "targetId": "06cece27-97a1-4ec3-969b-4e3d4bf42a87",
+          "attrs": {},
+          "targetNum": "RG.3",
+          "targetNumTuple": [
+            "RG",
+            3
+          ]
+        }
+      ],
+      "elicited by": [
+        {
+          "targetId": "587a968c-f18e-4897-804a-ab0dadb06287",
+          "attrs": {},
+          "targetNum": "LS.2",
+          "targetNumTuple": [
+            "LS",
+            2
+          ]
+        }
+      ],
+      "refines": [
+        {
+          "targetId": "f76d7b91-ab59-4317-9ad2-e03c12cf371e",
+          "attrs": {},
+          "targetNum": "T.4.4",
+          "targetNumTuple": [
+            "T",
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  },
   "d878999f-df2d-4888-9952-91be294531f6": {
     "type": "RequirementGroup",
     "attrs": {
@@ -28854,6 +30144,39 @@
     "rels": {
       "groups": [
         {
+          "targetId": "b0706cfd-7d04-4eee-a569-6ad5b7ed83f1",
+          "attrs": {},
+          "targetNum": "PL.LS.2.1",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "50dfc15b-2a23-41b4-a9bd-09c014258470",
+          "attrs": {},
+          "targetNum": "PL.LS.2.2",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "2df022de-6510-4d53-8db4-bc4965691e04",
+          "attrs": {},
+          "targetNum": "PL.LS.2.3",
+          "targetNumTuple": [
+            "PL",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
           "targetId": "b4ad08f4-dda4-414c-896c-a05055822c53",
           "attrs": {},
           "targetNum": "SEN.LS.2.1",
@@ -28862,6 +30185,83 @@
             "LS",
             2,
             1
+          ]
+        },
+        {
+          "targetId": "3ea37afa-23b3-4909-a129-5adc24b29c7e",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.2",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "69d44caa-a6a6-440c-8c50-dd4f9ef6b496",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.3",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "7add6512-d493-46d1-a99e-8be9aff16e26",
+          "attrs": {},
+          "targetNum": "SEN.LS.2.4",
+          "targetNumTuple": [
+            "SEN",
+            "LS",
+            2,
+            4
+          ]
+        },
+        {
+          "targetId": "3e6c8749-eac4-45d5-a75d-ec0e49ddcf35",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.1",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            1
+          ]
+        },
+        {
+          "targetId": "4ec711d7-98c3-4aac-b217-b29a72ae724e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.2",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            2
+          ]
+        },
+        {
+          "targetId": "f726e3b1-9d7e-4023-8c3b-a31a053ac31f",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.3",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            3
+          ]
+        },
+        {
+          "targetId": "b51ac729-d532-4db4-905e-01be4287546e",
+          "attrs": {},
+          "targetNum": "TSS.LS.2.4",
+          "targetNumTuple": [
+            "TSS",
+            "LS",
+            2,
+            4
           ]
         }
       ]

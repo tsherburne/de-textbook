@@ -8,7 +8,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "BD: Context"
+        "value": "Context"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -318,7 +318,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "BD: Silverfish"
+        "value": "Silverfish"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -677,7 +677,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "BD: Obstacle"
+        "value": "Obstacle"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -1405,7 +1405,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "BD: Control Station"
+        "value": "Control Station"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -1771,6 +1771,63 @@
       ]
     }
   },
+  "d3e69b39-7419-4ad6-9229-b31def0e54bb": {
+    "type": "Category",
+    "attrs": {
+      "description": {
+        "dataType": "text",
+        "value": "Resilience Architecture Extensions"
+      },
+      "name": {
+        "dataType": "string",
+        "value": "RA: Block Diagrams"
+      },
+      "number": {
+        "dataType": "hierarchicalNumber",
+        "value": "RA.2"
+      }
+    },
+    "rels": {
+      "categorizes": [
+        {
+          "targetId": "f38e558d-8448-4b43-a8c4-e03b7da734dc",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "RA.1",
+          "targetNumTuple": [
+            "RA",
+            1
+          ]
+        },
+        {
+          "targetId": "1543c812-6012-4074-9ffa-432b9c06ef00",
+          "attrs": {
+            "order": {
+              "dataType": "",
+              "value": ""
+            },
+            "hint": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "RA.2",
+          "targetNumTuple": [
+            "RA",
+            2
+          ]
+        }
+      ]
+    }
+  },
   "1543c812-6012-4074-9ffa-432b9c06ef00": {
     "type": "Category",
     "attrs": {
@@ -1780,7 +1837,7 @@
       },
       "name": {
         "dataType": "string",
-        "value": "BD: Vehicle Sentinel"
+        "value": "Vehicle Sentinel"
       },
       "number": {
         "dataType": "hierarchicalNumber",
@@ -1983,63 +2040,6 @@
       "categorized by": [
         {
           "targetId": "d3e69b39-7419-4ad6-9229-b31def0e54bb",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            },
-            "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "RA.2",
-          "targetNumTuple": [
-            "RA",
-            2
-          ]
-        }
-      ]
-    }
-  },
-  "d3e69b39-7419-4ad6-9229-b31def0e54bb": {
-    "type": "Category",
-    "attrs": {
-      "description": {
-        "dataType": "text",
-        "value": "Resilience Architecture Extensions"
-      },
-      "name": {
-        "dataType": "string",
-        "value": "RA: Block Diagrams"
-      },
-      "number": {
-        "dataType": "hierarchicalNumber",
-        "value": "RA.2"
-      }
-    },
-    "rels": {
-      "categorizes": [
-        {
-          "targetId": "f38e558d-8448-4b43-a8c4-e03b7da734dc",
-          "attrs": {
-            "order": {
-              "dataType": "",
-              "value": ""
-            },
-            "hint": {
-              "dataType": "",
-              "value": ""
-            }
-          },
-          "targetNum": "RA.1",
-          "targetNumTuple": [
-            "RA",
-            1
-          ]
-        },
-        {
-          "targetId": "1543c812-6012-4074-9ffa-432b9c06ef00",
           "attrs": {
             "order": {
               "dataType": "",
@@ -10157,6 +10157,22 @@
             1,
             2,
             1
+          ]
+        }
+      ],
+      "ma: has variation": [
+        {
+          "targetId": "8016dbd6-3803-4418-88b1-c3a60c2dfb8c",
+          "attrs": {
+            "justification": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "HCA.3",
+          "targetNumTuple": [
+            "HCA",
+            3
           ]
         }
       ],
@@ -18813,6 +18829,22 @@
           "targetNumTuple": [
             "H",
             2
+          ]
+        }
+      ],
+      "ma: variation of": [
+        {
+          "targetId": "8e74e996-6f9b-4b2a-8938-fab925543541",
+          "attrs": {
+            "justification": {
+              "dataType": "",
+              "value": ""
+            }
+          },
+          "targetNum": "CS.3",
+          "targetNumTuple": [
+            "CS",
+            3
           ]
         }
       ]
