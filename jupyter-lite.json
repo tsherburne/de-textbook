@@ -53,13 +53,13 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.8f5cefaa26fbae099326.js",
+        "load": "static/remoteEntry.6375e54406c677384240.js",
         "name": "jupyter-leaflet"
       },
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.0a859bd5f4f46047146d.js",
+        "load": "static/remoteEntry.710d0093522e0289f99a.js",
         "name": "jupyter-matplotlib"
       },
       {
@@ -79,7 +79,7 @@
       {
         "extension": "./extension",
         "liteExtension": false,
-        "load": "static/remoteEntry.80b3e67b9de9b245d27f.js",
+        "load": "static/remoteEntry.aa1060b2d1221f8e5688.js",
         "name": "jupyterlab_pygments",
         "style": "./style"
       }
