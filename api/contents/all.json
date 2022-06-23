@@ -2,9 +2,9 @@
   "content": [
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.039861Z",
+      "created": "2022-06-23T12:51:32.476751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:50:46.764528Z",
+      "last_modified": "2022-06-23T12:50:31.212369Z",
       "mimetype": null,
       "name": "02_SCRE_System_Description.ipynb",
       "path": "02_SCRE_System_Description.ipynb",
@@ -14,9 +14,9 @@
     },
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.039861Z",
+      "created": "2022-06-23T12:51:32.480751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:50:46.764528Z",
+      "last_modified": "2022-06-23T12:50:31.212369Z",
       "mimetype": null,
       "name": "04_SCRE_Vulnerability_Assessment.ipynb",
       "path": "04_SCRE_Vulnerability_Assessment.ipynb",
@@ -26,9 +26,9 @@
     },
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.035861Z",
+      "created": "2022-06-23T12:51:32.476751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:50:46.764528Z",
+      "last_modified": "2022-06-23T12:50:31.212369Z",
       "mimetype": null,
       "name": "01_SCRE_DE_Textbook.ipynb",
       "path": "01_SCRE_DE_Textbook.ipynb",
@@ -38,9 +38,9 @@
     },
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.039861Z",
+      "created": "2022-06-23T12:51:32.480751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:50:46.764528Z",
+      "last_modified": "2022-06-23T12:50:31.212369Z",
       "mimetype": null,
       "name": "05_SCRE_Resilience_Architecture.ipynb",
       "path": "05_SCRE_Resilience_Architecture.ipynb",
@@ -50,9 +50,9 @@
     },
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.039861Z",
+      "created": "2022-06-23T12:51:32.480751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:51:51.391880Z",
+      "last_modified": "2022-06-23T12:51:31.196660Z",
       "mimetype": "text/markdown",
       "name": "README.md",
       "path": "README.md",
@@ -62,9 +62,9 @@
     },
     {
       "content": null,
-      "created": "2022-06-23T12:51:53.039861Z",
+      "created": "2022-06-23T12:51:32.480751Z",
       "format": null,
-      "last_modified": "2022-06-23T12:50:46.764528Z",
+      "last_modified": "2022-06-23T12:50:31.212369Z",
       "mimetype": null,
       "name": "03_SCRE_Risk_Assessment.ipynb",
       "path": "03_SCRE_Risk_Assessment.ipynb",
@@ -73,9 +73,9 @@
       "writable": true
     }
   ],
-  "created": "2022-06-23T12:51:53.039861Z",
+  "created": "2022-06-23T12:51:32.480751Z",
   "format": "json",
-  "last_modified": "2022-06-23T12:51:53.039861Z",
+  "last_modified": "2022-06-23T12:51:32.480751Z",
   "mimetype": null,
   "name": "",
   "path": "",
